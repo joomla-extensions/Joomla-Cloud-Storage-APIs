@@ -7,28 +7,22 @@
  * @license     GNU General Public License version 2 or later; see LICENSE
  */
 
-require_once JPATH_PLATFORM . '/joomla/googlecloudstorage/object.php';
-require_once __DIR__ . '/stubs/JGooglecloudstorageObjectMock.php';
+use Joomla\Registry\Registry;
 
 /**
- * Test class for JGooglecloudstorage.
+ * Test class for JGooglecloudstorageObject.
  *
- * @package     Joomla.UnitTest
- * @subpackage  Googlecloudstorage
- *
- * @since       ??.?
+ * @since  1.0
  */
 class JGooglecloudstorageObjectTest extends PHPUnit_Framework_TestCase
 {
 	/**
-	 * @var    JRegistry  Options for the Googlecloudstorage object
-	 * @since  ??.?
+	 * @var  Registry  Options for the Googlecloudstorage object.
 	 */
 	protected $options;
 
 	/**
-	 * @var    JGooglecloudstorageObject  Object under test.
-	 * @since  ??.?
+	 * @var  JGooglecloudstorageObject  Object under test.
 	 */
 	protected $object;
 
@@ -36,15 +30,13 @@ class JGooglecloudstorageObjectTest extends PHPUnit_Framework_TestCase
 	 * Sets up the fixture, for example, opens a network connection.
 	 * This method is called before a test is executed.
 	 *
-	 * @access protected
-	 *
-	 * @return void
+	 * @return  void
 	 */
 	protected function setUp()
 	{
 		parent::setUp();
 
-		$this->options = new JRegistry;
+		$this->options = new Registry;
 		$this->options->set(
 			'testAcl',
 				array(
@@ -76,13 +68,11 @@ class JGooglecloudstorageObjectTest extends PHPUnit_Framework_TestCase
 			)
 		);
 
-		$this->object = new JGooglecloudstorageObjectMock($this->options);
+		$this->object = $this->getMockForAbstractClass('JGooglecloudstorageObject', array($this->options));
 	}
 
 	/**
 	 * Tests the createAclXml method
-	 *
-	 * @return void
 	 */
 	public function testCreateAclXml()
 	{
@@ -121,8 +111,6 @@ class JGooglecloudstorageObjectTest extends PHPUnit_Framework_TestCase
 
 	/**
 	 * Tests the urlSafeB64Encode method using a sample response
-	 *
-	 * @return void
 	 */
 	public function testUrlSafeB64Encode()
 	{
@@ -137,8 +125,6 @@ class JGooglecloudstorageObjectTest extends PHPUnit_Framework_TestCase
 
 	/**
 	 * Tests the getJwtHeader method using a sample response
-	 *
-	 * @return void
 	 */
 	public function testGetJwtHeader()
 	{

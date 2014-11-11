@@ -9,6 +9,8 @@
 
 defined('JPATH_PLATFORM') or die;
 
+use Joomla\Registry\Registry;
+
 /**
  * Googlecloudstorage API object class for the Joomla Platform.
  *
@@ -19,7 +21,7 @@ defined('JPATH_PLATFORM') or die;
 abstract class JGooglecloudstorageObject
 {
 	/**
-	 * @var    JRegistry  Options for the Googlecloudstorage object.
+	 * @var    Registry  Options for the Googlecloudstorage object.
 	 * @since  1.0
 	 */
 	protected $options;
@@ -33,14 +35,14 @@ abstract class JGooglecloudstorageObject
 	/**
 	 * Constructor.
 	 *
-	 * @param   JRegistry  $options  Googlecloudstorage options object.
-	 * @param   JHttp      $client   The HTTP client object.
+	 * @param   Registry  $options  Googlecloudstorage options object.
+	 * @param   JHttp     $client   The HTTP client object.
 	 *
 	 * @since   1.0
 	 */
-	public function __construct(JRegistry $options = null, JHttp $client = null)
+	public function __construct(Registry $options = null, JHttp $client = null)
 	{
-		$this->options = isset($options) ? $options : new JRegistry;
+		$this->options = isset($options) ? $options : new Registry;
 		$this->client = isset($client) ? $client : new JHttp($this->options);
 	}
 

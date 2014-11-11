@@ -7,27 +7,22 @@
  * @license     GNU General Public License version 2 or later; see LICENSE
  */
 
-require_once JPATH_PLATFORM . '/joomla/googlecloudstorage/buckets.php';
+use Joomla\Registry\Registry;
 
 /**
- * Test class for JGooglecloudstorage.
+ * Test class for JGooglecloudstorageBucketsPut.
  *
- * @package     Joomla.UnitTest
- * @subpackage  Googlecloudstorage
- *
- * @since       ??.?
+ * @since  1.0
  */
 class JGooglecloudstorageBucketsPutTest extends PHPUnit_Framework_TestCase
 {
 	/**
-	 * @var    JRegistry  Options for the Googlecloudstorage object.
-	 * @since  ??.?
+	 * @var  Registry  Options for the Googlecloudstorage object.
 	 */
 	protected $options;
 
 	/**
-	 * @var    JGooglecloudstorageObject  Object under test.
-	 * @since  ??.?
+	 * @var  JGooglecloudstorageBucketsPut  Object under test.
 	 */
 	protected $object;
 
@@ -35,15 +30,13 @@ class JGooglecloudstorageBucketsPutTest extends PHPUnit_Framework_TestCase
 	 * Sets up the fixture, for example, opens a network connection.
 	 * This method is called before a test is executed.
 	 *
-	 * @access protected
-	 *
-	 * @return void
+	 * @return  void
 	 */
 	protected function setUp()
 	{
 		parent::setUp();
 
-		$this->options = new JRegistry;
+		$this->options = new Registry;
 		$this->options->set(
 			'testCors',
 			array(
@@ -91,8 +84,6 @@ class JGooglecloudstorageBucketsPutTest extends PHPUnit_Framework_TestCase
 
 	/**
 	 * Tests the createCorsXml method
-	 *
-	 * @return void
 	 */
 	public function testCreateCorsXml()
 	{
@@ -125,8 +116,6 @@ class JGooglecloudstorageBucketsPutTest extends PHPUnit_Framework_TestCase
 
 	/**
 	 * Tests the createLifecycleXml method
-	 *
-	 * @return void
 	 */
 	public function testCreateLifecycleXml()
 	{
@@ -147,8 +136,6 @@ class JGooglecloudstorageBucketsPutTest extends PHPUnit_Framework_TestCase
 
 	/**
 	 * Tests the createLoggingXml method
-	 *
-	 * @return void
 	 */
 	public function testCreateLoggingXml()
 	{
@@ -165,8 +152,6 @@ class JGooglecloudstorageBucketsPutTest extends PHPUnit_Framework_TestCase
 
 	/**
 	 * Tests the createVersioningXml method
-	 *
-	 * @return void
 	 */
 	public function testCreateVersioningXml()
 	{
@@ -181,8 +166,6 @@ class JGooglecloudstorageBucketsPutTest extends PHPUnit_Framework_TestCase
 
 	/**
 	 * Tests the createWebsiteConfigXml method
-	 *
-	 * @return void
 	 */
 	public function testCreateWebsiteConfigXml()
 	{

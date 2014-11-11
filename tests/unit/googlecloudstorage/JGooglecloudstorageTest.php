@@ -7,27 +7,22 @@
  * @license     GNU General Public License version 2 or later; see LICENSE
  */
 
-require_once JPATH_PLATFORM . '/joomla/googlecloudstorage/googlecloudstorage.php';
+use Joomla\Registry\Registry;
 
 /**
  * Test class for JGooglecloudstorage.
  *
- * @package     Joomla.UnitTest
- * @subpackage  Googlecloudstorage
- *
- * @since       ??.?
+ * @since  1.0
  */
 class JGooglecloudstorageTest extends PHPUnit_Framework_TestCase
 {
 	/**
-	 * @var    JRegistry  Options for the Googlecloudstorage object.
-	 * @since  ??.?
+	 * @var  Registry  Options for the Googlecloudstorage object.
 	 */
 	protected $options;
 
 	/**
-	 * @var    JGooglecloudstorage  Object under test.
-	 * @since  ??.?
+	 * @var  JGooglecloudstorage  Object under test.
 	 */
 	protected $object;
 
@@ -35,36 +30,18 @@ class JGooglecloudstorageTest extends PHPUnit_Framework_TestCase
 	 * Sets up the fixture, for example, opens a network connection.
 	 * This method is called before a test is executed.
 	 *
-	 * @access protected
-	 *
-	 * @return void
+	 * @return  void
 	 */
 	protected function setUp()
 	{
 		parent::setUp();
 
-		$this->options = new JRegistry;
+		$this->options = new Registry;
 		$this->object = new JGooglecloudstorage($this->options);
 	}
 
 	/**
-	 * Tears down the fixture, for example, closes a network connection.
-	 * This method is called after a test is executed.
-	 *
-	 * @access protected
-	 *
-	 * @return void
-	 */
-	protected function tearDown()
-	{
-	}
-
-	/**
 	 * Tests the __construct method
-	 *
-	 * @return  void
-	 *
-	 * @since   ??.?
 	 */
 	public function test__Construct()
 	{
@@ -95,10 +72,6 @@ class JGooglecloudstorageTest extends PHPUnit_Framework_TestCase
 
 	/**
 	 * Tests the magic __get method - service
-	 *
-	 * @since  ??.?
-	 *
-	 * @return void
 	 */
 	public function test__GetService()
 	{
@@ -110,10 +83,6 @@ class JGooglecloudstorageTest extends PHPUnit_Framework_TestCase
 
 	/**
 	 * Tests the magic __get method - buckets
-	 *
-	 * @since  ??.?
-	 *
-	 * @return void
 	 */
 	public function test__GetBuckets()
 	{
@@ -125,10 +94,6 @@ class JGooglecloudstorageTest extends PHPUnit_Framework_TestCase
 
 	/**
 	 * Tests the magic __get method - objects
-	 *
-	 * @since  ??.?
-	 *
-	 * @return void
 	 */
 	public function test__GetObjects()
 	{
@@ -140,10 +105,6 @@ class JGooglecloudstorageTest extends PHPUnit_Framework_TestCase
 
 	/**
 	 * Tests the setOption method
-	 *
-	 * @since  ??.?
-	 *
-	 * @return void
 	 */
 	public function testSetOption()
 	{
@@ -157,10 +118,6 @@ class JGooglecloudstorageTest extends PHPUnit_Framework_TestCase
 
 	/**
 	 * Tests the getOption method
-	 *
-	 * @since  ??.?
-	 *
-	 * @return void
 	 */
 	public function testGetOption()
 	{
