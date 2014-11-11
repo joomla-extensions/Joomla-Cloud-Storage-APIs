@@ -9,6 +9,8 @@
 
 defined('JPATH_PLATFORM') or die;
 
+use Joomla\Registry\Registry;
+
 /**
  * Amazons3 API object class for the Joomla Platform.
  *
@@ -19,7 +21,7 @@ defined('JPATH_PLATFORM') or die;
 abstract class JAmazons3Object
 {
 	/**
-	 * @var    JRegistry  Options for the Amazons3 object.
+	 * @var    Registry  Options for the Amazons3 object.
 	 * @since  ??.?
 	 */
 	protected $options;
@@ -33,14 +35,14 @@ abstract class JAmazons3Object
 	/**
 	 * Constructor.
 	 *
-	 * @param   JRegistry      $options  Amazons3 options object.
+	 * @param   Registry       $options  Amazons3 options object.
 	 * @param   JAmazons3Http  $client   The HTTP client object.
 	 *
 	 * @since   ??.?
 	 */
-	public function __construct(JRegistry $options = null, JAmazons3Http $client = null)
+	public function __construct(Registry $options = null, JAmazons3Http $client = null)
 	{
-		$this->options = isset($options) ? $options : new JRegistry;
+		$this->options = isset($options) ? $options : new Registry;
 		$this->client = isset($client) ? $client : new JAmazons3Http($this->options);
 	}
 

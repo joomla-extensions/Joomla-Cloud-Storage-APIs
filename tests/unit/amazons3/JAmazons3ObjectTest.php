@@ -1,34 +1,28 @@
 <?php
 /**
  * @package     Joomla.UnitTest
- * @subpackage  Client
+ * @subpackage  Amazons3
  *
- * @copyright   Copyright (C) 2005 - 2013 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2014 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE
  */
 
-require_once JPATH_PLATFORM . '/joomla/amazons3/object.php';
-require_once __DIR__ . '/stubs/JAmazons3ObjectMock.php';
+use Joomla\Registry\Registry;
 
 /**
- * Test class for JAmazons3.
+ * Test class for JAmazons3Object.
  *
- * @package     Joomla.UnitTest
- * @subpackage  Amazons3
- *
- * @since       ??.?
+ * @since  1.0
  */
 class JAmazons3ObjectTest extends PHPUnit_Framework_TestCase
 {
 	/**
-	 * @var    JRegistry  Options for the Amazons3 object.
-	 * @since  ??.?
+	 * @var  Registry  Options for the Amazons3 object.
 	 */
 	protected $options;
 
 	/**
-	 * @var    JAmazons3Issues  Object under test.
-	 * @since  ??.?
+	 * @var  JAmazons3Object  Object under test.
 	 */
 	protected $object;
 
@@ -36,22 +30,18 @@ class JAmazons3ObjectTest extends PHPUnit_Framework_TestCase
 	 * Sets up the fixture, for example, opens a network connection.
 	 * This method is called before a test is executed.
 	 *
-	 * @access protected
-	 *
-	 * @return void
+	 * @return  void
 	 */
 	protected function setUp()
 	{
 		parent::setUp();
 
-		$this->options = new JRegistry;
-		$this->object = new JAmazons3ObjectMock($this->options);
+		$this->options = new Registry;
+		$this->object = $this->getMockForAbstractClass('JAmazonS3Object', array($this->options));
 	}
 
 	/**
 	 * Tests the processResponse method using a sample response.
-	 *
-	 * @return void
 	 */
 	public function testProcessResponse()
 	{
@@ -71,8 +61,6 @@ class JAmazons3ObjectTest extends PHPUnit_Framework_TestCase
 
 	/**
 	 * Tests the create authorization method.
-	 *
-	 * @return void
 	 */
 	public function testCreateAuthorization()
 	{
@@ -93,8 +81,6 @@ class JAmazons3ObjectTest extends PHPUnit_Framework_TestCase
 
 	/**
 	 * Tests the createCanonicalizedAmzHeaders method.
-	 *
-	 * @return void
 	 */
 	public function testCreateCanonicalizedAmzHeaders()
 	{
@@ -124,8 +110,6 @@ class JAmazons3ObjectTest extends PHPUnit_Framework_TestCase
 
 	/**
 	 * Tests the createCanonicalizedResource method.
-	 *
-	 * @return void
 	 */
 	public function testCreateCanonicalizedResource()
 	{
@@ -141,8 +125,6 @@ class JAmazons3ObjectTest extends PHPUnit_Framework_TestCase
 
 	/**
 	 * Tests the filterValidSubresources method.
-	 *
-	 * @return void
 	 */
 	public function testFilterValidSubresources()
 	{

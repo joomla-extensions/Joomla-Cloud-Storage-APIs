@@ -2,9 +2,12 @@
 <phpunit bootstrap="vendor/autoload.php" colors="false" backupGlobals="false" strict="true">
 	<testsuites>
 		<testsuite name="Unit">
-			<directory>tests</directory>
+			<directory>tests/unit</directory>
 		</testsuite>
 	</testsuites>
+    <php>
+        <const name="JPATH_PLATFORM" value="1" />
+    </php>
 
 	<logging>
 		<log type="coverage-html" target="build/coverage" title="Joomla-Cloud-APIs" charset="UTF-8" yui="true" highlight="true"

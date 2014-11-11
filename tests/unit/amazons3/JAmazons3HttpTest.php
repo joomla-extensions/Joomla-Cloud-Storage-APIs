@@ -1,27 +1,21 @@
 <?php
 /**
  * @package     Joomla.UnitTest
- * @subpackage  Client
+ * @subpackage  Amazons3
  *
- * @copyright   Copyright (C) 2005 - 2013 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2014 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE
  */
 
-require_once JPATH_PLATFORM . '/joomla/amazons3/http.php';
-
 /**
- * Test class for JAmazons3.
+ * Test class for JAmazons3Http.
  *
- * @package     Joomla.UnitTest
- * @subpackage  Amazons3
- *
- * @since       ??.?
+ * @since  1.0
  */
 class JAmazons3HttpTest extends PHPUnit_Framework_TestCase
 {
 	/**
-	 * @var    JAmazons3Http  Object under test.
-	 * @since  ??.?
+	 * @var  JAmazons3Http  Object under test.
 	 */
 	protected $object;
 
@@ -30,8 +24,6 @@ class JAmazons3HttpTest extends PHPUnit_Framework_TestCase
 	 * This method is called before a test is executed.
 	 *
 	 * @return  void
-	 *
-	 * @since   ??.?
 	 */
 	protected function setUp()
 	{
@@ -41,23 +33,7 @@ class JAmazons3HttpTest extends PHPUnit_Framework_TestCase
 	}
 
 	/**
-	 * Tears down the fixture, for example, closes a network connection.
-	 * This method is called after a test is executed.
-	 *
-	 * @return  void
-	 *
-	 * @since   ??.?
-	 */
-	protected function tearDown()
-	{
-	}
-
-	/**
 	 * Tests the __construct method
-	 *
-	 * @return  void
-	 *
-	 * @since   ??.?
 	 */
 	public function test__Construct()
 	{

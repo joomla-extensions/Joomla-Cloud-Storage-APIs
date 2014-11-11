@@ -9,6 +9,8 @@
 
 defined('JPATH_PLATFORM') or die;
 
+use Joomla\Registry\Registry;
+
 /**
  * Joomla Platform class for interacting with an Amazons3 server instance.
  *
@@ -19,7 +21,7 @@ defined('JPATH_PLATFORM') or die;
 class JAmazons3
 {
 	/**
-	 * @var    JRegistry  Options for the Amazons3 object.
+	 * @var    Registry  Options for the Amazons3 object.
 	 * @since  ??.?
 	 */
 	protected $options;
@@ -51,15 +53,14 @@ class JAmazons3
 	/**
 	 * Constructor.
 	 *
-	 * @param   JRegistry      $options  Amazons3 options object. Should include
-	 *                                    api.accessKeyId and api.secretAccessKey
+	 * @param   Registry       $options  Amazons3 options object. Should include api.accessKeyId and api.secretAccessKey
 	 * @param   JAmazons3Http  $client   The HTTP client object.
 	 *
 	 * @since   ??.?
 	 */
-	public function __construct(JRegistry $options = null, JAmazons3Http $client = null)
+	public function __construct(Registry $options = null, JAmazons3Http $client = null)
 	{
-		$this->options = isset($options) ? $options : new JRegistry;
+		$this->options = isset($options) ? $options : new Registry;
 		$this->client  = isset($client) ? $client : new JAmazons3Http($this->options);
 
 		// Setup the default API url if not already set.
