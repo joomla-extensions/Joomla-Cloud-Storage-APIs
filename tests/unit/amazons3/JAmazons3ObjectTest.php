@@ -37,7 +37,7 @@ class JAmazons3ObjectTest extends PHPUnit_Framework_TestCase
 		parent::setUp();
 
 		$this->options = new Registry;
-		$this->object = $this->getMockForAbstractClass('JAmazonS3Object', array($this->options));
+		$this->object = $this->getMockForAbstractClass('JAmazons3Object', array($this->options));
 	}
 
 	/**
