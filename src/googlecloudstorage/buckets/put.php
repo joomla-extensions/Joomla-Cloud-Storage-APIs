@@ -12,9 +12,7 @@ defined('JPATH_PLATFORM') or die;
 /**
  * Defines the PUT operation on buckets
  *
- * @package     Joomla.Cloud
- * @subpackage  Googlecloudstorage
- * @since       1.0
+ * @since  1.0
  */
 class JGooglecloudstorageBucketsPut extends JGooglecloudstorageBuckets
 {
@@ -25,7 +23,7 @@ class JGooglecloudstorageBucketsPut extends JGooglecloudstorageBuckets
 	 * @param   string  $bucketLocation  The bucket region (default: US Standard)
 	 * @param   string  $predefinedAcl   The predefined ACL
 	 *
-	 * @return string  The response body
+	 * @return  SimpleXMLElement|string  The response body
 	 *
 	 * @since   1.0
 	 */
@@ -74,7 +72,7 @@ class JGooglecloudstorageBucketsPut extends JGooglecloudstorageBuckets
 	 * @param   string  $bucket  The bucket name
 	 * @param   string  $acl     An array containing the ACL permissions
 	 *
-	 * @return string  The response body
+	 * @return  SimpleXMLElement|string  The response body
 	 *
 	 * @since   1.0
 	 */
@@ -108,7 +106,7 @@ class JGooglecloudstorageBucketsPut extends JGooglecloudstorageBuckets
 	 *
 	 * @param   string  $corsConfig  An array containing the CORS configuration
 	 *
-	 * @return string The XML
+	 * @return  string The XML
 	 */
 	public function createCorsXml($corsConfig)
 	{
@@ -153,7 +151,7 @@ class JGooglecloudstorageBucketsPut extends JGooglecloudstorageBuckets
 	 * @param   string  $bucket  The bucket name
 	 * @param   string  $cors    An array containing the CORS configuration
 	 *
-	 * @return string  The response body
+	 * @return  SimpleXMLElement|string  The response body
 	 *
 	 * @since   1.0
 	 */
@@ -193,7 +191,7 @@ class JGooglecloudstorageBucketsPut extends JGooglecloudstorageBuckets
 	 *
 	 * @param   string  $lifecycle  An array containing the lifecycle configuration
 	 *
-	 * @return string The XML
+	 * @return  string The XML
 	 */
 	public function createLifecycleXml($lifecycle)
 	{
@@ -236,7 +234,7 @@ class JGooglecloudstorageBucketsPut extends JGooglecloudstorageBuckets
 	 * @param   string  $bucket     The bucket name
 	 * @param   string  $lifecycle  An array containing the lifecycle configuration
 	 *
-	 * @return string  The response body
+	 * @return  SimpleXMLElement|string  The response body
 	 *
 	 * @since   1.0
 	 */
@@ -278,7 +276,7 @@ class JGooglecloudstorageBucketsPut extends JGooglecloudstorageBuckets
 	 * @param   string  $logObjectPrefix  The object prefix for log objects. It can be at most
 	 *                                    900 characters and must be a valid object name.
 	 *
-	 * @return string The XML
+	 * @return  string The XML
 	 */
 	public function createLoggingXml($logBucket, $logObjectPrefix)
 	{
@@ -303,7 +301,7 @@ class JGooglecloudstorageBucketsPut extends JGooglecloudstorageBuckets
 	 * @param   string  $logObjectPrefix  The object prefix for log objects. It can be at most
 	 *                                    900 characters and must be a valid object name
 	 *
-	 * @return string  The response body
+	 * @return  SimpleXMLElement|string  The response body
 	 *
 	 * @since   1.0
 	 */
@@ -339,7 +337,7 @@ class JGooglecloudstorageBucketsPut extends JGooglecloudstorageBuckets
 	 *
 	 * @param   string  $status  Versioning status of a bucket. Can be Enabled or Suspended
 	 *
-	 * @return string The XML
+	 * @return  string The XML
 	 */
 	public function createVersioningXml($status)
 	{
@@ -352,7 +350,7 @@ class JGooglecloudstorageBucketsPut extends JGooglecloudstorageBuckets
 	 * @param   string  $bucket  The bucket name
 	 * @param   string  $status  Versioning status of a bucket. Can be `Enabled` or `Suspended`
 	 *
-	 * @return string  The response body
+	 * @return  SimpleXMLElement|string  The response body
 	 *
 	 * @since   1.0
 	 */
@@ -387,7 +385,7 @@ class JGooglecloudstorageBucketsPut extends JGooglecloudstorageBuckets
 	 * @param   string  $mainPageSuffix  An object name suffix to simulate directory index behavior
 	 * @param   string  $notFoundPage    Name of the object to return with 404 responses
 	 *
-	 * @return string The XML
+	 * @return  string The XML
 	 */
 	public function createWebsiteConfigXml($mainPageSuffix, $notFoundPage)
 	{
@@ -415,7 +413,7 @@ class JGooglecloudstorageBucketsPut extends JGooglecloudstorageBuckets
 	 * @param   string  $mainPageSuffix  An object name suffix to simulate directory index behavior
 	 * @param   string  $notFoundPage    Name of the object to return with 404 responses
 	 *
-	 * @return string  The response body
+	 * @return  SimpleXMLElement|string  The response body
 	 *
 	 * @since   1.0
 	 */

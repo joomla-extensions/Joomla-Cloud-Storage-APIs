@@ -12,9 +12,7 @@ defined('JPATH_PLATFORM') or die;
 /**
  * Defines the DELETE operation on buckets
  *
- * @package     Joomla.Cloud
- * @subpackage  Googlecloudstorage
- * @since       1.0
+ * @since  1.0
  */
 class JGooglecloudstorageObjectsDelete extends JGooglecloudstorageObjects
 {
@@ -26,7 +24,7 @@ class JGooglecloudstorageObjectsDelete extends JGooglecloudstorageObjects
 	 * @param   string  $generation         A query string parameter for a specific object generation
 	 * @param   string  $ifGenerationMatch  x-goog-if-generation-match request header
 	 *
-	 * @return string  The response body
+	 * @return  SimpleXMLElement|string  The response body
 	 *
 	 * @since   1.0
 	 */

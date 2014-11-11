@@ -14,9 +14,7 @@ use Joomla\Registry\Registry;
 /**
  * Googlecloudstorage API object class for the Joomla Platform.
  *
- * @package     Joomla.Cloud
- * @subpackage  Googlecloudstorage
- * @since       1.0
+ * @since  1.0
  */
 abstract class JGooglecloudstorageObject
 {
@@ -52,7 +50,7 @@ abstract class JGooglecloudstorageObject
 	 * @param   string  $url      The url that is used in the request
 	 * @param   string  $headers  An array of headers
 	 *
-	 * @return string  The response body
+	 * @return  SimpleXMLElement|string  The response body
 	 *
 	 * @since   1.0
 	 */
@@ -78,7 +76,9 @@ abstract class JGooglecloudstorageObject
 	 *
 	 * @param   string  $acl  An array containing the ACL permissions
 	 *
-	 * @return string The XML
+	 * @return  SimpleXMLElement|string  The response body
+	 *
+	 * @since   1.0
 	 */
 	public function createAclXml($acl)
 	{
@@ -139,9 +139,10 @@ abstract class JGooglecloudstorageObject
 	 * @param   JHttpResponse  $response      The response.
 	 * @param   integer        $expectedCode  The expected "good" code.
 	 *
-	 * @throws DomainException
+	 * @return  SimpleXMLElement|string
 	 *
-	 * @return mixed
+	 * @since   1.0
+	 * @throws  DomainException
 	 */
 	public function processResponse(JHttpResponse $response, $expectedCode = 200)
 	{
@@ -167,21 +168,19 @@ abstract class JGooglecloudstorageObject
 		{
 			return new SimpleXMLElement($response->body);
 		}
-		else
-		{
-			// Convert the respnse headers to a string
-			$headersArrayAsString = str_replace(
-				"\",\"", "\",\n\t\"",
-				str_replace(
-					array("{","}",":"),
-					array("Array(\n\t","\n)","=>"),
-					json_encode($response->headers)
-				)
-			);
 
-			return "Response code: " . $response->code . ".\n"
-				. "Response headers: " . $headersArrayAsString . "\n";
-		}
+		// Convert the respnse headers to a string
+		$headersArrayAsString = str_replace(
+			"\",\"", "\",\n\t\"",
+			str_replace(
+				array("{","}",":"),
+				array("Array(\n\t","\n)","=>"),
+				json_encode($response->headers)
+			)
+		);
+
+		return "Response code: " . $response->code . ".\n"
+			. "Response headers: " . $headersArrayAsString . "\n";
 	}
 
 	/**
@@ -189,7 +188,9 @@ abstract class JGooglecloudstorageObject
 	 *
 	 * @param   mixed  $data  The input data
 	 *
-	 * @return mixed  The encoded data
+	 * @return  string  The encoded data
+	 *
+	 * @since   1.0
 	 */
 	public function urlSafeB64Encode($data)
 	{
@@ -205,7 +206,9 @@ abstract class JGooglecloudstorageObject
 	/**
 	 * Gets the header part of the JSON Web Token
 	 *
-	 * @return string  The header
+	 * @return  string  The header
+	 *
+	 * @since   1.0
 	 */
 	public function getJwtHeader()
 	{
@@ -234,7 +237,7 @@ abstract class JGooglecloudstorageObject
 	 * @param   string  $prn    The email address of the user for which the
 	 *                          application is requesting delegated access.
 	 *
-	 * @return string  The claim set
+	 * @return  string  The claim set
 	 */
 	public function getJwtClaimSet($scope, $prn)
 	{
@@ -269,7 +272,7 @@ abstract class JGooglecloudstorageObject
 	 * @param   string  $header    The JWT claim header
 	 * @param   string  $claimSet  The JWT claim set
 	 *
-	 * @return string  The signature for the JWT
+	 * @return  string  The signature for the JWT
 	 */
 	public function getJws($header, $claimSet)
 	{
@@ -298,7 +301,7 @@ abstract class JGooglecloudstorageObject
 	 * @param   string  $prn    The email address of the user for which the
 	 *                          application is requesting delegated access.
 	 *
-	 * @return string  The authorization request header
+	 * @return  string  The authorization request header
 	 *
 	 * @since   1.0
 	 */

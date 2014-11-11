@@ -12,43 +12,36 @@ defined('JPATH_PLATFORM') or die;
 /**
  * Common items for operations on objects
  *
- * @package     Joomla.Cloud
- * @subpackage  Googlecloudstorage
- * @since       1.0
+ * @since  1.0
  */
 class JGooglecloudstorageObjects extends JGooglecloudstorageObject
 {
 	/**
-	 * @var    JGooglecloudstorageObjectsGet  Googlecloudstorage API object for
-	 *                                        GET operations on objects.
+	 * @var    JGooglecloudstorageObjectsGet  Googlecloudstorage API object for GET operations on objects.
 	 * @since  1.0
 	 */
 	protected $get;
 
 	/**
-	 * @var    JGooglecloudstorageObjectsHead  Googlecloudstorage API object for
-	 *                                         HEAD operations on objects.
+	 * @var    JGooglecloudstorageObjectsHead  Googlecloudstorage API object for HEAD operations on objects.
 	 * @since  1.0
 	 */
 	protected $head;
 
 	/**
-	 * @var    JGooglecloudstorageObjectsPut  Googlecloudstorage API object for
-	 *                                        PUT operations on objects.
+	 * @var    JGooglecloudstorageObjectsPut  Googlecloudstorage API object for PUT operations on objects.
 	 * @since  1.0
 	 */
 	protected $put;
 
 	/**
-	 * @var    JGooglecloudstorageObjectsPost  Googlecloudstorage API object for
-	 *                                         POST operations on objects.
+	 * @var    JGooglecloudstorageObjectsPost  Googlecloudstorage API object for POST operations on objects.
 	 * @since  1.0
 	 */
 	protected $post;
 
 	/**
-	 * @var    JGooglecloudstorageObjectsDelete  Googlecloudstorage API object for
-	 *                                           DELETE operations on objects.
+	 * @var    JGooglecloudstorageObjectsDelete  Googlecloudstorage API object for DELETE operations on objects.
 	 * @since  1.0
 	 */
 	protected $delete;

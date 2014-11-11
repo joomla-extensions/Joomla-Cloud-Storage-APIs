@@ -12,9 +12,7 @@ defined('JPATH_PLATFORM') or die;
 /**
  * Common items for operations on the service
  *
- * @package     Joomla.Cloud
- * @subpackage  Googlecloudstorage
- * @since       1.0
+ * @since  1.0
  */
 class JGooglecloudstorageService extends JGooglecloudstorageObject
 {

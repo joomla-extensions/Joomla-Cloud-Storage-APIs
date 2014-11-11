@@ -12,9 +12,7 @@ defined('JPATH_PLATFORM') or die;
 /**
  * Defines the GET operation on buckets
  *
- * @package     Joomla.Cloud
- * @subpackage  Googlecloudstorage
- * @since       1.0
+ * @since  1.0
  */
 class JGooglecloudstorageBucketsGet extends JGooglecloudstorageBuckets
 {
@@ -25,7 +23,7 @@ class JGooglecloudstorageBucketsGet extends JGooglecloudstorageBuckets
 	 * @param   string  $parameters  An array of optional parameters that can be set
 	 *                               to filter the results
 	 *
-	 * @return string  The response body
+	 * @return  SimpleXMLElement|string  The response body
 	 *
 	 * @since   1.0
 	 */
@@ -58,7 +56,7 @@ class JGooglecloudstorageBucketsGet extends JGooglecloudstorageBuckets
 	 *
 	 * @param   string  $bucket  The bucket name
 	 *
-	 * @return string  The response body
+	 * @return  SimpleXMLElement|string  The response body
 	 *
 	 * @since   1.0
 	 */
@@ -80,7 +78,7 @@ class JGooglecloudstorageBucketsGet extends JGooglecloudstorageBuckets
 	 *
 	 * @param   string  $bucket  The bucket name
 	 *
-	 * @return string  The response body
+	 * @return  SimpleXMLElement|string  The response body
 	 *
 	 * @since   1.0
 	 */
@@ -101,7 +99,7 @@ class JGooglecloudstorageBucketsGet extends JGooglecloudstorageBuckets
 	 *
 	 * @param   string  $bucket  The bucket name
 	 *
-	 * @return string  The response body
+	 * @return  SimpleXMLElement|string  The response body
 	 *
 	 * @since   1.0
 	 */
@@ -122,7 +120,7 @@ class JGooglecloudstorageBucketsGet extends JGooglecloudstorageBuckets
 	 *
 	 * @param   string  $bucket  The bucket name
 	 *
-	 * @return string  The response body
+	 * @return  SimpleXMLElement|string  The response body
 	 *
 	 * @since   1.0
 	 */
@@ -143,7 +141,7 @@ class JGooglecloudstorageBucketsGet extends JGooglecloudstorageBuckets
 	 *
 	 * @param   string  $bucket  The bucket name
 	 *
-	 * @return string  The response body
+	 * @return  SimpleXMLElement|string  The response body
 	 *
 	 * @since   1.0
 	 */

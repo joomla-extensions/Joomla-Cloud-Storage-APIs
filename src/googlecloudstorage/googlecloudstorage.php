@@ -14,9 +14,7 @@ use Joomla\Registry\Registry;
 /**
  * Joomla Platform class for interacting with a Google Cloud storage server instance.
  *
- * @package     Joomla.Cloud
- * @subpackage  Googlecloudstorage
- * @since       1.0
+ * @since  1.0
  */
 class JGooglecloudstorage
 {

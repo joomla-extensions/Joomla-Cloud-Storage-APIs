@@ -12,16 +12,14 @@ defined('JPATH_PLATFORM') or die;
 /**
  * Defines the GET operation on the service
  *
- * @package     Joomla.Cloud
- * @subpackage  Googlecloudstorage
- * @since       1.0
+ * @since  1.0
  */
 class JGooglecloudstorageServiceGet extends JGooglecloudstorageService
 {
 	/**
 	 * Lists all of the buckets in a specified project.
 	 *
-	 * @return string  The response body
+	 * @return  SimpleXMLElement|string  The response body
 	 *
 	 * @since   1.0
 	 */

@@ -12,9 +12,7 @@ defined('JPATH_PLATFORM') or die;
 /**
  * Defines the GET operation on objects
  *
- * @package     Joomla.Cloud
- * @subpackage  Googlecloudstorage
- * @since       1.0
+ * @since  1.0
  */
 class JGooglecloudstorageObjectsGet extends JGooglecloudstorageObjects
 {
@@ -26,7 +24,7 @@ class JGooglecloudstorageObjectsGet extends JGooglecloudstorageObjects
 	 * @param   string  $generation       Used for fetching a specific object version
 	 * @param   array   $optionalHeaders  An array of optional headers to be set
 	 *
-	 * @return string  The response body
+	 * @return  SimpleXMLElement|string  The response body
 	 *
 	 * @since   1.0
 	 */
@@ -61,7 +59,7 @@ class JGooglecloudstorageObjectsGet extends JGooglecloudstorageObjects
 	 * @param   string  $bucket  The bucket name
 	 * @param   string  $object  The object name
 	 *
-	 * @return string  The response body
+	 * @return  SimpleXMLElement|string  The response body
 	 *
 	 * @since   1.0
 	 */

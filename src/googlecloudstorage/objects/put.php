@@ -12,9 +12,7 @@ defined('JPATH_PLATFORM') or die;
 /**
  * Defines the PUT operation on objects
  *
- * @package     Joomla.Cloud
- * @subpackage  Googlecloudstorage
- * @since       1.0
+ * @since  1.0
  */
 class JGooglecloudstorageObjectsPut extends JGooglecloudstorageObjects
 {
@@ -26,7 +24,7 @@ class JGooglecloudstorageObjectsPut extends JGooglecloudstorageObjects
 	 * @param   string  $content          The content of the object
 	 * @param   string  $optionalHeaders  An array of optional headers to be set
 	 *
-	 * @return string  The response body
+	 * @return  SimpleXMLElement|string  The response body
 	 *
 	 * @since   1.0
 	 */
