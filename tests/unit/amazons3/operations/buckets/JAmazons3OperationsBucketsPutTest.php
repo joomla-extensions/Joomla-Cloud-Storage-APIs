@@ -7,27 +7,22 @@
  * @license     GNU General Public License version 2 or later; see LICENSE
  */
 
-require_once JPATH_PLATFORM . '/joomla/amazons3/operations/buckets.php';
+use Joomla\Registry\Registry;
 
 /**
- * Test class for JAmazons3.
+ * Test class for JAmazons3OperationsBucketsPut.
  *
- * @package     Joomla.UnitTest
- * @subpackage  Amazons3
- *
- * @since       ??.?
+ * @since  1.0
  */
 class JAmazons3OperationsBucketsPutTest extends PHPUnit_Framework_TestCase
 {
 	/**
-	 * @var    JRegistry  Options for the Amazons3 object.
-	 * @since  ??.?
+	 * @var  Registry  Options for the Amazons3 object.
 	 */
 	protected $options;
 
 	/**
-	 * @var    JAmazons3Object  Object under test.
-	 * @since  ??.?
+	 * @var  JAmazons3OperationsBuckets  Object under test.
 	 */
 	protected $object;
 
@@ -35,15 +30,13 @@ class JAmazons3OperationsBucketsPutTest extends PHPUnit_Framework_TestCase
 	 * Sets up the fixture, for example, opens a network connection.
 	 * This method is called before a test is executed.
 	 *
-	 * @access protected
-	 *
-	 * @return void
+	 * @return  void
 	 */
 	protected function setUp()
 	{
 		parent::setUp();
 
-		$this->options = new JRegistry;
+		$this->options = new Registry;
 		$this->options->set('api.accessKeyId', 'testAccessKeyId');
 		$this->options->set('api.secretAccessKey', 'testSecretAccessKey');
 		$this->options->set('api.url', 's3.amazonaws.com');
@@ -182,12 +175,7 @@ class JAmazons3OperationsBucketsPutTest extends PHPUnit_Framework_TestCase
 	}
 
 	/**
-	 * Tests the putBucket method with a region different from the default one
-	 * and no ACL permissions
-	 *
-	 * @return  void
-	 *
-	 * @since   ??.?
+	 * Tests the putBucket method with a region different from the default one and no ACL permissions
 	 */
 	public function testPutBucketWithRegion()
 	{
@@ -228,10 +216,6 @@ class JAmazons3OperationsBucketsPutTest extends PHPUnit_Framework_TestCase
 
 	/**
 	 * Tests the putBucket method with the default region and canned ACL permissions
-	 *
-	 * @return  void
-	 *
-	 * @since   ??.?
 	 */
 	public function testPutBucketWithCannedAcl()
 	{
@@ -261,12 +245,7 @@ class JAmazons3OperationsBucketsPutTest extends PHPUnit_Framework_TestCase
 	}
 
 	/**
-	 * Tests the putBucket method with the default region and explicitly specified
-	 * ACL permissions
-	 *
-	 * @return  void
-	 *
-	 * @since   ??.?
+	 * Tests the putBucket method with the default region and explicitly specified ACL permissions
 	 */
 	public function testPutBucketWithExplicitAcl()
 	{
@@ -307,10 +286,6 @@ class JAmazons3OperationsBucketsPutTest extends PHPUnit_Framework_TestCase
 
 	/**
 	 * Tests the putBucketAcl method with canned ACL permissions
-	 *
-	 * @return  void
-	 *
-	 * @since   ??.?
 	 */
 	public function testPutBucketAclCanned()
 	{
@@ -341,10 +316,6 @@ class JAmazons3OperationsBucketsPutTest extends PHPUnit_Framework_TestCase
 
 	/**
 	 * Tests the putBucketAcl method with explicitly specified ACL permissions
-	 *
-	 * @return  void
-	 *
-	 * @since   ??.?
 	 */
 	public function testPutBucketAclExplicit()
 	{
@@ -384,10 +355,6 @@ class JAmazons3OperationsBucketsPutTest extends PHPUnit_Framework_TestCase
 
 	/**
 	 * Tests the putBucketCors method
-	 *
-	 * @return  void
-	 *
-	 * @since   ??.?
 	 */
 	public function testPutBucketCors()
 	{
@@ -444,10 +411,6 @@ class JAmazons3OperationsBucketsPutTest extends PHPUnit_Framework_TestCase
 
 	/**
 	 * Tests the putBucketLifecycle method
-	 *
-	 * @return  void
-	 *
-	 * @since   ??.?
 	 */
 	public function testPutBucketLifecycle()
 	{
@@ -499,10 +462,6 @@ class JAmazons3OperationsBucketsPutTest extends PHPUnit_Framework_TestCase
 
 	/**
 	 * Tests the putBucketPolicy method
-	 *
-	 * @return  void
-	 *
-	 * @since   ??.?
 	 */
 	public function testPutBucketPolicy()
 	{
@@ -545,10 +504,6 @@ class JAmazons3OperationsBucketsPutTest extends PHPUnit_Framework_TestCase
 	/**
 	 * Tests the putBucketLogging method, which sets the logging parameters for a bucket
 	 * and specifies permissions for who can view and modify the logging parameters
-	 *
-	 * @return  void
-	 *
-	 * @since   ??.?
 	 */
 	public function testPutBucketLogging()
 	{
@@ -602,10 +557,6 @@ class JAmazons3OperationsBucketsPutTest extends PHPUnit_Framework_TestCase
 	/**
 	 * Tests the putBucketNotification method, which enables notifications of
 	 * specified events for a bucket
-	 *
-	 * @return  void
-	 *
-	 * @since   ??.?
 	 */
 	public function testPutBucketNotification()
 	{
@@ -649,10 +600,6 @@ class JAmazons3OperationsBucketsPutTest extends PHPUnit_Framework_TestCase
 
 	/**
 	 * Tests the putBucketTagging which adds a set of tags to an existing bucket
-	 *
-	 * @return  void
-	 *
-	 * @since   ??.?
 	 */
 	public function testPutBucketTagging()
 	{
@@ -703,10 +650,6 @@ class JAmazons3OperationsBucketsPutTest extends PHPUnit_Framework_TestCase
 	/**
 	 * Thests the putBucketRequestPayment, which sets the request payment
 	 * configuration of a bucket
-	 *
-	 * @return  void
-	 *
-	 * @since   ??.?
 	 */
 	public function testPutBucketRequestPayment()
 	{
@@ -747,10 +690,6 @@ class JAmazons3OperationsBucketsPutTest extends PHPUnit_Framework_TestCase
 
 	/**
 	 * Thests the putBucketVersioning, using only the Status request element
-	 *
-	 * @return  void
-	 *
-	 * @since   ??.?
 	 */
 	public function testPutBucketVersioningWithoutMfaDelete()
 	{
@@ -791,10 +730,6 @@ class JAmazons3OperationsBucketsPutTest extends PHPUnit_Framework_TestCase
 
 	/**
 	 * Thests the putBucketVersioning, using both Status and MfaDelete request elements
-	 *
-	 * @return  void
-	 *
-	 * @since   ??.?
 	 */
 	public function testPutBucketVersioningWithMfaDelete()
 	{
@@ -840,10 +775,6 @@ class JAmazons3OperationsBucketsPutTest extends PHPUnit_Framework_TestCase
 	/**
 	 * Thests the putBucketWebsite, which sets the configuration of the website
 	 * that is specified in the website subresource
-	 *
-	 * @return  void
-	 *
-	 * @since   ??.?
 	 */
 	public function testPutBucketWebsite()
 	{

@@ -7,25 +7,22 @@
  * @license     GNU General Public License version 2 or later; see LICENSE
  */
 
+use Joomla\Registry\Registry;
+
 /**
- * Test class for JAmazons3.
+ * Test class for JAmazons3OperationsBucketsDelete.
  *
- * @package     Joomla.UnitTest
- * @subpackage  Amazons3
- *
- * @since       ??.?
+ * @since  1.0
  */
 class JAmazons3OperationsBucketsDeleteTest extends PHPUnit_Framework_TestCase
 {
 	/**
-	 * @var    JRegistry  Options for the Amazons3 object.
-	 * @since  ??.?
+	 * @var  Registry  Options for the Amazons3 object.
 	 */
 	protected $options;
 
 	/**
-	 * @var    JAmazons3Object  Object under test.
-	 * @since  ??.?
+	 * @var  JAmazons3OperationsBuckets  Object under test.
 	 */
 	protected $object;
 
@@ -33,15 +30,13 @@ class JAmazons3OperationsBucketsDeleteTest extends PHPUnit_Framework_TestCase
 	 * Sets up the fixture, for example, opens a network connection.
 	 * This method is called before a test is executed.
 	 *
-	 * @access protected
-	 *
-	 * @return void
+	 * @return  void
 	 */
 	protected function setUp()
 	{
 		parent::setUp();
 
-		$this->options = new JRegistry;
+		$this->options = new Registry;
 		$this->options->set('api.accessKeyId', 'testAccessKeyId');
 		$this->options->set('api.secretAccessKey', 'testSecretAccessKey');
 		$this->options->set('api.url', 's3.amazonaws.com');
@@ -57,9 +52,7 @@ class JAmazons3OperationsBucketsDeleteTest extends PHPUnit_Framework_TestCase
 	 *
 	 * @param   string  $subresource  The subresource that is used for creating the DELETE request.
 	 *
-	 * @return  void
-	 *
-	 * @since   ??.?
+	 * @return  SimpleXMLElement
 	 */
 	protected function commonDeleteTestOperations($subresource)
 	{
@@ -85,10 +78,6 @@ class JAmazons3OperationsBucketsDeleteTest extends PHPUnit_Framework_TestCase
 
 	/**
 	 * Tests the deleteBucket method
-	 *
-	 * @return  void
-	 *
-	 * @since   ??.?
 	 */
 	public function testDeleteBucket()
 	{
@@ -101,10 +90,6 @@ class JAmazons3OperationsBucketsDeleteTest extends PHPUnit_Framework_TestCase
 
 	/**
 	 * Tests the deleteBucketCors method
-	 *
-	 * @return  void
-	 *
-	 * @since   ??.?
 	 */
 	public function testDeleteBucketCors()
 	{
@@ -117,10 +102,6 @@ class JAmazons3OperationsBucketsDeleteTest extends PHPUnit_Framework_TestCase
 
 	/**
 	 * Tests the deleteBucketLifecycle method
-	 *
-	 * @return  void
-	 *
-	 * @since   ??.?
 	 */
 	public function testDeleteBucketLifecycle()
 	{
@@ -133,10 +114,6 @@ class JAmazons3OperationsBucketsDeleteTest extends PHPUnit_Framework_TestCase
 
 	/**
 	 * Tests the deleteBucketPolicy method
-	 *
-	 * @return  void
-	 *
-	 * @since   ??.?
 	 */
 	public function testDeleteBucketPolicy()
 	{
@@ -149,10 +126,6 @@ class JAmazons3OperationsBucketsDeleteTest extends PHPUnit_Framework_TestCase
 
 	/**
 	 * Tests the deleteBucketTagging method
-	 *
-	 * @return  void
-	 *
-	 * @since   ??.?
 	 */
 	public function testDeleteBucketTagging()
 	{
@@ -165,10 +138,6 @@ class JAmazons3OperationsBucketsDeleteTest extends PHPUnit_Framework_TestCase
 
 	/**
 	 * Tests the deleteBucketWebsite method
-	 *
-	 * @return  void
-	 *
-	 * @since   ??.?
 	 */
 	public function testDeleteBucketWebsite()
 	{

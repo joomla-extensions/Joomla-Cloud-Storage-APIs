@@ -7,27 +7,22 @@
  * @license     GNU General Public License version 2 or later; see LICENSE
  */
 
-require_once JPATH_PLATFORM . '/joomla/amazons3/operations/objects.php';
+use Joomla\Registry\Registry;
 
 /**
- * Test class for JAmazons3.
+ * Test class for JAmazons3OperationsObjectsGet.
  *
- * @package     Joomla.UnitTest
- * @subpackage  Amazons3
- *
- * @since       ??.?
+ * @since  1.0
  */
 class JAmazons3OperationsObjectsGetTest extends PHPUnit_Framework_TestCase
 {
 	/**
-	 * @var    JRegistry  Options for the Amazons3 object.
-	 * @since  ??.?
+	 * @var  Registry  Options for the Amazons3 object.
 	 */
 	protected $options;
 
 	/**
-	 * @var    JAmazons3Object  Object under test.
-	 * @since  ??.?
+	 * @var  JAmazons3OperationsObjects  Object under test.
 	 */
 	protected $object;
 
@@ -35,15 +30,13 @@ class JAmazons3OperationsObjectsGetTest extends PHPUnit_Framework_TestCase
 	 * Sets up the fixture, for example, opens a network connection.
 	 * This method is called before a test is executed.
 	 *
-	 * @access protected
-	 *
-	 * @return void
+	 * @return  void
 	 */
 	protected function setUp()
 	{
 		parent::setUp();
 
-		$this->options = new JRegistry;
+		$this->options = new Registry;
 		$this->options->set('api.accessKeyId', 'testAccessKeyId');
 		$this->options->set('api.secretAccessKey', 'testSecretAccessKey');
 		$this->options->set('api.url', 's3.amazonaws.com');
@@ -67,9 +60,7 @@ class JAmazons3OperationsObjectsGetTest extends PHPUnit_Framework_TestCase
 	 * @param   string  $versionId    The version id
 	 * @param   string  $range        The range of bytes to be returned
 	 *
-	 * @return  void
-	 *
-	 * @since   ??.?
+	 * @return  SimpleXMLElement
 	 */
 	protected function commonGetTestOperations($subresource = null, $versionId = null, $range = null)
 	{
@@ -122,10 +113,6 @@ class JAmazons3OperationsObjectsGetTest extends PHPUnit_Framework_TestCase
 
 	/**
 	 * Tests the getObject method
-	 *
-	 * @return  void
-	 *
-	 * @since   ??.?
 	 */
 	public function testGetObject()
 	{
@@ -141,10 +128,6 @@ class JAmazons3OperationsObjectsGetTest extends PHPUnit_Framework_TestCase
 
 	/**
 	 * Tests the getObject method with a version Id
-	 *
-	 * @return  void
-	 *
-	 * @since   ??.?
 	 */
 	public function testGetObjectVersion()
 	{
@@ -161,10 +144,6 @@ class JAmazons3OperationsObjectsGetTest extends PHPUnit_Framework_TestCase
 
 	/**
 	 * Tests the getObject method with a version Id
-	 *
-	 * @return  void
-	 *
-	 * @since   ??.?
 	 */
 	public function testGetObjectRange()
 	{
@@ -182,10 +161,6 @@ class JAmazons3OperationsObjectsGetTest extends PHPUnit_Framework_TestCase
 
 	/**
 	 * Tests the getObjectAcl method
-	 *
-	 * @return  void
-	 *
-	 * @since   ??.?
 	 */
 	public function testGetObjectAcl()
 	{
@@ -201,10 +176,6 @@ class JAmazons3OperationsObjectsGetTest extends PHPUnit_Framework_TestCase
 
 	/**
 	 * Tests the getObjectAcl method with a version Id
-	 *
-	 * @return  void
-	 *
-	 * @since   ??.?
 	 */
 	public function testGetObjectVersionAcl()
 	{
@@ -221,10 +192,6 @@ class JAmazons3OperationsObjectsGetTest extends PHPUnit_Framework_TestCase
 
 	/**
 	 * Tests the getObjectAcl method with a version Id
-	 *
-	 * @return  void
-	 *
-	 * @since   ??.?
 	 */
 	public function testGetObjectRangeAcl()
 	{
@@ -242,10 +209,6 @@ class JAmazons3OperationsObjectsGetTest extends PHPUnit_Framework_TestCase
 
 	/**
 	 * Tests the getObjectTorrent method
-	 *
-	 * @return  void
-	 *
-	 * @since   ??.?
 	 */
 	public function testGetObjectTorrent()
 	{
@@ -261,10 +224,6 @@ class JAmazons3OperationsObjectsGetTest extends PHPUnit_Framework_TestCase
 
 	/**
 	 * Tests the listParts method
-	 *
-	 * @return  void
-	 *
-	 * @since   ??.?
 	 */
 	public function testListParts()
 	{

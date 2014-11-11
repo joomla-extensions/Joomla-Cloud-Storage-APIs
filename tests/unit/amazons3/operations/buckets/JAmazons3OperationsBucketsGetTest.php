@@ -7,27 +7,22 @@
  * @license     GNU General Public License version 2 or later; see LICENSE
  */
 
-require_once JPATH_PLATFORM . '/joomla/amazons3/operations/buckets.php';
+use Joomla\Registry\Registry;
 
 /**
- * Test class for JAmazons3.
+ * Test class for JAmazons3OperationsBucketsGet.
  *
- * @package     Joomla.UnitTest
- * @subpackage  Amazons3
- *
- * @since       ??.?
+ * @since  1.0
  */
 class JAmazons3OperationsBucketsGetTest extends PHPUnit_Framework_TestCase
 {
 	/**
-	 * @var    JRegistry  Options for the Amazons3 object.
-	 * @since  ??.?
+	 * @var  Registry  Options for the Amazons3 object.
 	 */
 	protected $options;
 
 	/**
-	 * @var    JAmazons3Object  Object under test.
-	 * @since  ??.?
+	 * @var  JAmazons3OperationsBuckets  Object under test.
 	 */
 	protected $object;
 
@@ -35,15 +30,13 @@ class JAmazons3OperationsBucketsGetTest extends PHPUnit_Framework_TestCase
 	 * Sets up the fixture, for example, opens a network connection.
 	 * This method is called before a test is executed.
 	 *
-	 * @access protected
-	 *
-	 * @return void
+	 * @return  void
 	 */
 	protected function setUp()
 	{
 		parent::setUp();
 
-		$this->options = new JRegistry;
+		$this->options = new Registry;
 		$this->options->set('api.accessKeyId', 'testAccessKeyId');
 		$this->options->set('api.secretAccessKey', 'testSecretAccessKey');
 		$this->options->set('api.url', 's3.amazonaws.com');
@@ -59,9 +52,7 @@ class JAmazons3OperationsBucketsGetTest extends PHPUnit_Framework_TestCase
 	 *
 	 * @param   string  $subresource  The subresource that is used for creating the GET request.
 	 *
-	 * @return  void
-	 *
-	 * @since   ??.?
+	 * @return  SimpleXMLElement
 	 */
 	protected function commonGetTestOperations($subresource)
 	{
@@ -87,10 +78,6 @@ class JAmazons3OperationsBucketsGetTest extends PHPUnit_Framework_TestCase
 
 	/**
 	 * Tests the getBucket method
-	 *
-	 * @return  void
-	 *
-	 * @since   ??.?
 	 */
 	public function testGetBucket()
 	{
@@ -103,10 +90,6 @@ class JAmazons3OperationsBucketsGetTest extends PHPUnit_Framework_TestCase
 
 	/**
 	 * Tests the getBucketAcl method
-	 *
-	 * @return  void
-	 *
-	 * @since   ??.?
 	 */
 	public function testGetBucketAcl()
 	{
@@ -119,10 +102,6 @@ class JAmazons3OperationsBucketsGetTest extends PHPUnit_Framework_TestCase
 
 	/**
 	 * Tests the getBucketCors method
-	 *
-	 * @return  void
-	 *
-	 * @since   ??.?
 	 */
 	public function testGetBucketCors()
 	{
@@ -135,10 +114,6 @@ class JAmazons3OperationsBucketsGetTest extends PHPUnit_Framework_TestCase
 
 	/**
 	 * Tests the getBucketLifecycle method
-	 *
-	 * @return  void
-	 *
-	 * @since   ??.?
 	 */
 	public function testGetBucketLifecycle()
 	{
@@ -151,10 +126,6 @@ class JAmazons3OperationsBucketsGetTest extends PHPUnit_Framework_TestCase
 
 	/**
 	 * Tests the getBucketPolicy method
-	 *
-	 * @return  void
-	 *
-	 * @since   ??.?
 	 */
 	public function testGetBucketPolicy()
 	{
@@ -167,10 +138,6 @@ class JAmazons3OperationsBucketsGetTest extends PHPUnit_Framework_TestCase
 
 	/**
 	 * Tests the getBucketLocation method
-	 *
-	 * @return  void
-	 *
-	 * @since   ??.?
 	 */
 	public function testGetBucketLocation()
 	{
@@ -183,10 +150,6 @@ class JAmazons3OperationsBucketsGetTest extends PHPUnit_Framework_TestCase
 
 	/**
 	 * Tests the getBucketLogging method
-	 *
-	 * @return  void
-	 *
-	 * @since   ??.?
 	 */
 	public function testGetBucketLogging()
 	{
@@ -199,10 +162,6 @@ class JAmazons3OperationsBucketsGetTest extends PHPUnit_Framework_TestCase
 
 	/**
 	 * Tests the getBucketNotification method
-	 *
-	 * @return  void
-	 *
-	 * @since   ??.?
 	 */
 	public function testGetBucketNotification()
 	{
@@ -215,10 +174,6 @@ class JAmazons3OperationsBucketsGetTest extends PHPUnit_Framework_TestCase
 
 	/**
 	 * Tests the getBucketTagging method
-	 *
-	 * @return  void
-	 *
-	 * @since   ??.?
 	 */
 	public function testGetBucketTagging()
 	{
@@ -231,10 +186,6 @@ class JAmazons3OperationsBucketsGetTest extends PHPUnit_Framework_TestCase
 
 	/**
 	 * Tests the getBucketVersions method
-	 *
-	 * @return  void
-	 *
-	 * @since   ??.?
 	 */
 	public function testGetBucketVersions()
 	{
@@ -247,10 +198,6 @@ class JAmazons3OperationsBucketsGetTest extends PHPUnit_Framework_TestCase
 
 	/**
 	 * Tests the getBucketRequestPayment method
-	 *
-	 * @return  void
-	 *
-	 * @since   ??.?
 	 */
 	public function testGetBucketRequestPayment()
 	{
@@ -263,10 +210,6 @@ class JAmazons3OperationsBucketsGetTest extends PHPUnit_Framework_TestCase
 
 	/**
 	 * Tests the getBucketVersioning method
-	 *
-	 * @return  void
-	 *
-	 * @since   ??.?
 	 */
 	public function testGetBucketVersioning()
 	{
@@ -279,10 +222,6 @@ class JAmazons3OperationsBucketsGetTest extends PHPUnit_Framework_TestCase
 
 	/**
 	 * Tests the getBucketWebsite method
-	 *
-	 * @return  void
-	 *
-	 * @since   ??.?
 	 */
 	public function testGetBucketWebsite()
 	{
@@ -295,10 +234,6 @@ class JAmazons3OperationsBucketsGetTest extends PHPUnit_Framework_TestCase
 
 	/**
 	 * Tests the listMultipartUploads method
-	 *
-	 * @return  void
-	 *
-	 * @since   ??.?
 	 */
 	public function testListMultipartUploads()
 	{

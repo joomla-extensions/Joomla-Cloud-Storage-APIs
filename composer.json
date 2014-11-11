@@ -6,10 +6,11 @@
     "license": "GPL-2.0+",
     "require": {
         "php": ">=5.3.10",
-        "joomla/registry": "~1.1"
+        "joomla/registry": "~1.2"
     },
     "require-dev": {
         "joomla/test": "~1.0",
+        "joomla/uri": "~1.1",
         "phpunit/phpunit": "4.*"
     },
     "autoload": {
