@@ -1,6 +1,6 @@
 <?php
 /**
- * @package     Joomla.Platform
+ * @package     Joomla.Cloud
  * @subpackage  Amazons3
  *
  * @copyright   Copyright (C) 2005 - 2013 Open Source Matters, Inc. All rights reserved.
@@ -12,7 +12,7 @@ defined('JPATH_PLATFORM') or die;
 /**
  * Defines the HEAD operations on objects
  *
- * @package     Joomla.Platform
+ * @package     Joomla.Cloud
  * @subpackage  Amazons3
  * @since       1.0
  */

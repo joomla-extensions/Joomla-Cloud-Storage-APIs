@@ -1,6 +1,6 @@
 <?php
 /**
- * @package     Joomla.Platform
+ * @package     Joomla.Cloud
  * @subpackage  Amazons3
  *
  * @copyright   Copyright (C) 2005 - 2014 Open Source Matters, Inc. All rights reserved.
@@ -14,7 +14,7 @@ use Joomla\Registry\Registry;
 /**
  * Amazons3 API object class for the Joomla Platform.
  *
- * @package     Joomla.Platform
+ * @package     Joomla.Cloud
  * @subpackage  Amazons3
  * @since       1.0
  */

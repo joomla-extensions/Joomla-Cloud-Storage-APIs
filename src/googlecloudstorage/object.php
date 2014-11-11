@@ -1,6 +1,6 @@
 <?php
 /**
- * @package     Joomla.Platform
+ * @package     Joomla.Cloud
  * @subpackage  Googlecloudstorage
  *
  * @copyright   Copyright (C) 2005 - 2013 Open Source Matters, Inc. All rights reserved.
@@ -12,7 +12,7 @@ defined('JPATH_PLATFORM') or die;
 /**
  * Googlecloudstorage API object class for the Joomla Platform.
  *
- * @package     Joomla.Platform
+ * @package     Joomla.Cloud
  * @subpackage  Googlecloudstorage
  * @since       1.0
  */

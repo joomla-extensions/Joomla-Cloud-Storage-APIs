@@ -1,6 +1,6 @@
 <?php
 /**
- * @package     Joomla.Platform
+ * @package     Joomla.Cloud
  * @subpackage  Amazons3
  *
  * @copyright   Copyright (C) 2005 - 2014 Open Source Matters, Inc. All rights reserved.
@@ -12,11 +12,9 @@ defined('JPATH_PLATFORM') or die;
 use Joomla\Registry\Registry;
 
 /**
- * Joomla Platform class for interacting with an Amazons3 server instance.
+ * Joomla! Platform class for interacting with an Amazons3 server instance.
  *
- * @package     Joomla.Platform
- * @subpackage  Amazons3
- * @since       1.0
+ * @since  1.0
  */
 class JAmazons3
 {
