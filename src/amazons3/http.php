@@ -14,9 +14,7 @@ use Joomla\Registry\Registry;
 /**
  * HTTP client class for connecting to an Amazons3 instance.
  *
- * @package     Joomla.Cloud
- * @subpackage  Amazons3
- * @since       1.0
+ * @since  1.0
  */
 class JAmazons3Http extends JHttp
 {

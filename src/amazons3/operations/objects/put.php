@@ -12,9 +12,7 @@ defined('JPATH_PLATFORM') or die;
 /**
  * Defines the PUT operations on objects
  *
- * @package     Joomla.Cloud
- * @subpackage  Amazons3
- * @since       1.0
+ * @since  1.0
  */
 class JAmazons3OperationsObjectsPut extends JAmazons3OperationsObjects
 {
@@ -26,7 +24,7 @@ class JAmazons3OperationsObjectsPut extends JAmazons3OperationsObjects
 	 * @param   string  $content         The content of the object
 	 * @param   array   $requestHeaders  An array of request headers
 	 *
-	 * @return string  The response body
+	 * @return  SimpleXMLElement|string|null  The response body
 	 *
 	 * @since   1.0
 	 */
@@ -77,7 +75,7 @@ class JAmazons3OperationsObjectsPut extends JAmazons3OperationsObjects
 	 * @param   string  $acl     An array containing the ACL permissions
 	 *                           (either canned or explicitly specified)
 	 *
-	 * @return string  The response body
+	 * @return  SimpleXMLElement|string  The response body
 	 *
 	 * @since   1.0
 	 */
@@ -114,9 +112,7 @@ class JAmazons3OperationsObjectsPut extends JAmazons3OperationsObjects
 		$response = $this->client->put($url, "", $headers);
 
 		// Process the response
-		$response_body = $this->processResponse($response);
-
-		return $response_body;
+		return $this->processResponse($response);
 	}
 
 	/**
@@ -128,7 +124,7 @@ class JAmazons3OperationsObjectsPut extends JAmazons3OperationsObjects
 	 * @param   string  $copySource      The path to the file to be copied (bucket + object)
 	 * @param   string  $requestHeaders  An array containing request headers
 	 *
-	 * @return string  The response body
+	 * @return  SimpleXMLElement|string|null  The response body
 	 *
 	 * @since   1.0
 	 */
@@ -171,7 +167,7 @@ class JAmazons3OperationsObjectsPut extends JAmazons3OperationsObjects
 	 * @param   string  $object          The name of the uploaded file
 	 * @param   string  $requestHeaders  An array containing request headers
 	 *
-	 * @return string  The response body
+	 * @return  SimpleXMLElement|string|null  The response body
 	 *
 	 * @since   1.0
 	 */
@@ -216,7 +212,7 @@ class JAmazons3OperationsObjectsPut extends JAmazons3OperationsObjects
 	 * @param   string  $uploadId        The upload ID
 	 * @param   string  $requestHeaders  An array containing request headers
 	 *
-	 * @return string  The response body
+	 * @return  SimpleXMLElement|string|null  The response body
 	 *
 	 * @since   1.0
 	 */
@@ -263,7 +259,7 @@ class JAmazons3OperationsObjectsPut extends JAmazons3OperationsObjects
 	 * @param   string  $uploadId        The upload ID
 	 * @param   string  $requestHeaders  An array containing request headers
 	 *
-	 * @return string  The response body
+	 * @return  SimpleXMLElement|string|null  The response body
 	 *
 	 * @since   1.0
 	 */
@@ -307,7 +303,7 @@ class JAmazons3OperationsObjectsPut extends JAmazons3OperationsObjects
 	 * @param   string  $uploadId  The upload ID
 	 * @param   string  $parts     An array of PartNumber and ETag pairs
 	 *
-	 * @return string  The response body
+	 * @return  SimpleXMLElement|string  The response body
 	 *
 	 * @since   1.0
 	 */

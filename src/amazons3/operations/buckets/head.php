@@ -12,9 +12,7 @@ defined('JPATH_PLATFORM') or die;
 /**
  * Defines the HEAD operations on buckets
  *
- * @package     Joomla.Cloud
- * @subpackage  Amazons3
- * @since       1.0
+ * @since  1.0
  */
 class JAmazons3OperationsBucketsHead extends JAmazons3OperationsBuckets
 {
@@ -23,27 +21,25 @@ class JAmazons3OperationsBucketsHead extends JAmazons3OperationsBuckets
 	 *
 	 * @param   string  $bucket  The bucket name
 	 *
-	 * @return string  The response body
+	 * @return  SimpleXMLElement|string  The response body
 	 *
 	 * @since   1.0
 	 */
 	public function headBucket($bucket)
 	{
-		$url = "https://" . $bucket . "." . $this->options->get("api.url") . "/";
+		$url = 'https://' . $bucket . '.' . $this->options->get('api.url') . '/';
 
 		// Create the headers
 		$headers = array(
-			"Date" => date("D, d M Y H:i:s O"),
+			'Date' => date('D, d M Y H:i:s O'),
 		);
-		$authorization = $this->createAuthorization("HEAD", $url, $headers);
-		$headers["Authorization"] = $authorization;
+		$authorization = $this->createAuthorization('HEAD', $url, $headers);
+		$headers['Authorization'] = $authorization;
 
 		// Send the http request
 		$response = $this->client->head($url, $headers);
 
 		// Process the response
-		$response_body = $this->processResponse($response);
-
-		return $response_body;
+		return $this->processResponse($response);
 	}
 }

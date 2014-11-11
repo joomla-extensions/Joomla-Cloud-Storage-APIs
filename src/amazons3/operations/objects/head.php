@@ -12,9 +12,7 @@ defined('JPATH_PLATFORM') or die;
 /**
  * Defines the HEAD operations on objects
  *
- * @package     Joomla.Cloud
- * @subpackage  Amazons3
- * @since       1.0
+ * @since  1.0
  */
 class JAmazons3OperationsObjectsHead extends JAmazons3OperationsObjects
 {
@@ -26,22 +24,22 @@ class JAmazons3OperationsObjectsHead extends JAmazons3OperationsObjects
 	 * @param   string  $versionId       The object's version ID
 	 * @param   string  $requestHeaders  Additional request headers
 	 *
-	 * @return string  The response body
+	 * @return  SimpleXMLElement|string  The response body
 	 *
 	 * @since   1.0
 	 */
 	public function headObject($bucket, $objectName, $versionId = null, $requestHeaders = array())
 	{
-		$url = "https://" . $bucket . "." . $this->options->get("api.url") . "/" . $objectName;
+		$url = 'https://' . $bucket . '.' . $this->options->get('api.url') . '/' . $objectName;
 
 		if (! is_null($versionId))
 		{
-			$url .= "?versionId=" . $versionId;
+			$url .= '?versionId=' . $versionId;
 		}
 
 		// Create the headers
 		$headers = array(
-			"Date" => date("D, d M Y H:i:s O"),
+			'Date' => date('D, d M Y H:i:s O'),
 		);
 
 		// Set the additional request headers
@@ -50,15 +48,13 @@ class JAmazons3OperationsObjectsHead extends JAmazons3OperationsObjects
 			$headers[$requestHeaderKey] = $requestHeaderValue;
 		}
 
-		$authorization = $this->createAuthorization("HEAD", $url, $headers);
-		$headers["Authorization"] = $authorization;
+		$authorization = $this->createAuthorization('HEAD', $url, $headers);
+		$headers['Authorization'] = $authorization;
 
 		// Send the http request
 		$response = $this->client->head($url, $headers);
 
 		// Process the response
-		$response_body = $this->processResponse($response);
-
-		return $response_body;
+		return $this->processResponse($response);
 	}
 }

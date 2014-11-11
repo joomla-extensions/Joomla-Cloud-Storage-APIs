@@ -14,9 +14,7 @@ use Joomla\Registry\Registry;
 /**
  * Amazons3 API object class for the Joomla Platform.
  *
- * @package     Joomla.Cloud
- * @subpackage  Amazons3
- * @since       1.0
+ * @since  1.0
  */
 abstract class JAmazons3Object
 {
@@ -52,7 +50,7 @@ abstract class JAmazons3Object
 	 * @param   string  $url      The url that is used in the request
 	 * @param   string  $headers  An array of headers
 	 *
-	 * @return string  The response body
+	 * @return  SimpleXMLElement|string  The response body
 	 *
 	 * @since   1.0
 	 */
@@ -73,9 +71,7 @@ abstract class JAmazons3Object
 		$response = $this->client->get($url, $headers);
 
 		// Process the response
-		$response_body = $this->processResponse($response);
-
-		return $response_body;
+		return $this->processResponse($response);
 	}
 
 	/**
@@ -84,7 +80,7 @@ abstract class JAmazons3Object
 	 * @param   string  $url      The url that is used in the request
 	 * @param   string  $headers  An array of headers
 	 *
-	 * @return string  The response body
+	 * @return  SimpleXMLElement|string  The response body
 	 *
 	 * @since   1.0
 	 */
@@ -105,9 +101,7 @@ abstract class JAmazons3Object
 		$response = $this->client->delete($url, $headers);
 
 		// Process the response
-		$response_body = $this->processResponse($response);
-
-		return $response_body;
+		return $this->processResponse($response);
 	}
 
 	/**
@@ -116,9 +110,10 @@ abstract class JAmazons3Object
 	 * @param   JHttpResponse  $response      The response.
 	 * @param   integer        $expectedCode  The expected "good" code.
 	 *
-	 * @throws DomainException
+	 * @return  SimpleXMLElement|string
 	 *
-	 * @return mixed
+	 * @since   1.0
+	 * @throws  DomainException
 	 */
 	public function processResponse(JHttpResponse $response, $expectedCode = 200)
 	{
@@ -144,10 +139,8 @@ abstract class JAmazons3Object
 		{
 			return new SimpleXMLElement($response->body);
 		}
-		else
-		{
-			return "Response code: " . $response->code . ".\n";
-		}
+
+		return "Response code: " . $response->code . ".\n";
 	}
 
 	/**
@@ -157,7 +150,7 @@ abstract class JAmazons3Object
 	 * @param   string  $url       The target url of the request
 	 * @param   string  $headers   The headers of the request
 	 *
-	 * @return string The Authorization request header
+	 * @return  string The Authorization request header
 	 *
 	 * @since   1.0
 	 */
@@ -207,7 +200,7 @@ abstract class JAmazons3Object
 	 *
 	 * @param   string  $headers  The headers of the request
 	 *
-	 * @return	string	The canonicalized amz headers
+	 * @return  string  The canonicalized amz headers
 	 *
 	 * @since   1.0
 	 */
@@ -262,7 +255,7 @@ abstract class JAmazons3Object
 	 *
 	 * @param   string  $url  The target url of the request
 	 *
-	 * @return	string	The canonicalized resource
+	 * @return  string  The canonicalized resource
 	 *
 	 * @since   1.0
 	 */
@@ -287,9 +280,9 @@ abstract class JAmazons3Object
 
 		if ($bucket !== "")
 		{
-			/**
+			/*
 			 * For a virtual hosted-style request "https://johnsmith.s3.amazonaws.com/photos/puppy.jpg",
-			 *  the CanonicalizedResource is "/johnsmith/photos/puppy.jpg".
+			 * the CanonicalizedResource is "/johnsmith/photos/puppy.jpg".
 			 */
 			$canonicalizedResource .= $bucket;
 
@@ -298,7 +291,7 @@ abstract class JAmazons3Object
 				$canonicalizedResource .= $parsedURL["path"];
 			}
 
-			/**
+			/*
 			 * If the request addresses a subresource, such as ?versioning, ?location, ?acl, ?torrent, ?lifecycle
 			 *  or ?versionid, append the subresource, its value if it has one, and the question mark.
 			 * Subresources must be lexicographically sorted by subresource name and separated by '&'
@@ -320,9 +313,9 @@ abstract class JAmazons3Object
 	 * Removes all elements from the $parameters array which are not valid
 	 * subresources
 	 *
-	 * @param   string  $parameters  An array of subresources
+	 * @param   array  $parameters  An array of subresources
 	 *
-	 * @return	string	The canonicalized resource
+	 * @return  array  The canonicalized resource
 	 *
 	 * @since   1.0
 	 */

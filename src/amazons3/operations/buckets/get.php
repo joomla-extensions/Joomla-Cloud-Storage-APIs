@@ -12,9 +12,7 @@ defined('JPATH_PLATFORM') or die;
 /**
  * Defines the GET operations on buckets
  *
- * @package     Joomla.Cloud
- * @subpackage  Amazons3
- * @since       1.0
+ * @since  1.0
  */
 class JAmazons3OperationsBucketsGet extends JAmazons3OperationsBuckets
 {
@@ -23,18 +21,16 @@ class JAmazons3OperationsBucketsGet extends JAmazons3OperationsBuckets
 	 *
 	 * @param   string  $bucket  The bucket name
 	 *
-	 * @return string  The response body
+	 * @return  SimpleXMLElement|string  The response body
 	 *
 	 * @since   1.0
 	 */
 	public function getBucket($bucket)
 	{
-		$url = "https://" . $bucket . "." . $this->options->get("api.url") . "/";
+		$url = 'https://' . $bucket . '.' . $this->options->get('api.url') . '/';
 
 		// Send the request and process the response
-		$response_body = $this->commonGetOperations($url);
-
-		return $response_body;
+		return $this->commonGetOperations($url);
 	}
 
 	/**
@@ -42,18 +38,16 @@ class JAmazons3OperationsBucketsGet extends JAmazons3OperationsBuckets
 	 *
 	 * @param   string  $bucket  The bucket name
 	 *
-	 * @return string  The response body
+	 * @return  SimpleXMLElement|string  The response body
 	 *
 	 * @since   1.0
 	 */
 	public function getBucketAcl($bucket)
 	{
-		$url = "https://" . $bucket . "." . $this->options->get("api.url") . "/?acl";
+		$url = 'https://' . $bucket . '.' . $this->options->get('api.url') . '/?acl';
 
 		// Send the request and process the response
-		$response_body = $this->commonGetOperations($url);
-
-		return $response_body;
+		return $this->commonGetOperations($url);
 	}
 
 	/**
@@ -62,18 +56,16 @@ class JAmazons3OperationsBucketsGet extends JAmazons3OperationsBuckets
 	 *
 	 * @param   string  $bucket  The bucket name
 	 *
-	 * @return string  The response body
+	 * @return  SimpleXMLElement|string  The response body
 	 *
 	 * @since   1.0
 	 */
 	public function getBucketCors($bucket)
 	{
-		$url = "https://" . $bucket . "." . $this->options->get("api.url") . "/?cors";
+		$url = 'https://' . $bucket . '.' . $this->options->get('api.url') . '/?cors';
 
 		// Send the request and process the response
-		$response_body = $this->commonGetOperations($url);
-
-		return $response_body;
+		return $this->commonGetOperations($url);
 	}
 
 	/**
@@ -81,18 +73,16 @@ class JAmazons3OperationsBucketsGet extends JAmazons3OperationsBuckets
 	 *
 	 * @param   string  $bucket  The bucket name
 	 *
-	 * @return string  The response body
+	 * @return  SimpleXMLElement|string  The response body
 	 *
 	 * @since   1.0
 	 */
 	public function getBucketLifecycle($bucket)
 	{
-		$url = "https://" . $bucket . "." . $this->options->get("api.url") . "/?lifecycle";
+		$url = 'https://' . $bucket . '.' . $this->options->get('api.url') . '/?lifecycle';
 
 		// Send the request and process the response
-		$response_body = $this->commonGetOperations($url);
-
-		return $response_body;
+		return $this->commonGetOperations($url);
 	}
 
 	/**
@@ -100,18 +90,16 @@ class JAmazons3OperationsBucketsGet extends JAmazons3OperationsBuckets
 	 *
 	 * @param   string  $bucket  The bucket name
 	 *
-	 * @return string  The response body
+	 * @return  SimpleXMLElement|string  The response body
 	 *
 	 * @since   1.0
 	 */
 	public function getBucketPolicy($bucket)
 	{
-		$url = "https://" . $bucket . "." . $this->options->get("api.url") . "/?policy";
+		$url = 'https://' . $bucket . '.' . $this->options->get('api.url') . '/?policy';
 
 		// Send the request and process the response
-		$response_body = $this->commonGetOperations($url);
-
-		return $response_body;
+		return $this->commonGetOperations($url);
 	}
 
 	/**
@@ -119,18 +107,16 @@ class JAmazons3OperationsBucketsGet extends JAmazons3OperationsBuckets
 	 *
 	 * @param   string  $bucket  The bucket name
 	 *
-	 * @return string  The response body
+	 * @return  SimpleXMLElement|string  The response body
 	 *
 	 * @since   1.0
 	 */
 	public function getBucketLocation($bucket)
 	{
-		$url = "https://" . $bucket . "." . $this->options->get("api.url") . "/?location";
+		$url = 'https://' . $bucket . '.' . $this->options->get('api.url') . '/?location';
 
 		// Send the request and process the response
-		$response_body = $this->commonGetOperations($url);
-
-		return $response_body;
+		return $this->commonGetOperations($url);
 	}
 
 	/**
@@ -138,18 +124,16 @@ class JAmazons3OperationsBucketsGet extends JAmazons3OperationsBuckets
 	 *
 	 * @param   string  $bucket  The bucket name
 	 *
-	 * @return string  The response body
+	 * @return  SimpleXMLElement|string  The response body
 	 *
 	 * @since   1.0
 	 */
 	public function getBucketLogging($bucket)
 	{
-		$url = "https://" . $bucket . "." . $this->options->get("api.url") . "/?logging";
+		$url = 'https://' . $bucket . '.' . $this->options->get('api.url') . '/?logging';
 
 		// Send the request and process the response
-		$response_body = $this->commonGetOperations($url);
-
-		return $response_body;
+		return $this->commonGetOperations($url);
 	}
 
 	/**
@@ -157,18 +141,16 @@ class JAmazons3OperationsBucketsGet extends JAmazons3OperationsBuckets
 	 *
 	 * @param   string  $bucket  The bucket name
 	 *
-	 * @return string  The response body
+	 * @return  SimpleXMLElement|string  The response body
 	 *
 	 * @since   1.0
 	 */
 	public function getBucketNotification($bucket)
 	{
-		$url = "https://" . $bucket . "." . $this->options->get("api.url") . "/?notification";
+		$url = 'https://' . $bucket . '.' . $this->options->get('api.url') . '/?notification';
 
 		// Send the request and process the response
-		$response_body = $this->commonGetOperations($url);
-
-		return $response_body;
+		return $this->commonGetOperations($url);
 	}
 
 	/**
@@ -176,18 +158,16 @@ class JAmazons3OperationsBucketsGet extends JAmazons3OperationsBuckets
 	 *
 	 * @param   string  $bucket  The bucket name
 	 *
-	 * @return string  The response body
+	 * @return  SimpleXMLElement|string  The response body
 	 *
 	 * @since   1.0
 	 */
 	public function getBucketTagging($bucket)
 	{
-		$url = "https://" . $bucket . "." . $this->options->get("api.url") . "/?tagging";
+		$url = 'https://' . $bucket . '.' . $this->options->get('api.url') . '/?tagging';
 
 		// Send the request and process the response
-		$response_body = $this->commonGetOperations($url);
-
-		return $response_body;
+		return $this->commonGetOperations($url);
 	}
 
 	/**
@@ -196,18 +176,16 @@ class JAmazons3OperationsBucketsGet extends JAmazons3OperationsBuckets
 	 *
 	 * @param   string  $bucket  The bucket name
 	 *
-	 * @return string  The response body
+	 * @return  SimpleXMLElement|string  The response body
 	 *
 	 * @since   1.0
 	 */
 	public function getBucketVersions($bucket)
 	{
-		$url = "https://" . $bucket . "." . $this->options->get("api.url") . "/?versions";
+		$url = 'https://' . $bucket . '.' . $this->options->get('api.url') . '/?versions';
 
 		// Send the request and process the response
-		$response_body = $this->commonGetOperations($url);
-
-		return $response_body;
+		return $this->commonGetOperations($url);
 	}
 
 	/**
@@ -216,18 +194,16 @@ class JAmazons3OperationsBucketsGet extends JAmazons3OperationsBuckets
 	 *
 	 * @param   string  $bucket  The bucket name
 	 *
-	 * @return string  The response body
+	 * @return  SimpleXMLElement|string  The response body
 	 *
 	 * @since   1.0
 	 */
 	public function getBucketRequestPayment($bucket)
 	{
-		$url = "https://" . $bucket . "." . $this->options->get("api.url") . "/?requestPayment";
+		$url = 'https://' . $bucket . '.' . $this->options->get('api.url') . '/?requestPayment';
 
 		// Send the request and process the response
-		$response_body = $this->commonGetOperations($url);
-
-		return $response_body;
+		return $this->commonGetOperations($url);
 	}
 
 	/**
@@ -235,18 +211,16 @@ class JAmazons3OperationsBucketsGet extends JAmazons3OperationsBuckets
 	 *
 	 * @param   string  $bucket  The bucket name
 	 *
-	 * @return string  The response body
+	 * @return  SimpleXMLElement|string  The response body
 	 *
 	 * @since   1.0
 	 */
 	public function getBucketVersioning($bucket)
 	{
-		$url = "https://" . $bucket . "." . $this->options->get("api.url") . "/?versioning";
+		$url = 'https://' . $bucket . '.' . $this->options->get('api.url') . '/?versioning';
 
 		// Send the request and process the response
-		$response_body = $this->commonGetOperations($url);
-
-		return $response_body;
+		return $this->commonGetOperations($url);
 	}
 
 	/**
@@ -254,18 +228,16 @@ class JAmazons3OperationsBucketsGet extends JAmazons3OperationsBuckets
 	 *
 	 * @param   string  $bucket  The bucket name
 	 *
-	 * @return string  The response body
+	 * @return  SimpleXMLElement|string  The response body
 	 *
 	 * @since   1.0
 	 */
 	public function getBucketWebsite($bucket)
 	{
-		$url = "https://" . $bucket . "." . $this->options->get("api.url") . "/?website";
+		$url = 'https://' . $bucket . '.' . $this->options->get('api.url') . '/?website';
 
 		// Send the request and process the response
-		$response_body = $this->commonGetOperations($url);
-
-		return $response_body;
+		return $this->commonGetOperations($url);
 	}
 
 	/**
@@ -274,17 +246,15 @@ class JAmazons3OperationsBucketsGet extends JAmazons3OperationsBuckets
 	 *
 	 * @param   string  $bucket  The bucket name
 	 *
-	 * @return string  The response body
+	 * @return  SimpleXMLElement|string  The response body
 	 *
 	 * @since   1.0
 	 */
 	public function listMultipartUploads($bucket)
 	{
-		$url = "https://" . $bucket . "." . $this->options->get("api.url") . "/?uploads";
+		$url = 'https://' . $bucket . '.' . $this->options->get('api.url') . '/?uploads';
 
 		// Send the request and process the response
-		$response_body = $this->commonGetOperations($url);
-
-		return $response_body;
+		return $this->commonGetOperations($url);
 	}
 }

@@ -12,9 +12,7 @@ defined('JPATH_PLATFORM') or die;
 /**
  * Defines the PUT operations on buckets
  *
- * @package     Joomla.Cloud
- * @subpackage  Amazons3
- * @since       1.0
+ * @since  1.0
  */
 class JAmazons3OperationsBucketsPut extends JAmazons3OperationsBuckets
 {
@@ -26,57 +24,55 @@ class JAmazons3OperationsBucketsPut extends JAmazons3OperationsBuckets
 	 * @param   string  $acl           An array containing the ACL permissions
 	 *                                 (either canned or explicitly specified)
 	 *
-	 * @return string  The response body
+	 * @return  SimpleXMLElement|string  The response body
 	 *
 	 * @since   1.0
 	 */
-	public function putBucket($bucket, $bucketRegion = "", $acl = null)
+	public function putBucket($bucket, $bucketRegion = '', $acl = null)
 	{
-		$url = "https://" . $bucket . "." . $this->options->get("api.url") . "/";
+		$url = 'https://' . $bucket . '.' . $this->options->get('api.url') . '/';
 		$headers = array(
-			"Date" => date("D, d M Y H:i:s O"),
+			'Date' => date('D, d M Y H:i:s O'),
 		);
-		$content = "";
+		$content = '';
 
 		// Check for ACL permissions
 		if (is_array($acl))
 		{
 			// Check for canned ACL permission
-			if (array_key_exists("acl", $acl))
+			if (array_key_exists('acl', $acl))
 			{
-				$headers["x-amz-acl"] = $acl["acl"];
+				$headers['x-amz-acl'] = $acl['acl'];
 			}
 			else
 			{
 				// Access permissions were specified explicitly
 				foreach ($acl as $aclPermission => $aclGrantee)
 				{
-					$headers["x-amz-grant-" . $aclPermission] = $aclGrantee;
+					$headers['x-amz-grant-' . $aclPermission] = $aclGrantee;
 				}
 			}
 		}
 
-		if ($bucketRegion != "")
+		if ($bucketRegion != '')
 		{
-			$content = "<CreateBucketConfiguration xmlns=\"http://s3.amazonaws.com/doc/2006-03-01/\">"
-				. "<LocationConstraint>" . $bucketRegion . "</LocationConstraint>"
-				. "</CreateBucketConfiguration>";
+			$content = '<CreateBucketConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/">'
+				. '<LocationConstraint>' . $bucketRegion . '</LocationConstraint>'
+				. '</CreateBucketConfiguration>';
 
-			$headers["Content-type"] = "application/x-www-form-urlencoded; charset=utf-8";
-			$headers["Content-Length"] = strlen($content);
+			$headers['Content-type'] = 'application/x-www-form-urlencoded; charset=utf-8';
+			$headers['Content-Length'] = strlen($content);
 		}
 
-		$authorization = $this->createAuthorization("PUT", $url, $headers);
-		$headers["Authorization"] = $authorization;
-		unset($headers["Content-type"]);
+		$authorization = $this->createAuthorization('PUT', $url, $headers);
+		$headers['Authorization'] = $authorization;
+		unset($headers['Content-type']);
 
 		// Send the http request
 		$response = $this->client->put($url, $content, $headers);
 
 		// Process the response
-		$response_body = $this->processResponse($response);
-
-		return $response_body;
+		return $this->processResponse($response);
 	}
 
 	/**
@@ -87,45 +83,43 @@ class JAmazons3OperationsBucketsPut extends JAmazons3OperationsBuckets
 	 * @param   string  $acl     An array containing the ACL permissions
 	 *                           (either canned or explicitly specified)
 	 *
-	 * @return string  The response body
+	 * @return  SimpleXMLElement|string  The response body
 	 *
 	 * @since   1.0
 	 */
 	public function putBucketAcl($bucket, $acl = null)
 	{
-		$url = "https://" . $bucket . "." . $this->options->get("api.url") . "/?acl";
+		$url = 'https://' . $bucket . '.' . $this->options->get('api.url') . '/?acl';
 		$headers = array(
-			"Date" => date("D, d M Y H:i:s O"),
+			'Date' => date('D, d M Y H:i:s O'),
 		);
 
 		// Check for ACL permissions
 		if (is_array($acl))
 		{
 			// Check for canned ACL permission
-			if (array_key_exists("acl", $acl))
+			if (array_key_exists('acl', $acl))
 			{
-				$headers["x-amz-acl"] = $acl["acl"];
+				$headers['x-amz-acl'] = $acl['acl'];
 			}
 			else
 			{
 				// Access permissions were specified explicitly
 				foreach ($acl as $aclPermission => $aclGrantee)
 				{
-					$headers["x-amz-grant-" . $aclPermission] = $aclGrantee;
+					$headers['x-amz-grant-' . $aclPermission] = $aclGrantee;
 				}
 			}
 		}
 
-		$authorization = $this->createAuthorization("PUT", $url, $headers);
-		$headers["Authorization"] = $authorization;
+		$authorization = $this->createAuthorization('PUT', $url, $headers);
+		$headers['Authorization'] = $authorization;
 
 		// Send the http request
-		$response = $this->client->put($url, "", $headers);
+		$response = $this->client->put($url, '', $headers);
 
 		// Process the response
-		$response_body = $this->processResponse($response);
-
-		return $response_body;
+		return $this->processResponse($response);
 	}
 
 	/**
@@ -134,17 +128,17 @@ class JAmazons3OperationsBucketsPut extends JAmazons3OperationsBuckets
 	 * @param   string  $bucket  The bucket name
 	 * @param   string  $rules   An array containing the CORS rules
 	 *
-	 * @return string  The response body
+	 * @return  SimpleXMLElement|string  The response body
 	 *
 	 * @since   1.0
 	 */
 	public function putBucketCors($bucket, $rules = null)
 	{
-		$url = "https://" . $bucket . "." . $this->options->get("api.url") . "/?cors";
+		$url = 'https://' . $bucket . '.' . $this->options->get('api.url') . '/?cors';
 		$headers = array(
-			"Date" => date("D, d M Y H:i:s O"),
+			'Date' => date('D, d M Y H:i:s O'),
 		);
-		$content = "";
+		$content = '';
 
 		// Check for CORS rules
 		if (is_array($rules))
@@ -164,16 +158,16 @@ class JAmazons3OperationsBucketsPut extends JAmazons3OperationsBuckets
 						// Create a new XML node for each property value
 						foreach ($rulePropertyValue as $currentValue)
 						{
-							$content .= "<" . $rulePropertyKey . ">"
+							$content .= '<' . $rulePropertyKey . '>'
 								. $currentValue
-								. "</" . $rulePropertyKey . ">" . "\n";
+								. "</" . $rulePropertyKey . ">\n";
 						}
 					}
 					else
 					{
-						$content .= "<" . $rulePropertyKey . ">"
+						$content .= '<' . $rulePropertyKey . '>'
 							. $rulePropertyValue
-							. "</" . $rulePropertyKey . ">" . "\n";
+							. "</" . $rulePropertyKey . ">\n";
 					}
 				}
 
@@ -183,22 +177,20 @@ class JAmazons3OperationsBucketsPut extends JAmazons3OperationsBuckets
 			$content .= "</CORSConfiguration>\n";
 
 			// Set the content related headers
-			$headers["Content-type"] = "application/x-www-form-urlencoded; charset=utf-8";
-			$headers["Content-Length"] = strlen($content);
-			$headers["Content-MD5"] = base64_encode(md5($content, true));
+			$headers['Content-type'] = 'application/x-www-form-urlencoded; charset=utf-8';
+			$headers['Content-Length'] = strlen($content);
+			$headers['Content-MD5'] = base64_encode(md5($content, true));
 		}
 
-		$authorization = $this->createAuthorization("PUT", $url, $headers);
-		$headers["Authorization"] = $authorization;
-		unset($headers["Content-type"]);
+		$authorization = $this->createAuthorization('PUT', $url, $headers);
+		$headers['Authorization'] = $authorization;
+		unset($headers['Content-type']);
 
 		// Send the http request
 		$response = $this->client->put($url, $content, $headers);
 
 		// Process the response
-		$response_body = $this->processResponse($response);
-
-		return $response_body;
+		return $this->processResponse($response);
 	}
 
 	/**
@@ -208,17 +200,17 @@ class JAmazons3OperationsBucketsPut extends JAmazons3OperationsBuckets
 	 * @param   string  $bucket  The bucket name
 	 * @param   string  $rules   An array containing the lifecycle configuration rules
 	 *
-	 * @return string  The response body
+	 * @return  SimpleXMLElement|string  The response body
 	 *
 	 * @since   1.0
 	 */
 	public function putBucketLifecycle($bucket, $rules = null)
 	{
-		$url = "https://" . $bucket . "." . $this->options->get("api.url") . "/?lifecycle";
+		$url = 'https://' . $bucket . '.' . $this->options->get('api.url') . '/?lifecycle';
 		$headers = array(
-			"Date" => date("D, d M Y H:i:s O"),
+			'Date' => date('D, d M Y H:i:s O'),
 		);
-		$content = "";
+		$content = '';
 
 		// Check for lifecycle configuration rules
 		if (is_array($rules))
@@ -228,7 +220,7 @@ class JAmazons3OperationsBucketsPut extends JAmazons3OperationsBuckets
 			// $rules is an array of rules (which in turn are arrays of rule properties)
 			foreach ($rules as $rule)
 			{
-				$content .= "<Rule>\n";
+				$content .= '<Rule>\n';
 
 				// Parse the rule properties
 				foreach ($rule as $rulePropertyKey => $rulePropertyValue)
@@ -239,18 +231,18 @@ class JAmazons3OperationsBucketsPut extends JAmazons3OperationsBuckets
 
 						foreach ($rulePropertyValue as $currentKey => $currentValue)
 						{
-							$content .= "<" . $currentKey . ">"
+							$content .= '<' . $currentKey . '>'
 								. $currentValue
-								. "</" . $currentKey . ">" . "\n";
+								. "</" . $currentKey . ">\n";
 						}
 
 						$content .= "</" . $rulePropertyKey . ">\n";
 					}
 					else
 					{
-						$content .= "<" . $rulePropertyKey . ">"
+						$content .= '<' . $rulePropertyKey . '>'
 							. $rulePropertyValue
-							. "</" . $rulePropertyKey . ">" . "\n";
+							. "</" . $rulePropertyKey . ">\n";
 					}
 				}
 
@@ -260,22 +252,20 @@ class JAmazons3OperationsBucketsPut extends JAmazons3OperationsBuckets
 			$content .= "</LifecycleConfiguration>\n";
 
 			// Set the content related headers
-			$headers["Content-type"] = "application/x-www-form-urlencoded; charset=utf-8";
-			$headers["Content-Length"] = strlen($content);
-			$headers["Content-MD5"] = base64_encode(md5($content, true));
+			$headers['Content-type'] = 'application/x-www-form-urlencoded; charset=utf-8';
+			$headers['Content-Length'] = strlen($content);
+			$headers['Content-MD5'] = base64_encode(md5($content, true));
 		}
 
-		$authorization = $this->createAuthorization("PUT", $url, $headers);
-		$headers["Authorization"] = $authorization;
-		unset($headers["Content-type"]);
+		$authorization = $this->createAuthorization('PUT', $url, $headers);
+		$headers['Authorization'] = $authorization;
+		unset($headers['Content-type']);
 
 		// Send the http request
 		$response = $this->client->put($url, $content, $headers);
 
 		// Process the response
-		$response_body = $this->processResponse($response);
-
-		return $response_body;
+		return $this->processResponse($response);
 	}
 
 	/**
@@ -284,17 +274,17 @@ class JAmazons3OperationsBucketsPut extends JAmazons3OperationsBuckets
 	 * @param   string  $bucket  The bucket name
 	 * @param   string  $policy  An array containing the bucket policy
 	 *
-	 * @return string  The response body
+	 * @return  SimpleXMLElement|string  The response body
 	 *
 	 * @since   1.0
 	 */
 	public function putBucketPolicy($bucket, $policy = null)
 	{
-		$url = "https://" . $bucket . "." . $this->options->get("api.url") . "/?policy";
+		$url = 'https://' . $bucket . '.' . $this->options->get('api.url') . '/?policy';
 		$headers = array(
-			"Date" => date("D, d M Y H:i:s O"),
+			'Date' => date('D, d M Y H:i:s O'),
 		);
-		$content = "";
+		$content = '';
 
 		// Check for lifecycle configuration rules
 		if (is_array($policy))
@@ -302,22 +292,20 @@ class JAmazons3OperationsBucketsPut extends JAmazons3OperationsBuckets
 			$content .= json_encode($policy);
 
 			// Set the content related headers
-			$headers["Content-type"] = "application/x-www-form-urlencoded; charset=utf-8";
-			$headers["Content-Length"] = strlen($content);
-			$headers["Content-MD5"] = base64_encode(md5($content, true));
+			$headers['Content-type'] = 'application/x-www-form-urlencoded; charset=utf-8';
+			$headers['Content-Length'] = strlen($content);
+			$headers['Content-MD5'] = base64_encode(md5($content, true));
 		}
 
-		$authorization = $this->createAuthorization("PUT", $url, $headers);
-		$headers["Authorization"] = $authorization;
-		unset($headers["Content-type"]);
+		$authorization = $this->createAuthorization('PUT', $url, $headers);
+		$headers['Authorization'] = $authorization;
+		unset($headers['Content-type']);
 
 		// Send the http request
 		$response = $this->client->put($url, $content, $headers);
 
 		// Process the response
-		$response_body = $this->processResponse($response);
-
-		return $response_body;
+		return $this->processResponse($response);
 	}
 
 	/**
@@ -327,17 +315,17 @@ class JAmazons3OperationsBucketsPut extends JAmazons3OperationsBuckets
 	 * @param   string  $bucket   The bucket name
 	 * @param   string  $logging  An array containing the logging details
 	 *
-	 * @return string  The response body
+	 * @return  SimpleXMLElement|string  The response body
 	 *
 	 * @since   1.0
 	 */
 	public function putBucketLogging($bucket, $logging = null)
 	{
-		$url = "https://" . $bucket . "." . $this->options->get("api.url") . "/?logging";
+		$url = 'https://' . $bucket . '.' . $this->options->get('api.url') . '/?logging';
 		$headers = array(
-			"Date" => date("D, d M Y H:i:s O"),
+			'Date' => date('D, d M Y H:i:s O'),
 		);
-		$content = "";
+		$content = '';
 
 		// Check for lifecycle configuration rules
 		if (is_array($logging))
@@ -350,28 +338,28 @@ class JAmazons3OperationsBucketsPut extends JAmazons3OperationsBuckets
 			foreach ($logging as $ruleKey => $ruleValue)
 			{
 				// Parse the rule properties
-				if (strcmp($ruleKey, "TargetGrants") == 0)
+				if (strcmp($ruleKey, 'TargetGrants') == 0)
 				{
 					$content .= "<" . $ruleKey . ">\n";
 
 					foreach ($ruleValue as $currentKey => $currentValue)
 					{
-						$content .= "<" . $currentKey . ">\n";
+						$content .= '<' . $currentKey . '>\n';
 
 						foreach ($currentValue as $key => $val)
 						{
-							if (strcmp($key, "Grantee") == 0)
+							if (strcmp($key, 'Grantee') == 0)
 							{
-								$content .= "<Grantee xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"";
+								$content .= '<Grantee xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="';
 
-								if (array_key_exists("EmailAddress", $val))
+								if (array_key_exists('EmailAddress', $val))
 								{
 									$content .= "AmazonCustomerByEmail\">\n";
 									$content .= "<EmailAddress>" . $val["EmailAddress"] . "</EmailAddress>\n";
 								}
 								else
 								{
-									if (array_key_exists("URI", $val))
+									if (array_key_exists('URI', $val))
 									{
 										$content .= "Group\">\n";
 										$content .= "<URI>" . $val["EmailAddress"] . "</URI>\n";
@@ -387,7 +375,7 @@ class JAmazons3OperationsBucketsPut extends JAmazons3OperationsBuckets
 							}
 							else
 							{
-								$content .= "<" . $key . ">" . $val;
+								$content .= '<' . $key . '>' . $val;
 							}
 
 							$content .= "</" . $key . ">\n";
@@ -400,9 +388,9 @@ class JAmazons3OperationsBucketsPut extends JAmazons3OperationsBuckets
 				}
 				else
 				{
-					$content .= "<" . $ruleKey . ">"
+					$content .= '<' . $ruleKey . '>'
 						. $ruleValue
-						. "</" . $ruleKey . ">" . "\n";
+						. "</" . $ruleKey . ">\n";
 				}
 			}
 
@@ -412,25 +400,23 @@ class JAmazons3OperationsBucketsPut extends JAmazons3OperationsBuckets
 		else
 		{
 			// If the method is called with only one argument, the logging is disabled
-			$content = '<?xml version="1.0" encoding="UTF-8"?>\n'
-				. '<BucketLoggingStatus xmlns="http://doc.s3.amazonaws.com/2006-03-01" />';
+			$content = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
+				. "<BucketLoggingStatus xmlns=\"http://doc.s3.amazonaws.com/2006-03-01\" />";
 		}
 
 		// Set the content related headers
-		$headers["Content-type"] = "application/x-www-form-urlencoded; charset=utf-8";
-		$headers["Content-Length"] = strlen($content);
-		$headers["Content-MD5"] = base64_encode(md5($content, true));
-		$authorization = $this->createAuthorization("PUT", $url, $headers);
-		$headers["Authorization"] = $authorization;
-		unset($headers["Content-type"]);
+		$headers['Content-type'] = 'application/x-www-form-urlencoded; charset=utf-8';
+		$headers['Content-Length'] = strlen($content);
+		$headers['Content-MD5'] = base64_encode(md5($content, true));
+		$authorization = $this->createAuthorization('PUT', $url, $headers);
+		$headers['Authorization'] = $authorization;
+		unset($headers['Content-type']);
 
 		// Send the http request
 		$response = $this->client->put($url, $content, $headers);
 
 		// Process the response
-		$response_body = $this->processResponse($response);
-
-		return $response_body;
+		return $this->processResponse($response);
 	}
 
 	/**
@@ -439,17 +425,17 @@ class JAmazons3OperationsBucketsPut extends JAmazons3OperationsBuckets
 	 * @param   string  $bucket        The bucket name
 	 * @param   string  $notification  An array containing the $notification details
 	 *
-	 * @return string  The response body
+	 * @return  SimpleXMLElement|string  The response body
 	 *
 	 * @since   1.0
 	 */
 	public function putBucketNotification($bucket, $notification = null)
 	{
-		$url = "https://" . $bucket . "." . $this->options->get("api.url") . "/?notification";
+		$url = 'https://' . $bucket . '.' . $this->options->get('api.url') . '/?notification';
 		$headers = array(
-			"Date" => date("D, d M Y H:i:s O"),
+			'Date' => date('D, d M Y H:i:s O'),
 		);
-		$content = "";
+		$content = '<NotificationConfiguration />';
 
 		// Check for lifecycle configuration rules
 		if (is_array($notification))
@@ -460,7 +446,7 @@ class JAmazons3OperationsBucketsPut extends JAmazons3OperationsBuckets
 			// $notification is an array of rules (which in turn are arrays of rule properties)
 			foreach ($notification as $ruleKey => $ruleValue)
 			{
-				$content .= "<" . $ruleKey . ">";
+				$content .= '<' . $ruleKey . '>';
 				$content .= $ruleValue;
 				$content .= "</" . $ruleKey . ">\n";
 			}
@@ -468,27 +454,20 @@ class JAmazons3OperationsBucketsPut extends JAmazons3OperationsBuckets
 			$content .= "</TopicConfiguration>\n";
 			$content .= "</NotificationConfiguration>";
 		}
-		else
-		{
-			// If the method is called with only one argument, the logging is disabled
-			$content .= "<NotificationConfiguration />";
-		}
 
 		// Set the content related headers
-		$headers["Content-type"] = "application/x-www-form-urlencoded; charset=utf-8";
-		$headers["Content-Length"] = strlen($content);
-		$headers["Content-MD5"] = base64_encode(md5($content, true));
-		$authorization = $this->createAuthorization("PUT", $url, $headers);
-		$headers["Authorization"] = $authorization;
-		unset($headers["Content-type"]);
+		$headers['Content-type'] = 'application/x-www-form-urlencoded; charset=utf-8';
+		$headers['Content-Length'] = strlen($content);
+		$headers['Content-MD5'] = base64_encode(md5($content, true));
+		$authorization = $this->createAuthorization('PUT', $url, $headers);
+		$headers['Authorization'] = $authorization;
+		unset($headers['Content-type']);
 
 		// Send the http request
 		$response = $this->client->put($url, $content, $headers);
 
 		// Process the response
-		$response_body = $this->processResponse($response);
-
-		return $response_body;
+		return $this->processResponse($response);
 	}
 
 	/**
@@ -497,17 +476,17 @@ class JAmazons3OperationsBucketsPut extends JAmazons3OperationsBuckets
 	 * @param   string  $bucket  The bucket name
 	 * @param   string  $tags    An array containing the tags
 	 *
-	 * @return string  The response body
+	 * @return  SimpleXMLElement|string  The response body
 	 *
 	 * @since   1.0
 	 */
 	public function putBucketTagging($bucket, $tags = null)
 	{
-		$url = "https://" . $bucket . "." . $this->options->get("api.url") . "/?tagging";
+		$url = 'https://' . $bucket . '.' . $this->options->get('api.url') . '/?tagging';
 		$headers = array(
-			"Date" => date("D, d M Y H:i:s O"),
+			'Date' => date('D, d M Y H:i:s O'),
 		);
-		$content = "";
+		$content = '';
 
 		// Check for lifecycle configuration rules
 		if (is_array($tags))
@@ -522,7 +501,7 @@ class JAmazons3OperationsBucketsPut extends JAmazons3OperationsBuckets
 
 				foreach ($tag as $ruleKey => $ruleValue)
 				{
-					$content .= "<" . $ruleKey . ">";
+					$content .= '<' . $ruleKey . '>';
 					$content .= $ruleValue;
 					$content .= "</" . $ruleKey . ">\n";
 				}
@@ -535,20 +514,18 @@ class JAmazons3OperationsBucketsPut extends JAmazons3OperationsBuckets
 		}
 
 		// Set the content related headers
-		$headers["Content-type"] = "application/x-www-form-urlencoded; charset=utf-8";
-		$headers["Content-Length"] = strlen($content);
-		$headers["Content-MD5"] = base64_encode(md5($content, true));
-		$authorization = $this->createAuthorization("PUT", $url, $headers);
-		$headers["Authorization"] = $authorization;
-		unset($headers["Content-type"]);
+		$headers['Content-type'] = 'application/x-www-form-urlencoded; charset=utf-8';
+		$headers['Content-Length'] = strlen($content);
+		$headers['Content-MD5'] = base64_encode(md5($content, true));
+		$authorization = $this->createAuthorization('PUT', $url, $headers);
+		$headers['Authorization'] = $authorization;
+		unset($headers['Content-type']);
 
 		// Send the http request
 		$response = $this->client->put($url, $content, $headers);
 
 		// Process the response
-		$response_body = $this->processResponse($response);
-
-		return $response_body;
+		return $this->processResponse($response);
 	}
 
 	/**
@@ -558,35 +535,33 @@ class JAmazons3OperationsBucketsPut extends JAmazons3OperationsBuckets
 	 * @param   string  $payer   Specifies who pays for the download and request fees.
 	 *                           Valid Values: Requester | BucketOwner
 	 *
-	 * @return string  The response body
+	 * @return  SimpleXMLElement|string  The response body
 	 *
 	 * @since   1.0
 	 */
 	public function putBucketRequestPayment($bucket, $payer)
 	{
-		$url = "https://" . $bucket . "." . $this->options->get("api.url") . "/?requestPayment";
+		$url = 'https://' . $bucket . '.' . $this->options->get('api.url') . '/?requestPayment';
 		$headers = array(
-			"Date" => date("D, d M Y H:i:s O"),
+			'Date' => date('D, d M Y H:i:s O'),
 		);
 		$content = "<RequestPaymentConfiguration xmlns=\"http://s3.amazonaws.com/doc/2006-03-01/\">\n"
 			. "<Payer>" . $payer . "</Payer>\n"
 			. "</RequestPaymentConfiguration>";
 
 		// Set the content related headers
-		$headers["Content-type"] = "application/x-www-form-urlencoded; charset=utf-8";
-		$headers["Content-Length"] = strlen($content);
-		$headers["Content-MD5"] = base64_encode(md5($content, true));
-		$authorization = $this->createAuthorization("PUT", $url, $headers);
-		$headers["Authorization"] = $authorization;
-		unset($headers["Content-type"]);
+		$headers['Content-type'] = 'application/x-www-form-urlencoded; charset=utf-8';
+		$headers['Content-Length'] = strlen($content);
+		$headers['Content-MD5'] = base64_encode(md5($content, true));
+		$authorization = $this->createAuthorization('PUT', $url, $headers);
+		$headers['Authorization'] = $authorization;
+		unset($headers['Content-type']);
 
 		// Send the http request
 		$response = $this->client->put($url, $content, $headers);
 
 		// Process the response
-		$response_body = $this->processResponse($response);
-
-		return $response_body;
+		return $this->processResponse($response);
 	}
 
 	/**
@@ -598,23 +573,23 @@ class JAmazons3OperationsBucketsPut extends JAmazons3OperationsBuckets
 	 *                               Required for MfaDelete
 	 * @param   string  $tokenCode   Also required for MfaDelete
 	 *
-	 * @return string  The response body
+	 * @return  SimpleXMLElement|string  The response body
 	 *
 	 * @since   1.0
 	 */
 	public function putBucketVersioning($bucket, $versioning, $serialNr = null, $tokenCode = null)
 	{
-		$url = "https://" . $bucket . "." . $this->options->get("api.url") . "/?versioning";
+		$url = 'https://' . $bucket . '.' . $this->options->get('api.url') . '/?versioning';
 		$headers = array(
-			"Date" => date("D, d M Y H:i:s O"),
+			'Date' => date('D, d M Y H:i:s O'),
 		);
 
 		if (is_array($versioning))
 		{
 			// Check for MfaDelete
-			if (array_key_exists("MfaDelete", $versioning))
+			if (array_key_exists('MfaDelete', $versioning))
 			{
-				$headers["x-amz-mfa"] = $serialNr . " " . $tokenCode;
+				$headers['x-amz-mfa'] = $serialNr . ' ' . $tokenCode;
 			}
 
 			$content = "<VersioningConfiguration xmlns=\"http://s3.amazonaws.com/doc/2006-03-01/\">\n";
@@ -624,24 +599,22 @@ class JAmazons3OperationsBucketsPut extends JAmazons3OperationsBuckets
 				$content .= "<" . $key . ">" . $value . "</" . $key . ">\n";
 			}
 
-			$content .= "</VersioningConfiguration>";
+			$content .= '</VersioningConfiguration>';
 		}
 
 		// Set the content related headers
-		$headers["Content-type"] = "application/x-www-form-urlencoded; charset=utf-8";
-		$headers["Content-Length"] = strlen($content);
-		$headers["Content-MD5"] = base64_encode(md5($content, true));
-		$authorization = $this->createAuthorization("PUT", $url, $headers);
-		$headers["Authorization"] = $authorization;
-		unset($headers["Content-type"]);
+		$headers['Content-type'] = 'application/x-www-form-urlencoded; charset=utf-8';
+		$headers['Content-Length'] = strlen($content);
+		$headers['Content-MD5'] = base64_encode(md5($content, true));
+		$authorization = $this->createAuthorization('PUT', $url, $headers);
+		$headers['Authorization'] = $authorization;
+		unset($headers['Content-type']);
 
 		// Send the http request
 		$response = $this->client->put($url, $content, $headers);
 
 		// Process the response
-		$response_body = $this->processResponse($response);
-
-		return $response_body;
+		return $this->processResponse($response);
 	}
 
 	/**
@@ -650,20 +623,20 @@ class JAmazons3OperationsBucketsPut extends JAmazons3OperationsBuckets
 	 * @param   string  $bucket   The bucket name
 	 * @param   string  $website  An array containing website parameters
 	 *
-	 * @return string  The response body
+	 * @return  SimpleXMLElement|string  The response body
 	 *
 	 * @since   1.0
 	 */
 	public function putBucketWebsite($bucket, $website)
 	{
-		$url = "https://" . $bucket . "." . $this->options->get("api.url") . "/?website";
+		$url = 'https://' . $bucket . '.' . $this->options->get('api.url') . '/?website';
 		$headers = array(
-			"Date" => date("D, d M Y H:i:s O"),
+			'Date' => date('D, d M Y H:i:s O'),
 		);
 
 		if (is_array($website))
 		{
-			$content = "<WebsiteConfiguration xmlns=\"http://s3.amazonaws.com/doc/2006-03-01/\">\n";
+			$content = '<WebsiteConfiguration xmlns=\'http://s3.amazonaws.com/doc/2006-03-01/\'>\n';
 
 			foreach ($website as $key => $value)
 			{
@@ -671,7 +644,7 @@ class JAmazons3OperationsBucketsPut extends JAmazons3OperationsBuckets
 
 				foreach ($value as $subKey => $subValue)
 				{
-					$content .= "<" . $subKey . ">";
+					$content .= '<' . $subKey . '>';
 
 					if (is_array($subValue))
 					{
@@ -685,7 +658,7 @@ class JAmazons3OperationsBucketsPut extends JAmazons3OperationsBuckets
 
 								foreach ($subValue2 as $subKey3 => $subValue3)
 								{
-									$content .= "<" . $subKey3 . ">";
+									$content .= '<' . $subKey3 . '>';
 									$content .= $subValue3;
 									$content .= "</" . $subKey3 . ">\n";
 								}
@@ -709,23 +682,21 @@ class JAmazons3OperationsBucketsPut extends JAmazons3OperationsBuckets
 				$content .= "</" . $key . ">\n";
 			}
 
-			$content .= "</WebsiteConfiguration>";
+			$content .= '</WebsiteConfiguration>';
 		}
 
 		// Set the content related headers
-		$headers["Content-type"] = "application/x-www-form-urlencoded; charset=utf-8";
-		$headers["Content-Length"] = strlen($content);
-		$headers["Content-MD5"] = base64_encode(md5($content, true));
-		$authorization = $this->createAuthorization("PUT", $url, $headers);
-		$headers["Authorization"] = $authorization;
-		unset($headers["Content-type"]);
+		$headers['Content-type'] = 'application/x-www-form-urlencoded; charset=utf-8';
+		$headers['Content-Length'] = strlen($content);
+		$headers['Content-MD5'] = base64_encode(md5($content, true));
+		$authorization = $this->createAuthorization('PUT', $url, $headers);
+		$headers['Authorization'] = $authorization;
+		unset($headers['Content-type']);
 
 		// Send the http request
 		$response = $this->client->put($url, $content, $headers);
 
 		// Process the response
-		$response_body = $this->processResponse($response);
-
-		return $response_body;
+		return $this->processResponse($response);
 	}
 }

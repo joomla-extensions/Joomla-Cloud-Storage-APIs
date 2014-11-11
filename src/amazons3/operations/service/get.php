@@ -12,26 +12,22 @@ defined('JPATH_PLATFORM') or die;
 /**
  * Defines the GET operation on the service
  *
- * @package     Joomla.Cloud
- * @subpackage  Amazons3
- * @since       1.0
+ * @since  1.0
  */
 class JAmazons3OperationsServiceGet extends JAmazons3OperationsService
 {
 	/**
 	 * Creates the get request and returns the response from Amazon
 	 *
-	 * @return string  The response body
+	 * @return  SimpleXMLElement|string  The response body
 	 *
 	 * @since   1.0
 	 */
 	public function getService()
 	{
-		$url = "https://" . $this->options->get("api.url") . "/";
+		$url = 'https://' . $this->options->get('api.url') . '/';
 
 		// Send the request and process the response
-		$response_body = $this->commonGetOperations($url);
-
-		return $response_body;
+		return $this->commonGetOperations($url);
 	}
 }

@@ -12,9 +12,7 @@ defined('JPATH_PLATFORM') or die;
 /**
  * Defines the OPTIONS operations on objects
  *
- * @package     Joomla.Cloud
- * @subpackage  Amazons3
- * @since       1.0
+ * @since  1.0
  */
 class JAmazons3OperationsObjectsOptionss3 extends JAmazons3OperationsObjects
 {
@@ -26,17 +24,17 @@ class JAmazons3OperationsObjectsOptionss3 extends JAmazons3OperationsObjects
 	 * @param   string  $objectName      The object name
 	 * @param   array   $requestHeaders  Additional request headers
 	 *
-	 * @return string  The response body
+	 * @return  SimpleXMLElement|string  The response body
 	 *
 	 * @since   1.0
 	 */
 	public function optionsObject($bucket, $objectName, $requestHeaders)
 	{
-		$url = "https://" . $bucket . "." . $this->options->get("api.url") . "/" . $objectName;
+		$url = 'https://' . $bucket . '.' . $this->options->get('api.url') . '/' . $objectName;
 
 		// Create the headers
 		$headers = array(
-			"Date" => date("D, d M Y H:i:s O"),
+			'Date' => date('D, d M Y H:i:s O'),
 		);
 
 		// Set the additional request headers
@@ -45,15 +43,13 @@ class JAmazons3OperationsObjectsOptionss3 extends JAmazons3OperationsObjects
 			$headers[$requestHeaderKey] = $requestHeaderValue;
 		}
 
-		$authorization = $this->createAuthorization("OPTIONS", $url, $headers);
-		$headers["Authorization"] = $authorization;
+		$authorization = $this->createAuthorization('OPTIONS', $url, $headers);
+		$headers['Authorization'] = $authorization;
 
 		// Send the http request
 		$response = $this->client->options($url, $headers);
 
 		// Process the response
-		$response_body = $this->processResponse($response);
-
-		return $response_body;
+		return $this->processResponse($response);
 	}
 }

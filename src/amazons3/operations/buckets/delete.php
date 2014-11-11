@@ -12,9 +12,7 @@ defined('JPATH_PLATFORM') or die;
 /**
  * Defines the DELETE operations on buckets
  *
- * @package     Joomla.Cloud
- * @subpackage  Amazons3
- * @since       1.0
+ * @since  1.0
  */
 class JAmazons3OperationsBucketsDelete extends JAmazons3OperationsBuckets
 {
@@ -23,18 +21,16 @@ class JAmazons3OperationsBucketsDelete extends JAmazons3OperationsBuckets
 	 *
 	 * @param   string  $bucket  The bucket name
 	 *
-	 * @return string  The response body
+	 * @return  SimpleXMLElement|string  The response body
 	 *
 	 * @since   1.0
 	 */
 	public function deleteBucket($bucket)
 	{
-		$url = "https://" . $bucket . "." . $this->options->get("api.url") . "/";
+		$url = 'https://' . $bucket . '.' . $this->options->get('api.url') . '/';
 
 		// Send the request and process the response
-		$response_body = $this->commonDeleteOperations($url);
-
-		return $response_body;
+		return $this->commonDeleteOperations($url);
 	}
 
 	/**
@@ -42,18 +38,16 @@ class JAmazons3OperationsBucketsDelete extends JAmazons3OperationsBuckets
 	 *
 	 * @param   string  $bucket  The bucket name
 	 *
-	 * @return string  The response body
+	 * @return  SimpleXMLElement|string  The response body
 	 *
 	 * @since   1.0
 	 */
 	public function deleteBucketCors($bucket)
 	{
-		$url = "https://" . $bucket . "." . $this->options->get("api.url") . "/?cors";
+		$url = 'https://' . $bucket . '.' . $this->options->get('api.url') . '/?cors';
 
 		// Send the request and process the response
-		$response_body = $this->commonDeleteOperations($url);
-
-		return $response_body;
+		return $this->commonDeleteOperations($url);
 	}
 
 	/**
@@ -61,18 +55,16 @@ class JAmazons3OperationsBucketsDelete extends JAmazons3OperationsBuckets
 	 *
 	 * @param   string  $bucket  The bucket name
 	 *
-	 * @return string  The response body
+	 * @return  SimpleXMLElement|string  The response body
 	 *
 	 * @since   1.0
 	 */
 	public function deleteBucketLifecycle($bucket)
 	{
-		$url = "https://" . $bucket . "." . $this->options->get("api.url") . "/?lifecycle";
+		$url = 'https://' . $bucket . '.' . $this->options->get('api.url') . '/?lifecycle';
 
 		// Send the request and process the response
-		$response_body = $this->commonDeleteOperations($url);
-
-		return $response_body;
+		return $this->commonDeleteOperations($url);
 	}
 
 	/**
@@ -81,18 +73,16 @@ class JAmazons3OperationsBucketsDelete extends JAmazons3OperationsBuckets
 	 *
 	 * @param   string  $bucket  The bucket name
 	 *
-	 * @return string  The response body
+	 * @return  SimpleXMLElement|string  The response body
 	 *
 	 * @since   1.0
 	 */
 	public function deleteBucketPolicy($bucket)
 	{
-		$url = "https://" . $bucket . "." . $this->options->get("api.url") . "/?policy";
+		$url = 'https://' . $bucket . '.' . $this->options->get('api.url') . '/?policy';
 
 		// Send the request and process the response
-		$response_body = $this->commonDeleteOperations($url);
-
-		return $response_body;
+		return $this->commonDeleteOperations($url);
 	}
 
 	/**
@@ -101,18 +91,16 @@ class JAmazons3OperationsBucketsDelete extends JAmazons3OperationsBuckets
 	 *
 	 * @param   string  $bucket  The bucket name
 	 *
-	 * @return string  The response body
+	 * @return  SimpleXMLElement|string  The response body
 	 *
 	 * @since   1.0
 	 */
 	public function deleteBucketTagging($bucket)
 	{
-		$url = "https://" . $bucket . "." . $this->options->get("api.url") . "/?tagging";
+		$url = 'https://' . $bucket . '.' . $this->options->get('api.url') . '/?tagging';
 
 		// Send the request and process the response
-		$response_body = $this->commonDeleteOperations($url);
-
-		return $response_body;
+		return $this->commonDeleteOperations($url);
 	}
 
 	/**
@@ -120,17 +108,15 @@ class JAmazons3OperationsBucketsDelete extends JAmazons3OperationsBuckets
 	 *
 	 * @param   string  $bucket  The bucket name
 	 *
-	 * @return string  The response body
+	 * @return  SimpleXMLElement|string  The response body
 	 *
 	 * @since   1.0
 	 */
 	public function deleteBucketWebsite($bucket)
 	{
-		$url = "https://" . $bucket . "." . $this->options->get("api.url") . "/?website";
+		$url = 'https://' . $bucket . '.' . $this->options->get('api.url') . '/?website';
 
 		// Send the request and process the response
-		$response_body = $this->commonDeleteOperations($url);
-
-		return $response_body;
+		return $this->commonDeleteOperations($url);
 	}
 }

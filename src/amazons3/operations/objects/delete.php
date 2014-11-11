@@ -12,9 +12,7 @@ defined('JPATH_PLATFORM') or die;
 /**
  * Defines the DELETE operations on objects
  *
- * @package     Joomla.Cloud
- * @subpackage  Amazons3
- * @since       1.0
+ * @since  1.0
  */
 class JAmazons3OperationsObjectsDelete extends JAmazons3OperationsObjects
 {
@@ -28,33 +26,31 @@ class JAmazons3OperationsObjectsDelete extends JAmazons3OperationsObjects
 	 *                              a virtual MFA device. Required for MfaDelete
 	 * @param   string  $tokenCode  Also required for MfaDelete
 	 *
-	 * @return string  The response body
+	 * @return  SimpleXMLElement|string  The response body
 	 *
 	 * @since   1.0
 	 */
 	public function deleteObject($bucket, $object, $versionId = null, $serialNr = null, $tokenCode = null)
 	{
-		$url = "https://" . $bucket . "." . $this->options->get("api.url") . "/" . $object;
+		$url = 'https://' . $bucket . '.' . $this->options->get('api.url') . '/' . $object;
 
 		if (! is_null($versionId))
 		{
-			$url .= "?versionId=" . $versionId;
+			$url .= '?versionId=' . $versionId;
 		}
 
 		$headers = array(
-			"Date" => date("D, d M Y H:i:s O"),
-			"Content-Length" => "0",
+			'Date' => date('D, d M Y H:i:s O'),
+			'Content-Length' => '0',
 		);
 
 		if (! is_null($serialNr))
 		{
-			$headers["x-amz-mfa"] = $serialNr . " " . $tokenCode;
+			$headers['x-amz-mfa'] = $serialNr . ' ' . $tokenCode;
 		}
 
 		// Send the request and process the response
-		$response_body = $this->commonDeleteOperations($url, $headers);
-
-		return $response_body;
+		return $this->commonDeleteOperations($url, $headers);
 	}
 
 	/**
@@ -64,18 +60,16 @@ class JAmazons3OperationsObjectsDelete extends JAmazons3OperationsObjects
 	 * @param   string  $object    The name of the object
 	 * @param   string  $uploadId  The upload id
 	 *
-	 * @return string  The response body
+	 * @return  SimpleXMLElement|string  The response body
 	 *
 	 * @since   1.0
 	 */
 	public function abortMultipartUpload($bucket, $object, $uploadId)
 	{
-		$url = "https://" . $bucket . "." . $this->options->get("api.url") . "/"
-			. $object . "?uploadId=" . $uploadId;
+		$url = 'https://' . $bucket . '.' . $this->options->get('api.url') . '/'
+			. $object . '?uploadId=' . $uploadId;
 
 		// Send the request and process the response
-		$response_body = $this->commonDeleteOperations($url);
-
-		return $response_body;
+		return $this->commonDeleteOperations($url, $headers);
 	}
 }

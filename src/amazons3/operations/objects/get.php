@@ -12,9 +12,7 @@ defined('JPATH_PLATFORM') or die;
 /**
  * Defines the GET operations on objects
  *
- * @package     Joomla.Cloud
- * @subpackage  Amazons3
- * @since       1.0
+ * @since  1.0
  */
 class JAmazons3OperationsObjectsGet extends JAmazons3OperationsObjects
 {
@@ -26,33 +24,31 @@ class JAmazons3OperationsObjectsGet extends JAmazons3OperationsObjects
 	 * @param   string  $versionId   The version id
 	 * @param   string  $range       The range of bytes to be returned
 	 *
-	 * @return string  The response body
+	 * @return  SimpleXMLElement|string  The response body
 	 *
 	 * @since   1.0
 	 */
 	public function getObject($bucket, $objectName, $versionId = null, $range = null)
 	{
-		$url = "https://" . $bucket . "." . $this->options->get("api.url")
-			. "/" . $objectName;
+		$url = 'https://' . $bucket . '.' . $this->options->get('api.url')
+			. '/' . $objectName;
 
 		if (! is_null($versionId))
 		{
-			$url .= "?versionId=" . $versionId;
+			$url .= '?versionId=' . $versionId;
 		}
 
 		$headers = array(
-			"Date" => date("D, d M Y H:i:s O"),
+			'Date' => date('D, d M Y H:i:s O'),
 		);
 
 		if (! is_null($range))
 		{
-			$headers['Range'] = "bytes=" . $range;
+			$headers['Range'] = 'bytes=' . $range;
 		}
 
 		// Send the request and process the response
-		$response_body = $this->commonGetOperations($url, $headers);
-
-		return $response_body;
+		return $this->commonGetOperations($url, $headers);
 	}
 
 	/**
@@ -63,37 +59,35 @@ class JAmazons3OperationsObjectsGet extends JAmazons3OperationsObjects
 	 * @param   string  $versionId   The version id
 	 * @param   string  $range       The range of bytes to be returned
 	 *
-	 * @return string  The response body
+	 * @return  SimpleXMLElement|string  The response body
 	 *
 	 * @since   1.0
 	 */
 	public function getObjectAcl($bucket, $objectName, $versionId = null, $range = null)
 	{
-		$url = "https://" . $bucket . "." . $this->options->get("api.url")
-			. "/" . $objectName;
+		$url = 'https://' . $bucket . '.' . $this->options->get('api.url')
+			. '/' . $objectName;
 
-		if (! is_null($versionId))
+		if (!is_null($versionId))
 		{
-			$url .= "?versionId=" . $versionId . "&acl";
+			$url .= '?versionId=' . $versionId . '&acl';
 		}
 		else
 		{
-			$url .= "?acl";
+			$url .= '?acl';
 		}
 
 		$headers = array(
-			"Date" => date("D, d M Y H:i:s O"),
+			'Date' => date('D, d M Y H:i:s O'),
 		);
 
 		if (! is_null($range))
 		{
-			$headers['Range'] = "bytes=" . $range;
+			$headers['Range'] = 'bytes=' . $range;
 		}
 
 		// Send the request and process the response
-		$response_body = $this->commonGetOperations($url, $headers);
-
-		return $response_body;
+		return $this->commonGetOperations($url, $headers);
 	}
 
 	/**
@@ -102,19 +96,17 @@ class JAmazons3OperationsObjectsGet extends JAmazons3OperationsObjects
 	 * @param   string  $bucket      The bucket name
 	 * @param   string  $objectName  The object name
 	 *
-	 * @return string  The response body
+	 * @return  SimpleXMLElement|string  The response body
 	 *
 	 * @since   1.0
 	 */
 	public function getObjectTorrent($bucket, $objectName)
 	{
-		$url = "https://" . $bucket . "." . $this->options->get("api.url")
-			. "/" . $objectName . "?torrent";
+		$url = 'https://' . $bucket . '.' . $this->options->get('api.url')
+			. '/' . $objectName . '?torrent';
 
 		// Send the request and process the response
-		$response_body = $this->commonGetOperations($url);
-
-		return $response_body;
+		return $this->commonGetOperations($url, $headers);
 	}
 
 	/**
@@ -124,28 +116,26 @@ class JAmazons3OperationsObjectsGet extends JAmazons3OperationsObjects
 	 * @param   string  $objectName  The object name
 	 * @param   string  $parameters  The upload parameters
 	 *
-	 * @return string  The response body
+	 * @return  SimpleXMLElement|string  The response body
 	 *
 	 * @since   1.0
 	 */
 	public function listParts($bucket, $objectName, $parameters)
 	{
-		$url = "https://" . $bucket . "." . $this->options->get("api.url")
-			. "/" . $objectName . "?uploadId=" . $parameters["uploadId"];
+		$url = 'https://' . $bucket . '.' . $this->options->get('api.url')
+			. '/' . $objectName . '?uploadId=' . $parameters['uploadId'];
 
-		if (array_key_exists("max-parts", $parameters))
+		if (array_key_exists('max-parts', $parameters))
 		{
-			$url .= "&max-parts=" . $parameters["max-parts"];
+			$url .= '&max-parts=' . $parameters['max-parts'];
 		}
 
-		if (array_key_exists("part-number-marker", $parameters))
+		if (array_key_exists('part-number-marker', $parameters))
 		{
-			$url .= "&part-number-marker=" . $parameters["part-number-marker"];
+			$url .= '&part-number-marker=' . $parameters['part-number-marker'];
 		}
 
 		// Send the request and process the response
-		$response_body = $this->commonGetOperations($url);
-
-		return $response_body;
+		return $this->commonGetOperations($url, $headers);
 	}
 }
