@@ -1,9 +1,9 @@
 <?php
 /**
  * @package     Joomla.UnitTest
- * @subpackage  Client
+ * @subpackage  Amazons3
  *
- * @copyright   Copyright (C) 2005 - 2013 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2014 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE
  */
 
@@ -62,9 +62,9 @@ class JAmazons3OperationsObjectsOptionsTest extends PHPUnit_Framework_TestCase
 
 	/**
 	 * Tests the optionsObject method
-	 * 
+	 *
 	 * @expectedException DomainException
-	 * 
+	 *
 	 * @return  void
 	 *
 	 * @since   ??.?

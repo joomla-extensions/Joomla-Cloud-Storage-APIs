@@ -3,7 +3,7 @@
  * @package     Joomla.Cloud
  * @subpackage  Amazons3
  *
- * @copyright   Copyright (C) 2005 - 2013 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2014 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE
  */
 
@@ -12,9 +12,7 @@ defined('JPATH_PLATFORM') or die;
 /**
  * Common items for operations on objects
  *
- * @package     Joomla.Cloud
- * @subpackage  Amazons3
- * @since       1.0
+ * @since  1.0
  */
 class JAmazons3OperationsObjects extends JAmazons3Object
 {
@@ -59,7 +57,7 @@ class JAmazons3OperationsObjects extends JAmazons3Object
 	 *
 	 * @param   string  $name  Name of property to retrieve.
 	 *
-	 * @return  JAmazons3Object  Amazons3 API object
+	 * @return  JAmazons3OperationsObjects  Amazons3 API object
 	 *
 	 * @since   1.0
 	 * @throws  InvalidArgumentException
