@@ -1,87 +1,95 @@
-## The Amazons3 Package
+## The AmazonS3 Package
 
-### Using the Amazons3 Package
+### Using the AmazonS3 Package
 
-The Amazons3 package is designed to be a straightforward interface for working with Amazon Simple Storage Service. It is based on the REST API provided by Amazon, which can be found at http://docs.aws.amazon.com/AmazonS3/2006-03-01/API/APIRest.html.
+The AmazonS3 package is designed to be a straightforward interface for working with Amazon Simple Storage Service. It is based on the REST API provided by Amazon, which can be found at http://docs.aws.amazon.com/AmazonS3/2006-03-01/API/APIRest.html.
 
+AmazonS3 is built upon the Http package which provides an easy way to consume URLs and web services in a transport independent way.
 
-Amazons3 is built upon the Http package which provides an easy way to consume URLs and web services in a transport independent way.
+#### Instantiating JAmazons3
 
-#### Instantiating Amazons3
+```php
+$amazon = new JAmazons3;
+```
 
-	$Amazons3 = new JAmazons3();
+This creates a basic `JAmazons3` object that can be used to access publicly available resources on AmazonS3. For certain operations, such as those which require authorization, you can configure additional options by using a `Joomla\Registry\Registry` object with your preferred details:
 
-This creates a basic Amazons3 object that can be used to access publicly available resources on Amazons3. For certain operations, such as those which require authorization, you can configure additional options by using a Registry object with your preferred details:
+```php
+use Joomla\Registry\Registry;
 
-	$options = new JRegistry();
-	$options->set('api.accessKeyId', 'AKIAIYASRIGEYY2MB6UQ');
-	$options->set('api.secretAccessKey', 'xtnNNdVPjfOfJJ6ohE4JoyK+dJL7crROT78T4G17');
+$options = new Registry;
+$options->set('api.accessKeyId', 'AKIAIYASRIGEYY2MB6UQ');
+$options->set('api.secretAccessKey', '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');
 
-	$Amazons3 = new JAmazons3($options);
+$amazon = new JAmazons3($options);
+```
 
-#### Accessing the Amazons3 API
+#### Accessing the AmazonS3 API
 
-Once an object has been created, it is simple to use it to access Amazons3:
+Once an object has been created, it is simple to use it to access AmazonS3:
 
-	$response = $amazons3->service->get->getService();
+```php
+$response = $amazon->service->get->getService();
+```
 	
 This call will list all of the buckets owned by the authenticated sender of the request.
 
 #### A more complete example
 
 The following is a cli application that will return a list of all buckets owned by the authenticated sender of the request.
-	
-	<?php
-	// We are a valid Joomla entry point.
-	define('_JEXEC', 1);
-	
-	// Setup the base path related constant.
-	define('JPATH_BASE', dirname(__FILE__));
-	
-	// Maximise error reporting.
-	error_reporting(E_ALL);
-	ini_set('display_errors', 1);
-	
-	// Bootstrap the application.
-	require dirname(__FILE__).'/import.php';
-	
-	class Amazons3App extends JApplicationCli
+
+```php
+<?php
+// We are a valid Joomla entry point.
+define('_JEXEC', 1);
+
+// Setup the base path related constant.
+define('JPATH_BASE', __DIR__);
+
+// Maximise error reporting.
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+// Bootstrap the application.
+require __DIR__ . '/import.php';
+
+class Amazons3App extends JApplicationCli
+{
+	public function doExecute()
 	{
-		/**
-		 * Display the application.
-		 */
-		function doExecute(){
-			$options = new JRegistry();
-	
-			$options->set('api.accessKeyId', 'AKIAIYASRIGEYY2MB6UQ');
-			$options->set('api.secretAccessKey', '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');
-	
-			$amazons3 = new JAmazons3($options);
-			try
-			{
-				$response = $amazons3->service->get->getService();
-	
-				print_r($response);
-			}
-			catch (Exception $e)
-			{
-				echo 'Caught exception: ',  $e->getMessage(), "\n";
-			}
+		$options = new \Joomla\Registry\Registry;
+
+		$options->set('api.accessKeyId', 'AKIAIYASRIGEYY2MB6UQ');
+		$options->set('api.secretAccessKey', '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');
+
+		$amazon = new JAmazons3($options);
+
+		try
+		{
+			$response = $amazon->service->get->getService();
+
+			print_r($response);
+		}
+		catch (Exception $e)
+		{
+			echo 'Caught exception: ',  $e->getMessage(), "\n";
 		}
 	}
-	
-	$cli = JApplicationCli::getInstance('Amazons3App');
-	JFactory::$application = $cli;
-	
-	$session = JFactory::getSession();
-	if ($session->isActive() == false){
-		$session->initialise(JFactory::getApplication()->input);
-		$session->start();
-	}
-	
-	// Run the application
-	$cli->execute();
+}
 
+$cli = JApplicationCli::getInstance('Amazons3App');
+JFactory::$application = $cli;
+
+$session = JFactory::getSession();
+if ($session->isActive() == false)
+{
+	$session->initialise(JFactory::getApplication()->input);
+	$session->start();
+}
+
+// Run the application
+$cli->execute();
+```
 
 ### Supported operations
 
@@ -98,40 +106,18 @@ Most of them use common request headers which are documented at http://docs.aws.
 
 This operation requires no arguments.
 
-	/**
-	 * Creates the get request and returns the response from Amazon
-	 *
-	 * @return string  The response body
-	 *
-	 * @since   ??.?
-	 */
-	public function getService()
-
-
 #### Buckets
 
 ##### GET Bucket
 
 ###### buckets->get->getBucket
 
-	/**
-	 * Creates the request for getting some or all (up to 1000) of the objects in a bucket.
-	 *
-	 * @param   string  $bucket      The bucket name
-	 * @param   string  $parameters  An array of optional parameters that can be set
-	 *                               to filter the results
-	 *
-	 * @return string  The response body
-	 *
-	 * @since   ??.?
-	 */
-	public function getBucket($bucket, $parameters = null)
-
-The `$parameters` argument can take the following values:
- - `delimiter`
- - `marker`
- - `max-keys`
- - `prefix`
+* $bucket - The bucket name
+* $parameters - An associative array which can take the following keys:
+    * `delimiter`
+    * `marker`
+    * `max-keys`
+    * `prefix`
 
 ###### buckets->get->getBucketAcl
 
