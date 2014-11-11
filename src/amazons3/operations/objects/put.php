@@ -14,7 +14,7 @@ defined('JPATH_PLATFORM') or die;
  *
  * @package     Joomla.Platform
  * @subpackage  Amazons3
- * @since       ??.?
+ * @since       1.0
  */
 class JAmazons3OperationsObjectsPut extends JAmazons3OperationsObjects
 {
@@ -28,7 +28,7 @@ class JAmazons3OperationsObjectsPut extends JAmazons3OperationsObjects
 	 *
 	 * @return string  The response body
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function putObject($bucket, $object, $content = "", $requestHeaders = null)
 	{
@@ -79,7 +79,7 @@ class JAmazons3OperationsObjectsPut extends JAmazons3OperationsObjects
 	 *
 	 * @return string  The response body
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function putObjectAcl($bucket, $object, $acl = null)
 	{
@@ -130,7 +130,7 @@ class JAmazons3OperationsObjectsPut extends JAmazons3OperationsObjects
 	 *
 	 * @return string  The response body
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function putObjectCopy($bucket, $object, $copySource, $requestHeaders = null)
 	{
@@ -173,7 +173,7 @@ class JAmazons3OperationsObjectsPut extends JAmazons3OperationsObjects
 	 *
 	 * @return string  The response body
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function initiateMultipartUpload($bucket, $object, $requestHeaders = null)
 	{
@@ -218,7 +218,7 @@ class JAmazons3OperationsObjectsPut extends JAmazons3OperationsObjects
 	 *
 	 * @return string  The response body
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function uploadPart($bucket, $object, $partNumber, $uploadId, $requestHeaders = null)
 	{
@@ -265,7 +265,7 @@ class JAmazons3OperationsObjectsPut extends JAmazons3OperationsObjects
 	 *
 	 * @return string  The response body
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function uploadPartCopy($bucket, $object, $partNumber, $uploadId, $requestHeaders = null)
 	{
@@ -309,7 +309,7 @@ class JAmazons3OperationsObjectsPut extends JAmazons3OperationsObjects
 	 *
 	 * @return string  The response body
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function completeMultipartUpload($bucket, $object, $uploadId, $parts)
 	{

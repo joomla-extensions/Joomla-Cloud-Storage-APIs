@@ -14,37 +14,37 @@ defined('JPATH_PLATFORM') or die;
  *
  * @package     Joomla.Platform
  * @subpackage  Googlecloudstorage
- * @since       ??.?
+ * @since       1.0
  */
 class JGooglecloudstorage
 {
 	/**
 	 * @var    JRegistry  Options for the Googlecloudstorage object.
-	 * @since  ??.?
+	 * @since  1.0
 	 */
 	protected $options;
 
 	/**
 	 * @var    JHttp  The HTTP client object to use in sending HTTP requests.
-	 * @since  ??.?
+	 * @since  1.0
 	 */
 	protected $client;
 
 	/**
 	 * @var    JGooglecloudstorageService  Googlecloudstorage API object for Service.
-	 * @since  ??.?
+	 * @since  1.0
 	 */
 	protected $service;
 
 	/**
 	 * @var    JGooglecloudstorageBuckets  Googlecloudstorage API object for Buckets.
-	 * @since  ??.?
+	 * @since  1.0
 	 */
 	protected $buckets;
 
 	/**
 	 * @var    JGooglecloudstorageObjects  Googlecloudstorage API object for Objects.
-	 * @since  ??.?
+	 * @since  1.0
 	 */
 	protected $objects;
 
@@ -54,7 +54,7 @@ class JGooglecloudstorage
 	 * @param   JRegistry  $options  Googlecloudstorage options object.
 	 * @param   JHttp      $client   The HTTP client object.
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function __construct(JRegistry $options = null, JHttp $client = null)
 	{
@@ -78,7 +78,7 @@ class JGooglecloudstorage
 	 *
 	 * @return  JGooglecloudstorageObject  Googlecloudstorage API object
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 * @throws  InvalidArgumentException
 	 */
 	public function __get($name)
@@ -107,7 +107,7 @@ class JGooglecloudstorage
 	 *
 	 * @return  mixed  The option value.
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function getOption($key)
 	{
@@ -122,7 +122,7 @@ class JGooglecloudstorage
 	 *
 	 * @return  JGooglecloudstorage  This object for method chaining.
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function setOption($key, $value)
 	{

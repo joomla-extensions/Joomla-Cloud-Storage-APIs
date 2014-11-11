@@ -14,42 +14,42 @@ defined('JPATH_PLATFORM') or die;
  *
  * @package     Joomla.Platform
  * @subpackage  Googlecloudstorage
- * @since       ??.?
+ * @since       1.0
  */
 class JGooglecloudstorageObjects extends JGooglecloudstorageObject
 {
 	/**
 	 * @var    JGooglecloudstorageObjectsGet  Googlecloudstorage API object for
 	 *                                        GET operations on objects.
-	 * @since  ??.?
+	 * @since  1.0
 	 */
 	protected $get;
 
 	/**
 	 * @var    JGooglecloudstorageObjectsHead  Googlecloudstorage API object for
 	 *                                         HEAD operations on objects.
-	 * @since  ??.?
+	 * @since  1.0
 	 */
 	protected $head;
 
 	/**
 	 * @var    JGooglecloudstorageObjectsPut  Googlecloudstorage API object for
 	 *                                        PUT operations on objects.
-	 * @since  ??.?
+	 * @since  1.0
 	 */
 	protected $put;
 
 	/**
 	 * @var    JGooglecloudstorageObjectsPost  Googlecloudstorage API object for
 	 *                                         POST operations on objects.
-	 * @since  ??.?
+	 * @since  1.0
 	 */
 	protected $post;
 
 	/**
 	 * @var    JGooglecloudstorageObjectsDelete  Googlecloudstorage API object for
 	 *                                           DELETE operations on objects.
-	 * @since  ??.?
+	 * @since  1.0
 	 */
 	protected $delete;
 
@@ -60,7 +60,7 @@ class JGooglecloudstorageObjects extends JGooglecloudstorageObject
 	 *
 	 * @return  JGooglecloudstorageObject  Googlecloudstorage API object
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 * @throws  InvalidArgumentException
 	 */
 	public function __get($name)

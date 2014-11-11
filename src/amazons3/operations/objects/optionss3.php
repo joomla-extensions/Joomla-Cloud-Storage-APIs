@@ -14,7 +14,7 @@ defined('JPATH_PLATFORM') or die;
  *
  * @package     Joomla.Platform
  * @subpackage  Amazons3
- * @since       ??.?
+ * @since       1.0
  */
 class JAmazons3OperationsObjectsOptionss3 extends JAmazons3OperationsObjects
 {
@@ -28,7 +28,7 @@ class JAmazons3OperationsObjectsOptionss3 extends JAmazons3OperationsObjects
 	 *
 	 * @return string  The response body
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function optionsObject($bucket, $objectName, $requestHeaders)
 	{

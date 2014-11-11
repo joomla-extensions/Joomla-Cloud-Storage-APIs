@@ -14,19 +14,19 @@ defined('JPATH_PLATFORM') or die;
  *
  * @package     Joomla.Platform
  * @subpackage  Googlecloudstorage
- * @since       ??.?
+ * @since       1.0
  */
 abstract class JGooglecloudstorageObject
 {
 	/**
 	 * @var    JRegistry  Options for the Googlecloudstorage object.
-	 * @since  ??.?
+	 * @since  1.0
 	 */
 	protected $options;
 
 	/**
 	 * @var    JHttp  The HTTP client object to use in sending HTTP requests.
-	 * @since  ??.?
+	 * @since  1.0
 	 */
 	protected $client;
 
@@ -36,7 +36,7 @@ abstract class JGooglecloudstorageObject
 	 * @param   JRegistry  $options  Googlecloudstorage options object.
 	 * @param   JHttp      $client   The HTTP client object.
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function __construct(JRegistry $options = null, JHttp $client = null)
 	{
@@ -52,7 +52,7 @@ abstract class JGooglecloudstorageObject
 	 *
 	 * @return string  The response body
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function commonGetOperations($url, $headers)
 	{
@@ -298,7 +298,7 @@ abstract class JGooglecloudstorageObject
 	 *
 	 * @return string  The authorization request header
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function getAuthorization($scope, $prn = null)
 	{

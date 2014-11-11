@@ -3,7 +3,7 @@
  * @package     Joomla.Platform
  * @subpackage  Amazons3
  *
- * @copyright   Copyright (C) 2005 - 2013 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2014 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE
  */
 
@@ -16,7 +16,7 @@ use Joomla\Registry\Registry;
  *
  * @package     Joomla.Platform
  * @subpackage  Amazons3
- * @since       ??.?
+ * @since       1.0
  */
 class JAmazons3Http extends JHttp
 {
@@ -26,7 +26,7 @@ class JAmazons3Http extends JHttp
 	 * @param   Registry        $options    Client options object.
 	 * @param   JHttpTransport  $transport  The HTTP transport object.
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function __construct(Registry $options = null, JHttpTransport $transport = null)
 	{

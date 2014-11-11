@@ -14,7 +14,7 @@ defined('JPATH_PLATFORM') or die;
  *
  * @package     Joomla.Platform
  * @subpackage  Googlecloudstorage
- * @since       ??.?
+ * @since       1.0
  */
 class JGooglecloudstorageObjectsDelete extends JGooglecloudstorageObjects
 {
@@ -28,7 +28,7 @@ class JGooglecloudstorageObjectsDelete extends JGooglecloudstorageObjects
 	 *
 	 * @return string  The response body
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function deleteObject($bucket, $object, $generation = null, $ifGenerationMatch = null)
 	{

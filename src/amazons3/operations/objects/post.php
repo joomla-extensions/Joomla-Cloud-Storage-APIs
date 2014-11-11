@@ -14,7 +14,7 @@ defined('JPATH_PLATFORM') or die;
  *
  * @package     Joomla.Platform
  * @subpackage  Amazons3
- * @since       ??.?
+ * @since       1.0
  */
 class JAmazons3OperationsObjectsPost extends JAmazons3OperationsObjects
 {
@@ -31,7 +31,7 @@ class JAmazons3OperationsObjectsPost extends JAmazons3OperationsObjects
 	 *
 	 * @return string  The response body
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function deleteMultipleObjects($bucket, $objects, $quiet = false, $serialNr = null, $tokenCode = null)
 	{
@@ -98,7 +98,7 @@ class JAmazons3OperationsObjectsPost extends JAmazons3OperationsObjects
 	 *
 	 * @return string  The response body
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function postObject($bucket, $fields)
 	{
@@ -140,7 +140,7 @@ class JAmazons3OperationsObjectsPost extends JAmazons3OperationsObjects
 	 *
 	 * @return string  The response body
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function postObjectRestore($bucket, $object, $days)
 	{

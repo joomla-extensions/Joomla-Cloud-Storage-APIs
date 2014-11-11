@@ -3,7 +3,7 @@
  * @package     Joomla.Platform
  * @subpackage  Amazons3
  *
- * @copyright   Copyright (C) 2005 - 2013 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2014 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE
  */
 
@@ -16,37 +16,37 @@ use Joomla\Registry\Registry;
  *
  * @package     Joomla.Platform
  * @subpackage  Amazons3
- * @since       ??.?
+ * @since       1.0
  */
 class JAmazons3
 {
 	/**
 	 * @var    Registry  Options for the Amazons3 object.
-	 * @since  ??.?
+	 * @since  1.0
 	 */
 	protected $options;
 
 	/**
 	 * @var    JAmazons3Http  The HTTP client object to use in sending HTTP requests.
-	 * @since  ??.?
+	 * @since  1.0
 	 */
 	protected $client;
 
 	/**
 	 * @var    JAmazons3OperationsService  Amazons3 API object for Service.
-	 * @since  ??.?
+	 * @since  1.0
 	 */
 	protected $service;
 
 	/**
 	 * @var    JAmazons3OperationsBuckets  Amazons3 API object for Buckets.
-	 * @since  ??.?
+	 * @since  1.0
 	 */
 	protected $buckets;
 
 	/**
 	 * @var    JAmazons3OperationsObjects  Amazons3 API object for Objects.
-	 * @since  ??.?
+	 * @since  1.0
 	 */
 	protected $objects;
 
@@ -56,7 +56,7 @@ class JAmazons3
 	 * @param   Registry       $options  Amazons3 options object. Should include api.accessKeyId and api.secretAccessKey
 	 * @param   JAmazons3Http  $client   The HTTP client object.
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function __construct(Registry $options = null, JAmazons3Http $client = null)
 	{
@@ -74,7 +74,7 @@ class JAmazons3
 	 *
 	 * @return  JAmazons3Object  Amazons3 API object
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 * @throws  InvalidArgumentException
 	 */
 	public function __get($name)
@@ -103,7 +103,7 @@ class JAmazons3
 	 *
 	 * @return  mixed  The option value.
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function getOption($key)
 	{
@@ -118,7 +118,7 @@ class JAmazons3
 	 *
 	 * @return  JAmazons3  This object for method chaining.
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function setOption($key, $value)
 	{

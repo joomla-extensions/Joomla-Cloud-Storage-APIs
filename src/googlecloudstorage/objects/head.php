@@ -14,7 +14,7 @@ defined('JPATH_PLATFORM') or die;
  *
  * @package     Joomla.Platform
  * @subpackage  Googlecloudstorage
- * @since       ??.?
+ * @since       1.0
  */
 class JGooglecloudstorageObjectsHead extends JGooglecloudstorageObjects
 {
@@ -29,7 +29,7 @@ class JGooglecloudstorageObjectsHead extends JGooglecloudstorageObjects
 	 *
 	 * @return string  The response body
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function headObject($bucket, $object, $generation = null, $optionalHeaders = null)
 	{

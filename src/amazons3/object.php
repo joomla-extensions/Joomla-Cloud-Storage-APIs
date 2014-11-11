@@ -3,7 +3,7 @@
  * @package     Joomla.Platform
  * @subpackage  Amazons3
  *
- * @copyright   Copyright (C) 2005 - 2013 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2014 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE
  */
 
@@ -16,19 +16,19 @@ use Joomla\Registry\Registry;
  *
  * @package     Joomla.Platform
  * @subpackage  Amazons3
- * @since       ??.?
+ * @since       1.0
  */
 abstract class JAmazons3Object
 {
 	/**
 	 * @var    Registry  Options for the Amazons3 object.
-	 * @since  ??.?
+	 * @since  1.0
 	 */
 	protected $options;
 
 	/**
 	 * @var    JAmazons3Http  The HTTP client object to use in sending HTTP requests.
-	 * @since  ??.?
+	 * @since  1.0
 	 */
 	protected $client;
 
@@ -38,7 +38,7 @@ abstract class JAmazons3Object
 	 * @param   Registry       $options  Amazons3 options object.
 	 * @param   JAmazons3Http  $client   The HTTP client object.
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function __construct(Registry $options = null, JAmazons3Http $client = null)
 	{
@@ -54,7 +54,7 @@ abstract class JAmazons3Object
 	 *
 	 * @return string  The response body
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function commonGetOperations($url, $headers = null)
 	{
@@ -86,7 +86,7 @@ abstract class JAmazons3Object
 	 *
 	 * @return string  The response body
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function commonDeleteOperations($url, $headers = null)
 	{
@@ -159,7 +159,7 @@ abstract class JAmazons3Object
 	 *
 	 * @return string The Authorization request header
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function createAuthorization($httpVerb, $url, $headers)
 	{
@@ -209,7 +209,7 @@ abstract class JAmazons3Object
 	 *
 	 * @return	string	The canonicalized amz headers
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function createCanonicalizedAmzHeaders($headers)
 	{
@@ -264,7 +264,7 @@ abstract class JAmazons3Object
 	 *
 	 * @return	string	The canonicalized resource
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function createCanonicalizedResource($url)
 	{
@@ -324,7 +324,7 @@ abstract class JAmazons3Object
 	 *
 	 * @return	string	The canonicalized resource
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function filterValidSubresources($parameters)
 	{

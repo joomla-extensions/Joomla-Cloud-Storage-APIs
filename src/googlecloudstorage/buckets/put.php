@@ -14,7 +14,7 @@ defined('JPATH_PLATFORM') or die;
  *
  * @package     Joomla.Platform
  * @subpackage  Googlecloudstorage
- * @since       ??.?
+ * @since       1.0
  */
 class JGooglecloudstorageBucketsPut extends JGooglecloudstorageBuckets
 {
@@ -27,7 +27,7 @@ class JGooglecloudstorageBucketsPut extends JGooglecloudstorageBuckets
 	 *
 	 * @return string  The response body
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function putBucket($bucket, $bucketLocation = null, $predefinedAcl = null)
 	{
@@ -76,7 +76,7 @@ class JGooglecloudstorageBucketsPut extends JGooglecloudstorageBuckets
 	 *
 	 * @return string  The response body
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function putBucketAcl($bucket, $acl)
 	{
@@ -155,7 +155,7 @@ class JGooglecloudstorageBucketsPut extends JGooglecloudstorageBuckets
 	 *
 	 * @return string  The response body
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function putBucketCors($bucket, $cors = null)
 	{
@@ -238,7 +238,7 @@ class JGooglecloudstorageBucketsPut extends JGooglecloudstorageBuckets
 	 *
 	 * @return string  The response body
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function putBucketLifecycle($bucket, $lifecycle = null)
 	{
@@ -305,7 +305,7 @@ class JGooglecloudstorageBucketsPut extends JGooglecloudstorageBuckets
 	 *
 	 * @return string  The response body
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function putBucketLogging($bucket, $logBucket, $logObjectPrefix = null)
 	{
@@ -354,7 +354,7 @@ class JGooglecloudstorageBucketsPut extends JGooglecloudstorageBuckets
 	 *
 	 * @return string  The response body
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function putBucketVersioning($bucket, $status)
 	{
@@ -417,7 +417,7 @@ class JGooglecloudstorageBucketsPut extends JGooglecloudstorageBuckets
 	 *
 	 * @return string  The response body
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function putBucketWebsiteConfig($bucket, $mainPageSuffix = null, $notFoundPage = null)
 	{

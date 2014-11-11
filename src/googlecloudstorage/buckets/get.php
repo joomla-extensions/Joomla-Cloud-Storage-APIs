@@ -14,7 +14,7 @@ defined('JPATH_PLATFORM') or die;
  *
  * @package     Joomla.Platform
  * @subpackage  Googlecloudstorage
- * @since       ??.?
+ * @since       1.0
  */
 class JGooglecloudstorageBucketsGet extends JGooglecloudstorageBuckets
 {
@@ -27,7 +27,7 @@ class JGooglecloudstorageBucketsGet extends JGooglecloudstorageBuckets
 	 *
 	 * @return string  The response body
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function getBucket($bucket, $parameters = null)
 	{
@@ -60,7 +60,7 @@ class JGooglecloudstorageBucketsGet extends JGooglecloudstorageBuckets
 	 *
 	 * @return string  The response body
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function getBucketAcl($bucket)
 	{
@@ -82,7 +82,7 @@ class JGooglecloudstorageBucketsGet extends JGooglecloudstorageBuckets
 	 *
 	 * @return string  The response body
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function getBucketCors($bucket)
 	{
@@ -103,7 +103,7 @@ class JGooglecloudstorageBucketsGet extends JGooglecloudstorageBuckets
 	 *
 	 * @return string  The response body
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function getBucketLifecycle($bucket)
 	{
@@ -124,7 +124,7 @@ class JGooglecloudstorageBucketsGet extends JGooglecloudstorageBuckets
 	 *
 	 * @return string  The response body
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function getBucketLogging($bucket)
 	{
@@ -145,7 +145,7 @@ class JGooglecloudstorageBucketsGet extends JGooglecloudstorageBuckets
 	 *
 	 * @return string  The response body
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function getBucketVersioning($bucket)
 	{

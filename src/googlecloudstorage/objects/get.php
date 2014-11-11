@@ -14,7 +14,7 @@ defined('JPATH_PLATFORM') or die;
  *
  * @package     Joomla.Platform
  * @subpackage  Googlecloudstorage
- * @since       ??.?
+ * @since       1.0
  */
 class JGooglecloudstorageObjectsGet extends JGooglecloudstorageObjects
 {
@@ -28,7 +28,7 @@ class JGooglecloudstorageObjectsGet extends JGooglecloudstorageObjects
 	 *
 	 * @return string  The response body
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function getObject($bucket, $object, $generation = null, $optionalHeaders = null)
 	{
@@ -63,7 +63,7 @@ class JGooglecloudstorageObjectsGet extends JGooglecloudstorageObjects
 	 *
 	 * @return string  The response body
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function getObjectAcl($bucket, $object)
 	{

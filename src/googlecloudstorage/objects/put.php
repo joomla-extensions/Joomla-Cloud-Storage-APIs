@@ -14,7 +14,7 @@ defined('JPATH_PLATFORM') or die;
  *
  * @package     Joomla.Platform
  * @subpackage  Googlecloudstorage
- * @since       ??.?
+ * @since       1.0
  */
 class JGooglecloudstorageObjectsPut extends JGooglecloudstorageObjects
 {
@@ -28,7 +28,7 @@ class JGooglecloudstorageObjectsPut extends JGooglecloudstorageObjects
 	 *
 	 * @return string  The response body
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function putObject($bucket, $object, $content = "", $optionalHeaders = null)
 	{
@@ -73,7 +73,7 @@ class JGooglecloudstorageObjectsPut extends JGooglecloudstorageObjects
 	 *
 	 * @return string  The response body
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function putObjectCopy($bucket, $object, $copySource, $optionalHeaders = null)
 	{
@@ -123,7 +123,7 @@ class JGooglecloudstorageObjectsPut extends JGooglecloudstorageObjects
 	 *
 	 * @return string  The response body
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function putObjectAcl($bucket, $object, $acl, $parameters = null, $optionalHeaders = null)
 	{

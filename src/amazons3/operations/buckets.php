@@ -14,31 +14,31 @@ defined('JPATH_PLATFORM') or die;
  *
  * @package     Joomla.Platform
  * @subpackage  Amazons3
- * @since       ??.?
+ * @since       1.0
  */
 class JAmazons3OperationsBuckets extends JAmazons3Object
 {
 	/**
 	 * @var    JAmazons3OperationsBucketsDelete  Amazons3 API object for DELETE operations on buckets.
-	 * @since  ??.?
+	 * @since  1.0
 	 */
 	protected $delete;
 
 	/**
 	 * @var    JAmazons3OperationsBucketsGet  Amazons3 API object for GET operations on buckets.
-	 * @since  ??.?
+	 * @since  1.0
 	 */
 	protected $get;
 
 	/**
 	 * @var    JAmazons3OperationsBucketsGet  Amazons3 API object for HEAD operations on buckets.
-	 * @since  ??.?
+	 * @since  1.0
 	 */
 	protected $head;
 
 	/**
 	 * @var    JAmazons3OperationsBucketsPut  Amazons3 API object for PUT operations on buckets.
-	 * @since  ??.?
+	 * @since  1.0
 	 */
 	protected $put;
 
@@ -49,7 +49,7 @@ class JAmazons3OperationsBuckets extends JAmazons3Object
 	 *
 	 * @return  JAmazons3Object  Amazons3 API object
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 * @throws  InvalidArgumentException
 	 */
 	public function __get($name)

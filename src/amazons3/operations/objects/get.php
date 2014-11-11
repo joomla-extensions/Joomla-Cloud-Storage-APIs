@@ -14,7 +14,7 @@ defined('JPATH_PLATFORM') or die;
  *
  * @package     Joomla.Platform
  * @subpackage  Amazons3
- * @since       ??.?
+ * @since       1.0
  */
 class JAmazons3OperationsObjectsGet extends JAmazons3OperationsObjects
 {
@@ -28,7 +28,7 @@ class JAmazons3OperationsObjectsGet extends JAmazons3OperationsObjects
 	 *
 	 * @return string  The response body
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function getObject($bucket, $objectName, $versionId = null, $range = null)
 	{
@@ -65,7 +65,7 @@ class JAmazons3OperationsObjectsGet extends JAmazons3OperationsObjects
 	 *
 	 * @return string  The response body
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function getObjectAcl($bucket, $objectName, $versionId = null, $range = null)
 	{
@@ -104,7 +104,7 @@ class JAmazons3OperationsObjectsGet extends JAmazons3OperationsObjects
 	 *
 	 * @return string  The response body
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function getObjectTorrent($bucket, $objectName)
 	{
@@ -126,7 +126,7 @@ class JAmazons3OperationsObjectsGet extends JAmazons3OperationsObjects
 	 *
 	 * @return string  The response body
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function listParts($bucket, $objectName, $parameters)
 	{

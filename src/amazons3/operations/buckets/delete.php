@@ -14,7 +14,7 @@ defined('JPATH_PLATFORM') or die;
  *
  * @package     Joomla.Platform
  * @subpackage  Amazons3
- * @since       ??.?
+ * @since       1.0
  */
 class JAmazons3OperationsBucketsDelete extends JAmazons3OperationsBuckets
 {
@@ -25,7 +25,7 @@ class JAmazons3OperationsBucketsDelete extends JAmazons3OperationsBuckets
 	 *
 	 * @return string  The response body
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function deleteBucket($bucket)
 	{
@@ -44,7 +44,7 @@ class JAmazons3OperationsBucketsDelete extends JAmazons3OperationsBuckets
 	 *
 	 * @return string  The response body
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function deleteBucketCors($bucket)
 	{
@@ -63,7 +63,7 @@ class JAmazons3OperationsBucketsDelete extends JAmazons3OperationsBuckets
 	 *
 	 * @return string  The response body
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function deleteBucketLifecycle($bucket)
 	{
@@ -83,7 +83,7 @@ class JAmazons3OperationsBucketsDelete extends JAmazons3OperationsBuckets
 	 *
 	 * @return string  The response body
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function deleteBucketPolicy($bucket)
 	{
@@ -103,7 +103,7 @@ class JAmazons3OperationsBucketsDelete extends JAmazons3OperationsBuckets
 	 *
 	 * @return string  The response body
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function deleteBucketTagging($bucket)
 	{
@@ -122,7 +122,7 @@ class JAmazons3OperationsBucketsDelete extends JAmazons3OperationsBuckets
 	 *
 	 * @return string  The response body
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function deleteBucketWebsite($bucket)
 	{

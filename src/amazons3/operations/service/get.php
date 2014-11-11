@@ -14,7 +14,7 @@ defined('JPATH_PLATFORM') or die;
  *
  * @package     Joomla.Platform
  * @subpackage  Amazons3
- * @since       ??.?
+ * @since       1.0
  */
 class JAmazons3OperationsServiceGet extends JAmazons3OperationsService
 {
@@ -23,7 +23,7 @@ class JAmazons3OperationsServiceGet extends JAmazons3OperationsService
 	 *
 	 * @return string  The response body
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function getService()
 	{

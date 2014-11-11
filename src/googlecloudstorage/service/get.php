@@ -14,7 +14,7 @@ defined('JPATH_PLATFORM') or die;
  *
  * @package     Joomla.Platform
  * @subpackage  Googlecloudstorage
- * @since       ??.?
+ * @since       1.0
  */
 class JGooglecloudstorageServiceGet extends JGooglecloudstorageService
 {
@@ -23,7 +23,7 @@ class JGooglecloudstorageServiceGet extends JGooglecloudstorageService
 	 *
 	 * @return string  The response body
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function getService()
 	{

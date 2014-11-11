@@ -14,7 +14,7 @@ defined('JPATH_PLATFORM') or die;
  *
  * @package     Joomla.Platform
  * @subpackage  Amazons3
- * @since       ??.?
+ * @since       1.0
  */
 class JAmazons3OperationsBucketsHead extends JAmazons3OperationsBuckets
 {
@@ -25,7 +25,7 @@ class JAmazons3OperationsBucketsHead extends JAmazons3OperationsBuckets
 	 *
 	 * @return string  The response body
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function headBucket($bucket)
 	{

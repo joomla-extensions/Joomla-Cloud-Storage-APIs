@@ -14,7 +14,7 @@ defined('JPATH_PLATFORM') or die;
  *
  * @package     Joomla.Platform
  * @subpackage  Amazons3
- * @since       ??.?
+ * @since       1.0
  */
 class JAmazons3OperationsBucketsPut extends JAmazons3OperationsBuckets
 {
@@ -28,7 +28,7 @@ class JAmazons3OperationsBucketsPut extends JAmazons3OperationsBuckets
 	 *
 	 * @return string  The response body
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function putBucket($bucket, $bucketRegion = "", $acl = null)
 	{
@@ -89,7 +89,7 @@ class JAmazons3OperationsBucketsPut extends JAmazons3OperationsBuckets
 	 *
 	 * @return string  The response body
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function putBucketAcl($bucket, $acl = null)
 	{
@@ -136,7 +136,7 @@ class JAmazons3OperationsBucketsPut extends JAmazons3OperationsBuckets
 	 *
 	 * @return string  The response body
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function putBucketCors($bucket, $rules = null)
 	{
@@ -210,7 +210,7 @@ class JAmazons3OperationsBucketsPut extends JAmazons3OperationsBuckets
 	 *
 	 * @return string  The response body
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function putBucketLifecycle($bucket, $rules = null)
 	{
@@ -286,7 +286,7 @@ class JAmazons3OperationsBucketsPut extends JAmazons3OperationsBuckets
 	 *
 	 * @return string  The response body
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function putBucketPolicy($bucket, $policy = null)
 	{
@@ -329,7 +329,7 @@ class JAmazons3OperationsBucketsPut extends JAmazons3OperationsBuckets
 	 *
 	 * @return string  The response body
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function putBucketLogging($bucket, $logging = null)
 	{
@@ -441,7 +441,7 @@ class JAmazons3OperationsBucketsPut extends JAmazons3OperationsBuckets
 	 *
 	 * @return string  The response body
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function putBucketNotification($bucket, $notification = null)
 	{
@@ -499,7 +499,7 @@ class JAmazons3OperationsBucketsPut extends JAmazons3OperationsBuckets
 	 *
 	 * @return string  The response body
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function putBucketTagging($bucket, $tags = null)
 	{
@@ -560,7 +560,7 @@ class JAmazons3OperationsBucketsPut extends JAmazons3OperationsBuckets
 	 *
 	 * @return string  The response body
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function putBucketRequestPayment($bucket, $payer)
 	{
@@ -600,7 +600,7 @@ class JAmazons3OperationsBucketsPut extends JAmazons3OperationsBuckets
 	 *
 	 * @return string  The response body
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function putBucketVersioning($bucket, $versioning, $serialNr = null, $tokenCode = null)
 	{
@@ -652,7 +652,7 @@ class JAmazons3OperationsBucketsPut extends JAmazons3OperationsBuckets
 	 *
 	 * @return string  The response body
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function putBucketWebsite($bucket, $website)
 	{

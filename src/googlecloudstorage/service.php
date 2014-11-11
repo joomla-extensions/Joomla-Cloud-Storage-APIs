@@ -14,14 +14,14 @@ defined('JPATH_PLATFORM') or die;
  *
  * @package     Joomla.Platform
  * @subpackage  Googlecloudstorage
- * @since       ??.?
+ * @since       1.0
  */
 class JGooglecloudstorageService extends JGooglecloudstorageObject
 {
 	/**
 	 * @var    JGooglecloudstorageServiceGet  Googlecloudstorage API object for
 	 *                                        GET operations on the service.
-	 * @since  ??.?
+	 * @since  1.0
 	 */
 	protected $get;
 
@@ -32,7 +32,7 @@ class JGooglecloudstorageService extends JGooglecloudstorageObject
 	 *
 	 * @return  JGooglecloudstorageObject  Googlecloudstorage API object
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 * @throws  InvalidArgumentException
 	 */
 	public function __get($name)

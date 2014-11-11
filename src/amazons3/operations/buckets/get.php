@@ -14,7 +14,7 @@ defined('JPATH_PLATFORM') or die;
  *
  * @package     Joomla.Platform
  * @subpackage  Amazons3
- * @since       ??.?
+ * @since       1.0
  */
 class JAmazons3OperationsBucketsGet extends JAmazons3OperationsBuckets
 {
@@ -25,7 +25,7 @@ class JAmazons3OperationsBucketsGet extends JAmazons3OperationsBuckets
 	 *
 	 * @return string  The response body
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function getBucket($bucket)
 	{
@@ -44,7 +44,7 @@ class JAmazons3OperationsBucketsGet extends JAmazons3OperationsBuckets
 	 *
 	 * @return string  The response body
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function getBucketAcl($bucket)
 	{
@@ -64,7 +64,7 @@ class JAmazons3OperationsBucketsGet extends JAmazons3OperationsBuckets
 	 *
 	 * @return string  The response body
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function getBucketCors($bucket)
 	{
@@ -83,7 +83,7 @@ class JAmazons3OperationsBucketsGet extends JAmazons3OperationsBuckets
 	 *
 	 * @return string  The response body
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function getBucketLifecycle($bucket)
 	{
@@ -102,7 +102,7 @@ class JAmazons3OperationsBucketsGet extends JAmazons3OperationsBuckets
 	 *
 	 * @return string  The response body
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function getBucketPolicy($bucket)
 	{
@@ -121,7 +121,7 @@ class JAmazons3OperationsBucketsGet extends JAmazons3OperationsBuckets
 	 *
 	 * @return string  The response body
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function getBucketLocation($bucket)
 	{
@@ -140,7 +140,7 @@ class JAmazons3OperationsBucketsGet extends JAmazons3OperationsBuckets
 	 *
 	 * @return string  The response body
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function getBucketLogging($bucket)
 	{
@@ -159,7 +159,7 @@ class JAmazons3OperationsBucketsGet extends JAmazons3OperationsBuckets
 	 *
 	 * @return string  The response body
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function getBucketNotification($bucket)
 	{
@@ -178,7 +178,7 @@ class JAmazons3OperationsBucketsGet extends JAmazons3OperationsBuckets
 	 *
 	 * @return string  The response body
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function getBucketTagging($bucket)
 	{
@@ -198,7 +198,7 @@ class JAmazons3OperationsBucketsGet extends JAmazons3OperationsBuckets
 	 *
 	 * @return string  The response body
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function getBucketVersions($bucket)
 	{
@@ -218,7 +218,7 @@ class JAmazons3OperationsBucketsGet extends JAmazons3OperationsBuckets
 	 *
 	 * @return string  The response body
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function getBucketRequestPayment($bucket)
 	{
@@ -237,7 +237,7 @@ class JAmazons3OperationsBucketsGet extends JAmazons3OperationsBuckets
 	 *
 	 * @return string  The response body
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function getBucketVersioning($bucket)
 	{
@@ -256,7 +256,7 @@ class JAmazons3OperationsBucketsGet extends JAmazons3OperationsBuckets
 	 *
 	 * @return string  The response body
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function getBucketWebsite($bucket)
 	{
@@ -276,7 +276,7 @@ class JAmazons3OperationsBucketsGet extends JAmazons3OperationsBuckets
 	 *
 	 * @return string  The response body
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 */
 	public function listMultipartUploads($bucket)
 	{

@@ -14,13 +14,13 @@ defined('JPATH_PLATFORM') or die;
  *
  * @package     Joomla.Platform
  * @subpackage  Amazons3
- * @since       ??.?
+ * @since       1.0
  */
 class JAmazons3OperationsService extends JAmazons3Object
 {
 	/**
 	 * @var    JAmazons3OperationsServiceGet  Amazons3 API object for GET operations on the service.
-	 * @since  ??.?
+	 * @since  1.0
 	 */
 	protected $get;
 
@@ -31,7 +31,7 @@ class JAmazons3OperationsService extends JAmazons3Object
 	 *
 	 * @return  JAmazons3Object  Amazons3 API object
 	 *
-	 * @since   ??.?
+	 * @since   1.0
 	 * @throws  InvalidArgumentException
 	 */
 	public function __get($name)
