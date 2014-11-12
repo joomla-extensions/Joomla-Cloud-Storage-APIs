@@ -4,7 +4,7 @@
 
 The AmazonS3 package is designed to be a straightforward interface for working with Amazon Simple Storage Service. It is based on the REST API provided by Amazon, which can be found at http://docs.aws.amazon.com/AmazonS3/2006-03-01/API/APIRest.html.
 
-AmazonS3 is built upon the Http package which provides an easy way to consume URLs and web services in a transport independent way.
+AmazonS3 is built upon the HTTP package which provides an easy way to consume URLs and web services in a transport independent way.
 
 #### Instantiating JAmazons3
 
@@ -182,7 +182,6 @@ This operation requires no arguments.
     * `key-marker`
     * `prefix`
     * `upload-id-marker`
-
 
 ##### HEAD Bucket
 
@@ -507,141 +506,37 @@ array(
 
 ##### GET Object
 
-###### buckets->get->getObject
+###### objects->get->getObject
 
-	/**
-	 * Creates the get object request and returns the response
-	 *
-	 * @param   string  $bucket           The bucket name
-	 * @param   string  $object           The object name
-	 * @param   string  $generation       Used for fetching a specific object version
-	 * @param   array   $optionalHeaders  An array of optional headers to be set
-	 *
-	 * @return string  The response body
-	 *
-	 * @since   ??.?
-	 */
-	public function getObject($bucket, $object, $generation = null, $optionalHeaders = null)
+* $bucket - The bucket name
+* $object - The object name
+* $generation - Used for fetching a specific object version
+* $optionalHeaders - An array of optional headers to be set
 
 The `$optionalHeaders` parameter is an array which can contain one or more of the following headers:
 
-- x-goog-if-generation-match
-- If-Match
-- If-Modified-Since
-- If-None-Match
-- If-Unmodified-Since
-- Range
+* x-goog-if-generation-match
+* If-Match
+* If-Modified-Since
+* If-None-Match
+* If-Unmodified-Since
+* Range
 
+###### objects->get->getObjectAcl
 
-###### buckets->get->getObjectAcl
+* $bucket - The bucket name
+* $object - The object name
 
-	/**
-	 * Creates the request for getting an object's acl and returns the response
-	 *
-	 * @param   string  $bucket  The bucket name
-	 * @param   string  $object  The object name
-	 *
-	 * @return string  The response body
-	 *
-	 * @since   ??.?
-	 */
-	public function getObjectAcl($bucket, $object)
+###### objects->get->getObjectTorrent
 
+* $bucket - The bucket name
+* $object - The object name
 
-##### HEAD Object
+###### objects->get->listParts
 
-###### buckets->head->headObject
-
-	/**
-	 * Creates the head request and returns the response
-	 *
-	 * @param   string  $bucket           The bucket name
-	 * @param   string  $object           The object name
-	 * @param   string  $generation       Parameter which can be used if you want
-	 *                                    to fetch a specific object generation
-	 * @param   string  $optionalHeaders  An array of optional headers to be set
-	 *
-	 * @return string  The response body
-	 *
-	 * @since   ??.?
-	 */
-	public function headObject($bucket, $object, $generation = null, $optionalHeaders = null)
-
-The `$optionalHeaders` parameter is an array which can contain one or more of the following headers:
-
-- If-Match
-- If-Modified-Since
-- If-None-Match
-- If-Unmodified-Since
-- Range
-- x-goog-if-generation-match
-- x-goog-if-metageneration-match
-
-
-#### Objects
-
-##### GET Object
-
-###### Objects->get->getObject
-
-	/**
-	 * Creates the request for getting a bucket and returns the response from Amazon
-	 *
-	 * @param   string  $bucket      The bucket name
-	 * @param   string  $objectName  The object name
-	 * @param   string  $versionId   The version id
-	 * @param   string  $range       The range of bytes to be returned
-	 *
-	 * @return string  The response body
-	 *
-	 * @since   ??.?
-	 */
-	public function getObject($bucket, $objectName, $versionId = null, $range = null)
-
-###### Objects->get->getObjectAcl
-
-	/**
-	 * Returns the access control list (ACL) of an object
-	 *
-	 * @param   string  $bucket      The bucket name
-	 * @param   string  $objectName  The object name
-	 * @param   string  $versionId   The version id
-	 * @param   string  $range       The range of bytes to be returned
-	 *
-	 * @return string  The response body
-	 *
-	 * @since   ??.?
-	 */
-	public function getObjectAcl($bucket, $objectName, $versionId = null, $range = null)
-
-###### Objects->get->getObjectTorrent
-
-	/**
-	 * Returns torrent files from a bucket
-	 *
-	 * @param   string  $bucket      The bucket name
-	 * @param   string  $objectName  The object name
-	 *
-	 * @return string  The response body
-	 *
-	 * @since   ??.?
-	 */
-	public function getObjectTorrent($bucket, $objectName)
-
-###### Objects->get->listParts
-
-	/**
-	 * Returns torrent files from a bucket
-	 *
-	 * @param   string  $bucket      The bucket name
-	 * @param   string  $objectName  The object name
-	 * @param   string  $parameters  The upload parameters
-	 *
-	 * @return string  The response body
-	 *
-	 * @since   ??.?
-	 */
-	public function listParts($bucket, $objectName, $parameters)
+* $bucket - The bucket name
+* $object - The object name
+* $parameters - The upload parameters
 
 The `$parameters` parameter can take the following values:
 * `uploadId`
@@ -650,51 +545,34 @@ The `$parameters` parameter can take the following values:
 
 More details can be found at http://docs.aws.amazon.com/AmazonS3/2006-03-01/API/mpUploadListParts.html#mpUploadListParts-requests-request-parameters.
 
-
 ##### HEAD Object
 
-###### Objects->head->headObject
+###### objects->head->headObject
 
-	/**
-	 * The HEAD operation retrieves metadata from an object without returning the object itself.
-	 *
-	 * @param   string  $bucket          The bucket name
-	 * @param   string  $objectName      The object name
-	 * @param   string  $versionId       The object's version ID
-	 * @param   string  $requestHeaders  Additional request headers
-	 *
-	 * @return string  The response body
-	 *
-	 * @since   ??.?
-	 */
-	public function headObject($bucket, $objectName, $versionId = null, $requestHeaders = array())
+* $bucket - The bucket name
+* $object - The object name
+* $generation - Used for fetching a specific object version
+* $optionalHeaders - An array of optional headers to be set
 
-The `$requestHeaders` parameter can take one of the following values:
-* `Range`
-* `If-Modified-Since`
-* `If-Unmodified-Since`
-* `If-Match`
-* `If-None-Match`
+The `$optionalHeaders` parameter is an array which can contain one or more of the following headers:
+
+* If-Match
+* If-Modified-Since
+* If-None-Match
+* If-Unmodified-Since
+* Range
+* x-goog-if-generation-match
+* x-goog-if-metageneration-match
 
 More details can be found at http://docs.aws.amazon.com/AmazonS3/2006-03-01/API/RESTObjectHEAD.html#RESTObjectHEAD-requests-request-headers.
 
 ##### OPTIONSS3 Object
 
-###### Objects->optionss3->optionsObject
+###### objects->optionss3->optionsObject
 
-	/**
-	 * A browser can send this preflight request to Amazon S3 to determine if it can
-	 * send an actual request with the specific origin, HTTP method, and headers.
-	 *
-	 * @param   string  $bucket          The bucket name
-	 * @param   string  $objectName      The object name
-	 * @param   array   $requestHeaders  Additional request headers
-	 *
-	 * @return string  The response body
-	 *
-	 * @since   ??.?
-	 */
-	public function optionsObject($bucket, $objectName, $requestHeaders)
+* $bucket - The bucket name
+* $object - The object name
+* $requestHeaders - Additional request headers
 
 The `$requestHeaders` parameter can take the following values:
 * `Origin`
@@ -703,24 +581,14 @@ The `$requestHeaders` parameter can take the following values:
 
 More details can be found at http://docs.aws.amazon.com/AmazonS3/2006-03-01/API/RESTOPTIONSobject.html#RESTOPTIONSobject-requests-request-headers.
 
-
 ##### PUT Object
 
-###### Objects->put->putObject
+###### objects->put->putObject
 
-	/**
-	 * Adds an object to a bucket
-	 *
-	 * @param   string  $bucket          The bucket name
-	 * @param   string  $object          The object to be added
-	 * @param   string  $content         The content of the object
-	 * @param   array   $requestHeaders  An array of request headers
-	 *
-	 * @return string  The response body
-	 *
-	 * @since   ??.?
-	 */
-	public function putObject($bucket, $object, $content = "", $requestHeaders = null)
+* $bucket - The bucket name
+* $object - The object name
+* $content - The content of the object
+* $requestHeaders - An array of request headers
 
 The `$requestHeaders` parameter can take the following values:
 * `Expect`
@@ -730,6 +598,12 @@ The `$requestHeaders` parameter can take the following values:
 * `x-amz-storage-class`
 * `x-amz-website-redirect-location`
 
+###### objects->put->putObjectAcl
+
+* $bucket - The bucket name
+* $object - The object name
+* $acl - An array containing the ACL permissions (either canned or explicitly specified)
+
 The `$acl` parameter can specify canned ACL permissions:
 * `private`
 * `public-read`
@@ -738,9 +612,9 @@ The `$acl` parameter can specify canned ACL permissions:
 * `log-delivery-write`
 
 You can also set explicit ACL permissions. You specify each grantee as a type=value pair, where the type can be one of the following:
-* `emailAddress` â€” if value specified is the email address of an AWS account
-* `id` â€” if value specified is the canonical User ID of an AWS account
-* `uri` â€” if granting permission to a predefined Amazon S3 group
+* `emailAddress` if value specified is the email address of an AWS account
+* `id` if value specified is the canonical User ID of an AWS account
+* `uri` if granting permission to a predefined Amazon S3 group
 
 Valid values for the explicit ACL permissions are:
 * `read`
@@ -751,82 +625,24 @@ Valid values for the explicit ACL permissions are:
 
 A good example for the `$acl` parameter would be:
 
-	array(
-		"read" => "uri=\"http://acs.amazonaws.com/groups/global/AuthenticatedUsers\"",
-		"write-acp" => "emailAddress=\"alex.ukf@gmail.com\"",
-		"full-control" => "id=\"6e887773574284f7e38cacbac9e1455ecce62f79929260e9b68db3b84720ed96\""
-	)
-
-More details about request headers and ACL permissions can be found at http://docs.aws.amazon.com/AmazonS3/2006-03-01/API/RESTObjectPUT.html#RESTObjectPUT-requests-request-headers.
-
-Additional details about canned ACL permissions can be found at http://docs.aws.amazon.com/AmazonS3/latest/dev/ACLOverview.html#CannedACL.
-
-
-###### Objects->put->putObjectAcl
-
-	/**
-	 * Creates the request for setting the permissions on an existing bucket
-	 * using access control lists (ACL)
-	 *
-	 * @param   string  $bucket  The bucket name
-	 * @param   string  $object  The object name
-	 * @param   string  $acl     An array containing the ACL permissions
-	 *                           (either canned or explicitly specified)
-	 *
-	 * @return string  The response body
-	 *
-	 * @since   ??.?
-	 */
-	public function putObjectAcl($bucket, $object, $acl = null)
-
-The `$acl` parameter can specify canned ACL permissions:
-* `private`
-* `public-read`
-* `public-read-write`
-* `authenticated-read`
-* `log-delivery-write`
-
-You can also set explicit ACL permissions. You specify each grantee as a type=value pair, where the type can be one of the following:
-* `emailAddress` â€” if value specified is the email address of an AWS account
-* `id` â€” if value specified is the canonical User ID of an AWS account
-* `uri` â€” if granting permission to a predefined Amazon S3 group
-
-Valid values for the explicit ACL permissions are:
-* `read`
-* `write`
-* `read-acp`
-* `write-acp`
-* `full-control` 
-
-A good example for the `$acl` parameter would be:
-
-	array(
-		"read" => "uri=\"http://acs.amazonaws.com/groups/global/AuthenticatedUsers\"",
-		"write-acp" => "emailAddress=\"alex.ukf@gmail.com\"",
-		"full-control" => "id=\"6e887773574284f7e38cacbac9e1455ecce62f79929260e9b68db3b84720ed96\""
-	)
+```php
+array(
+	"read" => "uri=\"http://acs.amazonaws.com/groups/global/AuthenticatedUsers\"",
+	"write-acp" => "emailAddress=\"alex.ukf@gmail.com\"",
+	"full-control" => "id=\"6e887773574284f7e38cacbac9e1455ecce62f79929260e9b68db3b84720ed96\""
+)
+```
 
 More details about request headers and ACL permissions can be found at http://docs.aws.amazon.com/AmazonS3/2006-03-01/API/RESTObjectPUTacl.html#RESTObjectPUTacl-requests-request-headers.
 
 Additional details about canned ACL permissions can be found at http://docs.aws.amazon.com/AmazonS3/latest/dev/ACLOverview.html#CannedACL.
 
+###### objects->put->putObjectCopy
 
-###### Objects->put->putObjectCopy
-
-	/**
-	 * This implementation of the PUT operation creates a copy of an object
-	 * that is already stored in Amazon S3.
-	 *
-	 * @param   string  $bucket          The name of the bucket to copy in
-	 * @param   string  $object          The name of the new file
-	 * @param   string  $copySource      The path to the file to be copied (bucket + object)
-	 * @param   string  $requestHeaders  An array containing request headers
-	 *
-	 * @return string  The response body
-	 *
-	 * @since   ??.?
-	 */
-	public function putObjectCopy($bucket, $object, $copySource, $requestHeaders = null)
+* $bucket - The bucket name
+* $object - The object name
+* $copySource - The path to the file to be copied (bucket + object)
+* $requestHeaders - An array containing request headers
 
 The `$requestHeaders` parameter can take the following values:
 * `x-amz-metadata-directive`
@@ -838,55 +654,12 @@ The `$requestHeaders` parameter can take the following values:
 * `x-amz-storage-class`
 * `x-amz-website-redirect-location`
 
-The `$acl` parameter can specify canned ACL permissions:
-* `private`
-* `public-read`
-* `public-read-write`
-* `authenticated-read`
-* `log-delivery-write`
+###### objects->put->initiateMultipartUpload
 
-You can also set explicit ACL permissions. You specify each grantee as a type=value pair, where the type can be one of the following:
-* `emailAddress` â€” if value specified is the email address of an AWS account
-* `id` â€” if value specified is the canonical User ID of an AWS account
-* `uri` â€” if granting permission to a predefined Amazon S3 group
-
-Valid values for the explicit ACL permissions are:
-* `read`
-* `write`
-* `read-acp`
-* `write-acp`
-* `full-control` 
-
-A good example for the `$acl` parameter would be:
-
-	array(
-		"read" => "uri=\"http://acs.amazonaws.com/groups/global/AuthenticatedUsers\"",
-		"write-acp" => "emailAddress=\"alex.ukf@gmail.com\"",
-		"full-control" => "id=\"6e887773574284f7e38cacbac9e1455ecce62f79929260e9b68db3b84720ed96\""
-	)
-
-
-More details about the request headers and ACL permissions can be found at http://docs.aws.amazon.com/AmazonS3/2006-03-01/API/RESTObjectCOPY.html#RESTObjectCOPY-requests-request-headers.
-
-Additional details about canned ACL permissions can be found at http://docs.aws.amazon.com/AmazonS3/latest/dev/ACLOverview.html#CannedACL.
-
-
-###### Objects->put->initiateMultipartUpload
-
-	/**
-	 * This operation initiates a multipart upload and returns an upload ID
-	 *
-	 * @param   string  $bucket          The name of the bucket to upload to
-	 * @param   string  $object          The name of the uploaded file
-	 * @param   string  $requestHeaders  An array containing request headers
-	 * @param   string  $acl             An array containing the ACL permissions
-	 *                                   (either canned or explicitly specified)
-	 *
-	 * @return string  The response body
-	 *
-	 * @since   ??.?
-	 */
-	public function initiateMultipartUpload($bucket, $object, $requestHeaders = null, $acl = null)
+* $bucket - The bucket name
+* $object - The object name
+* $requestHeaders - An array containing request headers
+* $acl - An array containing the ACL permissions (either canned or explicitly specified)
 
 The `$requestHeaders` parameter can take the following values:
 * `Expires`
@@ -903,9 +676,9 @@ The `$acl` parameter can specify canned ACL permissions:
 * `log-delivery-write`
 
 You can also set explicit ACL permissions. You specify each grantee as a type=value pair, where the type can be one of the following:
-* `emailAddress` â€” if value specified is the email address of an AWS account
-* `id` â€” if value specified is the canonical User ID of an AWS account
-* `uri` â€” if granting permission to a predefined Amazon S3 group
+* `emailAddress` if value specified is the email address of an AWS account
+* `id` if value specified is the canonical User ID of an AWS account
+* `uri` if granting permission to a predefined Amazon S3 group
 
 Valid values for the explicit ACL permissions are:
 * `read`
@@ -916,34 +689,25 @@ Valid values for the explicit ACL permissions are:
 
 A good example for the `$acl` parameter would be:
 
-	array(
-		"read" => "uri=\"http://acs.amazonaws.com/groups/global/AuthenticatedUsers\"",
-		"write-acp" => "emailAddress=\"alex.ukf@gmail.com\"",
-		"full-control" => "id=\"6e887773574284f7e38cacbac9e1455ecce62f79929260e9b68db3b84720ed96\""
-	)
-
+```php
+array(
+	"read" => "uri=\"http://acs.amazonaws.com/groups/global/AuthenticatedUsers\"",
+	"write-acp" => "emailAddress=\"alex.ukf@gmail.com\"",
+	"full-control" => "id=\"6e887773574284f7e38cacbac9e1455ecce62f79929260e9b68db3b84720ed96\""
+)
+```
 
 More details about the request headers and ACL permissions can be found at http://docs.aws.amazon.com/AmazonS3/2006-03-01/API/mpUploadInitiate.html#mpUploadInitiate-requests-request-headers.
 
 Additional details about canned ACL permissions can be found at http://docs.aws.amazon.com/AmazonS3/latest/dev/ACLOverview.html#CannedACL.
 
+###### objects->put->uploadPart
 
-###### Objects->put->uploadPart
-
-	/**
-	 * This operation uploads a part in a multipart upload.
-	 *
-	 * @param   string  $bucket          The name of the bucket to upload to
-	 * @param   string  $object          The name of the uploaded file
-	 * @param   string  $partNumber      The part number
-	 * @param   string  $uploadId        The upload ID
-	 * @param   string  $requestHeaders  An array containing request headers
-	 *
-	 * @return string  The response body
-	 *
-	 * @since   ??.?
-	 */
-	public function uploadPart($bucket, $object, $partNumber, $uploadId, $requestHeaders = null)
+* $bucket - The bucket name
+* $object - The object name
+* $partNumber - The part number
+* $uploadId - The upload ID
+* $requestHeaders - An array containing request headers
 
 The `$requestHeaders` parameter can take one of the following values:
 * `Content-MD5`
@@ -951,25 +715,13 @@ The `$requestHeaders` parameter can take one of the following values:
 
 More details can be found at http://docs.aws.amazon.com/AmazonS3/2006-03-01/API/mpUploadUploadPart.html#mpUploadUploadPart-requests-request-headers.
 
+###### objects->put->uploadPartCopy
 
-###### Objects->put->uploadPartCopy
-
-	/**
-	 * Uploads a part by copying data from an existing object as data source.
-	 * You specify the data source by adding the request header x-amz-copy-source in your request
-	 * and a byte range by adding the request header x-amz-copy-source-range in your request.
-	 *
-	 * @param   string  $bucket          The name of the bucket to upload to
-	 * @param   string  $object          The name of the uploaded file
-	 * @param   string  $partNumber      The part number
-	 * @param   string  $uploadId        The upload ID
-	 * @param   string  $requestHeaders  An array containing request headers
-	 *
-	 * @return string  The response body
-	 *
-	 * @since   ??.?
-	 */
-	public function uploadPartCopy($bucket, $object, $partNumber, $uploadId, $requestHeaders = null)
+* $bucket - The bucket name
+* $object - The object name
+* $partNumber - The part number
+* $uploadId - The upload ID
+* $requestHeaders - An array containing request headers
 
 The `$requestHeaders` parameter can take one of the following values:
 * `x-amz-copy-source`
@@ -981,22 +733,12 @@ The `$requestHeaders` parameter can take one of the following values:
 
 More details can be found at http://docs.aws.amazon.com/AmazonS3/2006-03-01/API/mpUploadUploadPartCopy.html#mpUploadUploadPartCopy-requests-request-headers.
 
+###### objects->put->completeMultipartUpload
 
-###### Objects->put->completeMultipartUpload
-
-	/**
-	 * This operation completes a multipart upload by assembling previously uploaded parts.
-	 *
-	 * @param   string  $bucket    The name of the bucket to upload to
-	 * @param   string  $object    The name of the uploaded file
-	 * @param   string  $uploadId  The upload ID
-	 * @param   string  $parts     An array of PartNumber and ETag pairs
-	 *
-	 * @return string  The response body
-	 *
-	 * @since   ??.?
-	 */
-	public function completeMultipartUpload($bucket, $object, $uploadId, $parts)
+* $bucket - The bucket name
+* $object - The object name
+* $uploadId - The upload ID
+* $parts - An array of PartNumber and ETag pairs
 
 The `$parts` parameter is an array of part elements, which can take the following values:
 * `PartNumber`
@@ -1006,42 +748,32 @@ More details can be found at http://docs.aws.amazon.com/AmazonS3/2006-03-01/API/
 
 A good example for the `$parts` parameter would be:
 
+```php
+array(
 	array(
-		array(
-			"PartNumber" => "1",
-			"ETag" => "a54357aff0632cce46d942af68356b38",
-		),
-		array(
-			"PartNumber" => "2",
-			"ETag" => "0c78aef83f66abc1fa1e8477f296d394",
-		),
-		array(
-			"PartNumber" => "3",
-			"ETag" => "acbd18db4cc2f85cedef654fccc4a4d8",
-		),
-	)
-
+		"PartNumber" => "1",
+		"ETag" => "a54357aff0632cce46d942af68356b38",
+	),
+	array(
+		"PartNumber" => "2",
+		"ETag" => "0c78aef83f66abc1fa1e8477f296d394",
+	),
+	array(
+		"PartNumber" => "3",
+		"ETag" => "acbd18db4cc2f85cedef654fccc4a4d8",
+	),
+)
+```
 
 ##### POST Object
 
-###### Objects->post->deleteMultipleObjects
+###### objects->post->deleteMultipleObjects
 
-	/**
-	 * Deletes multiple objects from a bucket
-	 *
-	 * @param   string  $bucket     The bucket name
-	 * @param   array   $objects    An array of objects to be deleted
-	 * @param   array   $quiet      In quiet mode the response includes only keys
-	 *                              where the delete operation encountered an error
-	 * @param   string  $serialNr   The serial number is generated using either a hardware or
-	 *                              a virtual MFA device. Required for MfaDelete
-	 * @param   string  $tokenCode  Also required for MfaDelete
-	 *
-	 * @return string  The response body
-	 *
-	 * @since   ??.?
-	 */
-	public function deleteMultipleObjects($bucket, $objects, $quiet = false, $serialNr = null, $tokenCode = null)
+* $bucket - The bucket name
+* $objects - An array of objects to be deleted
+* $quiet - In quiet mode the response includes only keys where the delete operation encountered an error
+* $serialNr - The serial number is generated using either a hardware or a virtual MFA device. Required for MfaDelete
+* $tokenCode - Also required for MfaDelete
 
 The `$objects` parameter is an array of object elements which can take the following values:
 * `Key`
@@ -1051,30 +783,22 @@ More details can be found at http://docs.aws.amazon.com/AmazonS3/2006-03-01/API/
 
 A good example for the `$objects` parameter would be:
 
+```php
+array(
 	array(
-		array(
-			"Key" => "404.txt"
-		),
-		array(
-			"Key" => "SampleDocument.txt",
-			"VersionId" => "OYcLXagmS.WaD..oyH4KRguB95_YhLs7",
-		),
+		"Key" => "404.txt"
 	),
+	array(
+		"Key" => "SampleDocument.txt",
+		"VersionId" => "OYcLXagmS.WaD..oyH4KRguB95_YhLs7",
+	),
+)
+```
 
+###### objects->post->postObject
 
-###### Objects->post->postObject
-
-	/**
-	 * The POST operation adds an object to a specified bucket using HTML forms
-	 *
-	 * @param   string  $bucket  The bucket name
-	 * @param   array   $fields  An array of objects to be deleted
-	 *
-	 * @return string  The response body
-	 *
-	 * @since   ??.?
-	 */
-	public function postObject($bucket, $fields)
+* $bucket - The bucket name
+* $fields - An array of fields to be deleted
 
 The `$fields` parameter can take the following values:
 * `AWSAccessKeyId`
@@ -1095,59 +819,31 @@ More details can be found at http://docs.aws.amazon.com/AmazonS3/2006-03-01/API/
 
 A good example for the `$fields` parameter would be:
 
-	array(
-		"key" => "testFile.txt",
-		"file" => "test content",
-	)
+```php
+array(
+	"key" => "testFile.txt",
+	"file" => "test content",
+)
+```
 
-###### Objects->post->postObjectRestore
-	
-	/**
-	 * Restores a temporary copy of an archived object. In the request, you
-	 * specify the number of days that you want the restored copy to exist.
-	 *
-	 * @param   string  $bucket  The bucket name
-	 * @param   string  $object  The name of the object to be restored
-	 * @param   string  $days    The number of days that you want the restored copy to exist
-	 *
-	 * @return string  The response body
-	 *
-	 * @since   ??.?
-	 */
-	public function postObjectRestore($bucket, $object, $days)
+###### objects->post->postObjectRestore
+
+* $bucket - The bucket name
+* $object - The name of the object to be restored
+* $days - The number of days that you want the restored copy to exist
 
 ##### DELETE Object
 
-###### Objects->delete->deleteObject
+###### objects->delete->deleteObject
 
-	/**
-	 * Deletes an object from a bucket
-	 *
-	 * @param   string  $bucket     The bucket name
-	 * @param   string  $object     The name of the object to be deleted
-	 * @param   string  $versionId  The version id of the object to be deleted
-	 * @param   string  $serialNr   The serial number is generated using either a hardware or
-	 *                              a virtual MFA device. Required for MfaDelete
-	 * @param   string  $tokenCode  Also required for MfaDelete
-	 *
-	 * @return string  The response body
-	 *
-	 * @since   ??.?
-	 */
-	public function deleteObject($bucket, $object, $versionId = null, $serialNr = null, $tokenCode = null)
+* $bucket - The bucket name
+* $object - The name of the object to be deleted
+* $versionId - The version id of the object to be deleted
+* $serialNr - The serial number is generated using either a hardware or a virtual MFA device. Required for MfaDelete
+* $tokenCode - Also required for MfaDelete
 
+###### objects->delete->abortMultipartUpload
 
-###### Objects->delete->abortMultipartUpload
-
-	/**
-	 * This operation aborts a multipart upload
-	 *
-	 * @param   string  $bucket    The bucket name
-	 * @param   string  $object    The name of the object
-	 * @param   string  $uploadId  The upload id
-	 *
-	 * @return string  The response body
-	 *
-	 * @since   ??.?
-	 */
-	public function abortMultipartUpload($bucket, $object, $uploadId)
+* $bucket - The bucket name
+* $object - The name of the object
+* $uploadId - The upload id
