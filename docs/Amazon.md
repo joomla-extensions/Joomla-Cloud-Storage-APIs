@@ -55,7 +55,7 @@ require __DIR__ . '/import.php';
 
 class Amazons3App extends JApplicationCli
 {
-	public function doExecute()
+	protected function doExecute()
 	{
 		$options = new \Joomla\Registry\Registry;
 
