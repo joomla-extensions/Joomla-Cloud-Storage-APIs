@@ -121,724 +121,387 @@ This operation requires no arguments.
 
 ###### buckets->get->getBucketAcl
 
-	/**
-	 * Creates the request for getting a bucket's acl and returns the response from Amazon
-	 *
-	 * @param   string  $bucket  The bucket name
-	 *
-	 * @return string  The response body
-	 *
-	 * @since   ??.?
-	 */
-	public function getBucketAcl($bucket)
+* $bucket - The bucket name
 
 ###### buckets->get->getBucketCors
 
-	/**
-	 * Creates the request for getting a bucket's cors configuration information set
-	 * and returns the response from Amazon
-	 *
-	 * @param   string  $bucket  The bucket name
-	 *
-	 * @return string  The response body
-	 *
-	 * @since   ??.?
-	 */
-	public function getBucketCors($bucket)
+* $bucket - The bucket name
 
 ###### buckets->get->getBucketLifecycle
 
-	/**
-	 * Creates the request for getting a bucket's lifecycle and returns the response from Amazon
-	 *
-	 * @param   string  $bucket  The bucket name
-	 *
-	 * @return string  The response body
-	 *
-	 * @since   ??.?
-	 */
-	public function getBucketLifecycle($bucket)
+* $bucket - The bucket name
 
 ###### buckets->get->getBucketPolicy
 
-	/**
-	 * Creates the request for getting a bucket's policy and returns the response from Amazon
-	 *
-	 * @param   string  $bucket  The bucket name
-	 *
-	 * @return string  The response body
-	 *
-	 * @since   ??.?
-	 */
-	public function getBucketPolicy($bucket)
-
+* $bucket - The bucket name
 
 ###### buckets->get->getBucketLocation
 
-	/**
-	 * Creates the request for getting a bucket's location and returns the response from Amazon
-	 *
-	 * @param   string  $bucket  The bucket name
-	 *
-	 * @return string  The response body
-	 *
-	 * @since   ??.?
-	 */
-	public function getBucketLocation($bucket)
+* $bucket - The bucket name
 
 ###### buckets->get->getBucketLogging
 
-	/**
-	 * Creates the request for getting a bucket's logging and returns the response from Amazon
-	 *
-	 * @param   string  $bucket  The bucket name
-	 *
-	 * @return string  The response body
-	 *
-	 * @since   ??.?
-	 */
-	public function getBucketLogging($bucket)
+* $bucket - The bucket name
 
 ###### buckets->get->getBucketNotification
 
-	/**
-	 * Creates the request for getting a bucket's notification configuration
-	 * and returns the response from Amazon
-	 *
-	 * @param   string  $bucket  The bucket name
-	 *
-	 * @return string  The response body
-	 *
-	 * @since   ??.?
-	 */
-	public function getBucketNotification($bucket)
-
+* $bucket - The bucket name
 
 ###### buckets->get->getBucketTagging
 
-	/**
-	 * Creates the request for getting a bucket's tagging and returns the response from Amazon
-	 *
-	 * @param   string  $bucket  The bucket name
-	 *
-	 * @return string  The response body
-	 *
-	 * @since   ??.?
-	 */
-	public function getBucketTagging($bucket)
+* $bucket - The bucket name
 
 ###### buckets->get->getBucketVersions
 
-	/**
-	 * Creates the request for getting the versions of a bucket's objects
-	 * and returns the response from Amazon
-	 *
-	 * @param   string  $bucket      The bucket name
-	 * @param   string  $parameters  An array of optional parameters that can be set
-	 *                               to filter the results
-	 *
-	 * @return string  The response body
-	 *
-	 * @since   ??.?
-	 */
-	public function getBucketVersions($bucket, $parameters = null)
-
-The `$parameters` argument can take the following values:
- - `delimiter`
- - `marker`
- - `max-keys`
- - `prefix`
- - `version-id-marker`
+* $bucket - The bucket name
+* $parameters - An associative array which can take the following keys:
+    * `delimiter`
+    * `marker`
+    * `max-keys`
+    * `prefix`
+    * `version-id-marker`
 
 ###### buckets->get->getBucketRequestPayment
 
-	/**
-	 * Creates the request for getting a bucket's request payment configuration
-	 * and returns the response from Amazon
-	 *
-	 * @param   string  $bucket  The bucket name
-	 *
-	 * @return string  The response body
-	 *
-	 * @since   ??.?
-	 */
-	public function getBucketRequestPayment($bucket)
+* $bucket - The bucket name
 
 ###### buckets->get->getBucketVersioning
 
-	/**
-	 * Creates the request for getting a bucket's versioning state and returns the response from Amazon
-	 *
-	 * @param   string  $bucket  The bucket name
-	 *
-	 * @return string  The response body
-	 *
-	 * @since   ??.?
-	 */
-	public function getBucketVersioning($bucket)
+* $bucket - The bucket name
 
 ###### buckets->get->getBucketWebsite
 
-	/**
-	 * Creates the request for getting a bucket's website and returns the response from Amazon
-	 *
-	 * @param   string  $bucket  The bucket name
-	 *
-	 * @return string  The response body
-	 *
-	 * @since   ??.?
-	 */
-	public function getBucketWebsite($bucket)
+* $bucket - The bucket name
 
 ###### buckets->get->listMultipartUploads
 
-	/**
-	 * Creates the request for listing a bucket's multipart uploads
-	 * and returns the response from Amazon
-	 *
-	 * @param   string  $bucket      The bucket name
-	 * @param   string  $parameters  An array of optional parameters that can be set
-	 *                               to filter the results
-	 *
-	 * @return string  The response body
-	 *
-	 * @since   ??.?
-	 */
-	public function listMultipartUploads($bucket, $parameters = null)
-
-
-The `$parameters` argument can take the following values:
-- `delimiter`
-- `max-uploads`
-- `key-marker`
-- `prefix`
-- `upload-id-marker`
+* $bucket - The bucket name
+* $parameters - An associative array which can take the following keys:
+    * `delimiter`
+    * `max-uploads`
+    * `key-marker`
+    * `prefix`
+    * `upload-id-marker`
 
 
 ##### HEAD Bucket
 
 ###### buckets->head->headBucket
 
-	/**
-	 * Creates a request to determine if a bucket exists and you have permission to access it.
-	 *
-	 * @param   string  $bucket  The bucket name
-	 *
-	 * @return string  The response body
-	 *
-	 * @since   ??.?
-	 */
-	public function headBucket($bucket)
-
+* $bucket - The bucket name
 
 ##### PUT Bucket
 
-	/**
-	 * Creates the request for creating a bucket and returns the response from Amazon
-	 *
-	 * @param   string  $bucket        The bucket name
-	 * @param   string  $bucketRegion  The bucket region (default: US Standard)
-	 * @param   string  $acl           An array containing the ACL permissions
-	 *                                 (either canned or explicitly specified)
-	 *
-	 * @return string  The response body
-	 *
-	 * @since   ??.?
-	 */
-	public function putBucket($bucket, $bucketRegion = "", $acl = null)
+###### buckets->put->putBucket
 
-You can specify the geographic location for your bucket by providing a location constraint in the `$bucketRegion` parameter. This tells Amazons3 to store the bucket and its contents on a server in the specified location. For more information, see http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region.
+* $bucket - The bucket name
+* $bucketRegion - The bucket region: You can specify the geographic location for your bucket by providing a location constraint. This tells AmazonS3 to store the bucket and its contents on a server in the specified location. For more information, see http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region.
+* $acl - An array containing the ACL permissions (see below for more information)
 
 The `$acl` parameter can specify canned ACL permissions:
-- `private`
-- `public-read`
-- `public-read-write`
-- `authenticated-read`
-- `log-delivery-write`
+* `private`
+* `public-read`
+* `public-read-write`
+* `authenticated-read`
+* `log-delivery-write`
 
 More details about canned ACL permissions can be found at http://docs.aws.amazon.com/AmazonS3/latest/dev/ACLOverview.html#CannedACL.
 
 You can also set explicit ACL permissions. You specify each grantee as a type=value pair, where the type can be one of the following:
-- `emailAddress` â€” if value specified is the email address of an AWS account
-- `id` â€” if value specified is the canonical User ID of an AWS account
-- `uri` â€” if granting permission to a predefined Amazon S3 group
+* `emailAddress` if value specified is the email address of an AWS account
+* `id` if value specified is the canonical User ID of an AWS account
+* `uri` if granting permission to a predefined Amazon S3 group
 
 Valid values for the explicit ACL permissions are:
-- `read`
-- `write`
-- `read-acp`
-- `write-acp`
-- `full-control`
+* `read`
+* `write`
+* `read-acp`
+* `write-acp`
+* `full-control`
 
 More details can be found at http://docs.aws.amazon.com/AmazonS3/2006-03-01/API/RESTBucketPUT.html#RESTBucketPUT-requests-request-headers.
 
-A good example for the `$acl` parameter would be:
+An example for the `$acl` parameter would be:
 
-	array(
-		"read" => "uri=\"http://acs.amazonaws.com/groups/global/AuthenticatedUsers\"",
-		"write-acp" => "emailAddress=\"alex.ukf@gmail.com\"",
-		"full-control" => "id=\"6e887773574284f7e38cacbac9e1455ecce62f79929260e9b68db3b84720ed96\""
-	)
-
+```php
+array(
+	"read" => "uri=\"http://acs.amazonaws.com/groups/global/AuthenticatedUsers\"",
+	"write-acp" => "emailAddress=\"alex.ukf@gmail.com\"",
+	"full-control" => "id=\"6e887773574284f7e38cacbac9e1455ecce62f79929260e9b68db3b84720ed96\""
+)
+```
 
 ###### buckets->put->putBucketAcl
 
-	/**
-	 * Creates the request for setting the permissions on an existing bucket
-	 * using access control lists (ACL)
-	 *
-	 * @param   string  $bucket  The bucket name
-	 * @param   string  $acl     An array containing the ACL permissions
-	 *                           (either canned or explicitly specified)
-	 *
-	 * @return string  The response body
-	 *
-	 * @since   ??.?
-	 */
-	public function putBucketAcl($bucket, $acl = null)
-
-
-The `$acl` parameter can specify canned ACL permissions:
-- `private`
-- `public-read`
-- `public-read-write`
-- `authenticated-read`
-- `log-delivery-write`
-
-More details about canned ACL permissions can be found at http://docs.aws.amazon.com/AmazonS3/latest/dev/ACLOverview.html#CannedACL.
-
-You can also set explicit ACL permissions. You specify each grantee as a type=value pair, where the type can be one of the following:
-- `emailAddress` â€” if value specified is the email address of an AWS account
-- `id` â€” if value specified is the canonical User ID of an AWS account
-- `uri` â€” if granting permission to a predefined Amazon S3 group
-
-Valid values for the explicit ACL permissions are:
-- `read`
-- `write`
-- `read-acp`
-- `write-acp`
-- `full-control`
-
-More details can be found at http://docs.aws.amazon.com/AmazonS3/2006-03-01/API/RESTBucketPUT.html#RESTBucketPUT-requests-request-headers.
-
-A good example for the `$acl` parameter would be:
-
-	array(
-		"read" => "uri=\"http://acs.amazonaws.com/groups/global/AuthenticatedUsers\"",
-		"write-acp" => "emailAddress=\"alex.ukf@gmail.com\"",
-		"full-control" => "id=\"6e887773574284f7e38cacbac9e1455ecce62f79929260e9b68db3b84720ed96\""
-	)
-	
+* $bucket - The bucket name
+* $acl - An array containing the ACL permissions (see the putBucket section for more on the ACL configuration)
 
 ###### buckets->put->putBucketCors
 
-	/**
-	 * Creates the request for setting the CORS configuration for your bucket
-	 *
-	 * @param   string  $bucket  The bucket name
-	 * @param   string  $rules   An array containing the CORS rules
-	 *
-	 * @return string  The response body
-	 *
-	 * @since   ??.?
-	 */
-	public function putBucketCors($bucket, $rules = null)
+* $bucket - The bucket name
+* $rules - An array containing the CORS rules (see below for more)
 
 The `$cors` parameter is an array of rules which allow cross-origin resource sharing on a bucket. Each rule is defined as an array and it can contain the following elements:
-- `ID` 
-- `AllowedOrigin` 
-- `AllowedMethod` 
-- `AllowedHeader`
-- `MaxAgeSec`
-- `ExposeHeader`
+* `ID` 
+* `AllowedOrigin` 
+* `AllowedMethod` 
+* `AllowedHeader`
+* `MaxAgeSec`
+* `ExposeHeader`
 
 More details about these elements can be found at http://docs.aws.amazon.com/AmazonS3/2006-03-01/API/RESTBucketPUTcors.html#RESTBucketPUTcors-requests-request-elements.
 
 A good example would be:
 
+```php
+array(
 	array(
-		array(
-			"ID" => "RuleUniqueId",
-			"AllowedOrigin" => array("http://*.example1.com", "http://*.example2.com"),
-			"AllowedMethod" => array("PUT", "POST", "DELETE"),
-			"AllowedHeader" => "*",
-			"MaxAgeSeconds" => "3000",
-			"ExposeHeader"  => "x-amz-server-side-encryption",
-		),
-		array(
-			"AllowedOrigin" => "*",
-			"AllowedMethod" => "GET",
-			"AllowedHeader" => "*",
-			"MaxAgeSeconds" => "3000",
-		)
+		"ID" => "RuleUniqueId",
+		"AllowedOrigin" => array("http://*.example1.com", "http://*.example2.com"),
+		"AllowedMethod" => array("PUT", "POST", "DELETE"),
+		"AllowedHeader" => "*",
+		"MaxAgeSeconds" => "3000",
+		"ExposeHeader"  => "x-amz-server-side-encryption",
+	),
+	array(
+		"AllowedOrigin" => "*",
+		"AllowedMethod" => "GET",
+		"AllowedHeader" => "*",
+		"MaxAgeSeconds" => "3000",
 	)
-
+)
+```
 
 ###### buckets->put->putBucketLifecycle
 
-	/**
-	 * Creates a new lifecycle configuration for the bucket or replaces
-	 * an existing lifecycle configuration
-	 *
-	 * @param   string  $bucket  The bucket name
-	 * @param   string  $rules   An array containing the lifecycle configuration rules
-	 *
-	 * @return string  The response body
-	 *
-	 * @since   ??.?
-	 */
-	public function putBucketLifecycle($bucket, $rules = null)
+* $bucket - The bucket name
+* $rules - An array containing the lifecycle configuration rules (see below for more information)
 
-The `$lifecycle` parameter is an array of rule arrays, which in turn are structured as follows:
-- `ID`
-- `Prefix`
-- `Status`
-- `Transition`
-	- `Date`
-	- `StorageClass`
-- `Expiration`
-	- `Date`
+The `$rules` parameter is an array of rule arrays, which in turn are structured as follows:
+* `ID`
+* `Prefix`
+* `Status`
+* `Transition`
+	* `Date`
+	* `StorageClass`
+* `Expiration`
+	* `Date`
 
 More details can be found at http://docs.aws.amazon.com/AmazonS3/2006-03-01/API/RESTBucketPUTlifecycle.html#RESTBucketPUTlifecycle-requests-request-elements.
 
 A good example would be:
 
+```php
+array(
 	array(
-		array(
-			"ID" => "RuleUniqueId",
-			"Prefix" => "glacierobjects",
-			"Status"  => "Enabled",
-			"Transition" => array(
-				"Date" => "2013-12-31T00:00:00.000Z",
-				"StorageClass" => "GLACIER",
-			),
-			"Expiration" => array(
-				"Date" => "2022-10-12T00:00:00.000Z",
-			),
+		"ID" => "RuleUniqueId",
+		"Prefix" => "glacierobjects",
+		"Status"  => "Enabled",
+		"Transition" => array(
+			"Date" => "2013-12-31T00:00:00.000Z",
+			"StorageClass" => "GLACIER",
 		),
-	)
-	
+		"Expiration" => array(
+			"Date" => "2022-10-12T00:00:00.000Z",
+		),
+	),
+)
+```	
 
 ###### buckets->put->putBucketPolicy
 
-	/**
-	 *  Adds to or replaces a policy on a bucket.
-	 *
-	 * @param   string  $bucket  The bucket name
-	 * @param   string  $policy  An array containing the bucket policy
-	 *
-	 * @return string  The response body
-	 *
-	 * @since   ??.?
-	 */
-	public function putBucketPolicy($bucket, $policy = null)
+* $bucket - The bucket name
+* $policy - An array containing the bucket policy (see below for more information)
 
 The `$policy` elements are:
-- `Version`
-- `Id`
-- `Statement`
-	- `Effect`
-	- `Sid`
-	- `Principal`
-		- `CanonicalUser`
-	- `Action` 
-	- `Resource`
+* `Version`
+* `Id`
+* `Statement`
+	* `Effect`
+	* `Sid`
+	* `Principal`
+		* `CanonicalUser`
+	* `Action` 
+	* `Resource`
 
 More details can be found at http://docs.aws.amazon.com/AmazonS3/2006-03-01/API/RESTBucketPUTpolicy.html#RESTBucketPUTpolicy-responses-examples-sample-request.
 
 A good example would be:
 
-	array(
-		"Version" => "2008-10-17",
-		"Id" => "aaaa-bbbb-cccc-eeee",
-		"Statement" => array(
-			array(
-			"Effect" => "Allow",
-			"Sid" => "1",
-			"Principal" => array(
-				"CanonicalUser" => "6e887773574284f7e38cacbac9e1455ecce62f79929260e9b68db3b84720ed96"
-			),
-			"Action" => "s3:*",
-			"Resource" => "arn:aws:s3:::gsoc-test-2/*",
-			),
+```php
+array(
+	"Version" => "2008-10-17",
+	"Id" => "aaaa-bbbb-cccc-eeee",
+	"Statement" => array(
+		array(
+		"Effect" => "Allow",
+		"Sid" => "1",
+		"Principal" => array(
+			"CanonicalUser" => "6e887773574284f7e38cacbac9e1455ecce62f79929260e9b68db3b84720ed96"
 		),
-	)
+		"Action" => "s3:*",
+		"Resource" => "arn:aws:s3:::gsoc-test-2/*",
+		),
+	),
+)
+```
 
 ###### buckets->put->putBucketLogging
 
-	/**
-	 * Sets the logging parameters for a bucket and specifies permissions for
-	 * who can view and modify the logging parameters
-	 *
-	 * @param   string  $bucket   The bucket name
-	 * @param   string  $logging  An array containing the logging details
-	 *
-	 * @return string  The response body
-	 *
-	 * @since   ??.?
-	 */
-	public function putBucketLogging($bucket, $logging = null)
+* $bucket - The bucket name
+* $logging - An array containing the logging details (see below for more information)
 
 The `$logging` elements are:
-- `TargetBucket`
-- `TargetPrefix`
-- `TargetGrants`
-	- `Grant`
-		- `Grantee`
-			- `EmailAddress`
-		- `Permission`
+* `TargetBucket`
+* `TargetPrefix`
+* `TargetGrants`
+	* `Grant`
+		* `Grantee`
+			* `EmailAddress`
+		* `Permission`
 
 More details can be found at http://docs.aws.amazon.com/AmazonS3/2006-03-01/API/RESTBucketPUTlogging.html#RESTBucketPUTlogging-requests-request-elements.
 
 A good example would be:
 
-	array(
-		"TargetBucket" => "gsoc-test-2",
-		"TargetPrefix" => "mybucket-access_log",
-		"TargetGrants" => array(
-			"Grant" => array(
-				"Grantee" => array(
-					"EmailAddress" => "alex.ukf@gmail.com",
-				),
-				"Permission" => "READ",
+```php
+array(
+	"TargetBucket" => "gsoc-test-2",
+	"TargetPrefix" => "mybucket-access_log",
+	"TargetGrants" => array(
+		"Grant" => array(
+			"Grantee" => array(
+				"EmailAddress" => "alex.ukf@gmail.com",
 			),
+			"Permission" => "READ",
 		),
-	)
-
+	),
+)
+```
 
 ###### buckets->put->putBucketNotification
 
-	/**
-	 * Enables notifications of specified events for a bucket
-	 *
-	 * @param   string  $bucket        The bucket name
-	 * @param   string  $notification  An array containing the $notification details
-	 *
-	 * @return string  The response body
-	 *
-	 * @since   ??.?
-	 */
-	public function putBucketNotification($bucket, $notification = null)
+* $bucket - The bucket name
+* $notification - An array containing the $notification details (see below for more information)
 
 The `$notification` parameter is an array which can contain:
-- `Topic`
-- `Event`
+* `Topic`
+* `Event`
 
 More details can be found at http://docs.aws.amazon.com/AmazonS3/2006-03-01/API/RESTBucketPUTnotification.html#RESTBucketPUTnotification-requests-request-elements.
 
 ###### buckets->put->putBucketTagging
 
-	/**
-	 * Adds a set of tags to an existing bucket
-	 *
-	 * @param   string  $bucket  The bucket name
-	 * @param   string  $tags    An array containing the tags
-	 *
-	 * @return string  The response body
-	 *
-	 * @since   ??.?
-	 */
-	public function putBucketTagging($bucket, $tags = null)
+* $bucket - The bucket name
+* $tags - An array containing the tags (see below for more information)
 
 The `$tags` parameter is an array of Tag elements, which in turn are arrays of with:
-- `Key`
-- `Value`
+* `Key`
+* `Value`
 
 More details can be found at http://docs.aws.amazon.com/AmazonS3/2006-03-01/API/RESTBucketPUTtagging.html#RESTBucketPUTtagging-requests-request-elements.
 
 A good example would be:
 
+```php
+array(
 	array(
-		array(
-			"Key" => "Project",
-			"Value" => "Project One",
-		),
-		array(
-			"Key" => "User",
-			"Value" => "alexukf",
-		),
-	)
-
-
-
-
-
+		"Key" => "Project",
+		"Value" => "Project One",
+	),
+	array(
+		"Key" => "User",
+		"Value" => "alexukf",
+	),
+)
+```
 
 ###### buckets->put->putBucketRequestPayment
 
-	/**
-	 * Sets the request payment configuration of a bucket
-	 *
-	 * @param Â  string Â $bucket Â The bucket name
-	 * @param Â  string Â $payer Â  Specifies who pays for the download and request fees.
-	 * Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Valid Values: Requester | BucketOwner
-	 *
-	 * @return string Â The response body
-	 *
-	 * @since Â  ??.?
-	 */
-	public function putBucketRequestPayment($bucket, $payer)
-
+* $bucket - The bucket name
+* $payer - Specifies who pays for the download and request fees.  Valid values are Requester or BucketOwner
 
 ###### buckets->put->putBucketVersioning
 
-	/**
-	 * Sets the versioning state of an existing bucket
-	 *
-	 * @param   string  $bucket      The bucket name
-	 * @param   string  $versioning  Array with Status and MfaDelete
-	 * @param   string  $serialNr    The serial number is generated using either a hardware or virtual MFA device
-	 *                               Required for MfaDelete
-	 * @param   string  $tokenCode   Also required for MfaDelete
-	 *
-	 * @return string  The response body
-	 *
-	 * @since   ??.?
-	 */
-	public function putBucketVersioning($bucket, $versioning, $serialNr = null, $tokenCode = null)
+* $bucket - The bucket name
+* $versioning - Array with Status and MfaDelete
+* $serialNr - The serial number is generated using either a hardware or virtual MFA device, required for MfaDelete
+* $tokenCode - Also required for MfaDelete
 
 More details can be found at http://docs.aws.amazon.com/AmazonS3/2006-03-01/API/RESTBucketPUTVersioningStatus.html#RESTBucketPUTVersioningStatus-requests-request-headers.
 
 ###### buckets->put->putBucketWebsiteConfig
 
-	/**
-	 * Sets the configuration of the website that is specified in the website subresource
-	 *
-	 * @param   string  $bucket   The bucket name
-	 * @param   string  $website  An array containing website parameters
-	 *
-	 * @return string  The response body
-	 *
-	 * @since   ??.?
-	 */
-	public function putBucketWebsite($bucket, $website)
+* $bucket - The bucket name
+* $website - An array containing website parameters
 
 The `website` parameter can take the following values:
-- `IndexDocument`
-	- `Suffix` 
-- `ErrorDocument`
-	- `Key` 
-- `RoutingRules`
-	- `RoutingRule`
-		- `Condition`
-			- `KeyPrefixEquals`
-			- `HttpErrorCodeReturnedEquals`
-		- `Redirect`
-			- `Protocol`
-			- `HostName`
-			- `ReplaceKeyPrefixWith`
-			- `ReplaceKeyWith`
-			- `HttpRedirectCode`
+* `IndexDocument`
+	* `Suffix` 
+* `ErrorDocument`
+	* `Key` 
+* `RoutingRules`
+	* `RoutingRule`
+		* `Condition`
+			* `KeyPrefixEquals`
+			* `HttpErrorCodeReturnedEquals`
+		* `Redirect`
+			* `Protocol`
+			* `HostName`
+			* `ReplaceKeyPrefixWith`
+			* `ReplaceKeyWith`
+			* `HttpRedirectCode`
 
 More details can be found at http://docs.aws.amazon.com/AmazonS3/2006-03-01/API/RESTBucketPUTwebsite.html#RESTBucketPUTwebsite-requests-request-elements.
 
 A good example would be:
 
-	array(
-		"IndexDocument" => array(
-			"Suffix" => "index.html"
-		),
-		"ErrorDocument" => array(
-			"Key" => "SomeErrorDocument.html"
-		),
-		"RoutingRules" => array(
-			"RoutingRule" => array(
-				"Condition" => array(
-					"KeyPrefixEquals" => "docs/"
-				),
-				"Redirect" => array(
-					"ReplaceKeyPrefixWith" => "documents/"
-				)
+```php
+array(
+	"IndexDocument" => array(
+		"Suffix" => "index.html"
+	),
+	"ErrorDocument" => array(
+		"Key" => "SomeErrorDocument.html"
+	),
+	"RoutingRules" => array(
+		"RoutingRule" => array(
+			"Condition" => array(
+				"KeyPrefixEquals" => "docs/"
+			),
+			"Redirect" => array(
+				"ReplaceKeyPrefixWith" => "documents/"
 			)
 		)
 	)
-
+)
+```
 
 ##### DELETE Bucket
 
 ###### buckets->delete->deleteBucket
 
-	/**
-	 * Deletes the bucket named in the URI
-	 *
-	 * @param   string  $bucket  The bucket name
-	 *
-	 * @return string  The response body
-	 *
-	 * @since   ??.?
-	 */
-	public function deleteBucket($bucket)
-
+* $bucket - The bucket name
 
 ###### buckets->delete->deleteBucketCors
 
-	/**
-	 * Deletes the cors configuration information set for the bucket.
-	 *
-	 * @param   string  $bucket  The bucket name
-	 *
-	 * @return string  The response body
-	 *
-	 * @since   ??.?
-	 */
-	public function deleteBucketCors($bucket)
-
+* $bucket - The bucket name
 
 ###### buckets->delete->deleteBucketLifecycle
 
-	/**
-	 * Deletes the lifecycle configuration from the specified bucket
-	 *
-	 * @param   string  $bucket  The bucket name
-	 *
-	 * @return string  The response body
-	 *
-	 * @since   ??.?
-	 */
-	public function deleteBucketLifecycle($bucket)
-
+* $bucket - The bucket name
 
 ###### buckets->delete->deleteBucketPolicy
 
-	/**
-	 * This implementation of the DELETE operation uses the policy subresource
-	 * to delete the policy on a specified bucket.
-	 *
-	 * @param   string  $bucket  The bucket name
-	 *
-	 * @return string  The response body
-	 *
-	 * @since   ??.?
-	 */
-	public function deleteBucketPolicy($bucket)
+* $bucket - The bucket name
 
 ###### buckets->delete->deleteBucketTagging
 
-	/**
-	 * This implementation of the DELETE operation uses the tagging
-	 * subresource to remove a tag set from the specified bucket.
-	 *
-	 * @param   string  $bucket  The bucket name
-	 *
-	 * @return string  The response body
-	 *
-	 * @since   ??.?
-	 */
-	public function deleteBucketTagging($bucket)
+* $bucket - The bucket name
 
 ###### buckets->delete->deleteBucketWebsite
 
-	/**
-	 * This operation removes the website configuration for a bucket.
-	 *
-	 * @param   string  $bucket  The bucket name
-	 *
-	 * @return string  The response body
-	 *
-	 * @since   ??.?
-	 */
-	public function deleteBucketWebsite($bucket)
-
+* $bucket - The bucket name
 
 #### Objects
 
@@ -981,9 +644,9 @@ The `$optionalHeaders` parameter is an array which can contain one or more of th
 	public function listParts($bucket, $objectName, $parameters)
 
 The `$parameters` parameter can take the following values:
-- `uploadId`
-- `max-parts`
-- `part-number-marker`
+* `uploadId`
+* `max-parts`
+* `part-number-marker`
 
 More details can be found at http://docs.aws.amazon.com/AmazonS3/2006-03-01/API/mpUploadListParts.html#mpUploadListParts-requests-request-parameters.
 
@@ -1007,11 +670,11 @@ More details can be found at http://docs.aws.amazon.com/AmazonS3/2006-03-01/API/
 	public function headObject($bucket, $objectName, $versionId = null, $requestHeaders = array())
 
 The `$requestHeaders` parameter can take one of the following values:
-- `Range`
-- `If-Modified-Since`
-- `If-Unmodified-Since`
-- `If-Match`
-- `If-None-Match`
+* `Range`
+* `If-Modified-Since`
+* `If-Unmodified-Since`
+* `If-Match`
+* `If-None-Match`
 
 More details can be found at http://docs.aws.amazon.com/AmazonS3/2006-03-01/API/RESTObjectHEAD.html#RESTObjectHEAD-requests-request-headers.
 
@@ -1034,9 +697,9 @@ More details can be found at http://docs.aws.amazon.com/AmazonS3/2006-03-01/API/
 	public function optionsObject($bucket, $objectName, $requestHeaders)
 
 The `$requestHeaders` parameter can take the following values:
-- `Origin`
-- `Access-Control-Request-Method`
-- `Access-Control-Request-Headers`
+* `Origin`
+* `Access-Control-Request-Method`
+* `Access-Control-Request-Headers`
 
 More details can be found at http://docs.aws.amazon.com/AmazonS3/2006-03-01/API/RESTOPTIONSobject.html#RESTOPTIONSobject-requests-request-headers.
 
@@ -1060,31 +723,31 @@ More details can be found at http://docs.aws.amazon.com/AmazonS3/2006-03-01/API/
 	public function putObject($bucket, $object, $content = "", $requestHeaders = null)
 
 The `$requestHeaders` parameter can take the following values:
-- `Expect`
-- `Expires`
-- `x-amz-meta-`
-- `x-amz-server-side-encryption`
-- `x-amz-storage-class`
-- `x-amz-website-redirect-location`
+* `Expect`
+* `Expires`
+* `x-amz-meta-`
+* `x-amz-server-side-encryption`
+* `x-amz-storage-class`
+* `x-amz-website-redirect-location`
 
 The `$acl` parameter can specify canned ACL permissions:
-- `private`
-- `public-read`
-- `public-read-write`
-- `authenticated-read`
-- `log-delivery-write`
+* `private`
+* `public-read`
+* `public-read-write`
+* `authenticated-read`
+* `log-delivery-write`
 
 You can also set explicit ACL permissions. You specify each grantee as a type=value pair, where the type can be one of the following:
-- `emailAddress` â€” if value specified is the email address of an AWS account
-- `id` â€” if value specified is the canonical User ID of an AWS account
-- `uri` â€” if granting permission to a predefined Amazon S3 group
+* `emailAddress` â€” if value specified is the email address of an AWS account
+* `id` â€” if value specified is the canonical User ID of an AWS account
+* `uri` â€” if granting permission to a predefined Amazon S3 group
 
 Valid values for the explicit ACL permissions are:
-- `read`
-- `write`
-- `read-acp`
-- `write-acp`
-- `full-control` 
+* `read`
+* `write`
+* `read-acp`
+* `write-acp`
+* `full-control` 
 
 A good example for the `$acl` parameter would be:
 
@@ -1117,23 +780,23 @@ Additional details about canned ACL permissions can be found at http://docs.aws.
 	public function putObjectAcl($bucket, $object, $acl = null)
 
 The `$acl` parameter can specify canned ACL permissions:
-- `private`
-- `public-read`
-- `public-read-write`
-- `authenticated-read`
-- `log-delivery-write`
+* `private`
+* `public-read`
+* `public-read-write`
+* `authenticated-read`
+* `log-delivery-write`
 
 You can also set explicit ACL permissions. You specify each grantee as a type=value pair, where the type can be one of the following:
-- `emailAddress` â€” if value specified is the email address of an AWS account
-- `id` â€” if value specified is the canonical User ID of an AWS account
-- `uri` â€” if granting permission to a predefined Amazon S3 group
+* `emailAddress` â€” if value specified is the email address of an AWS account
+* `id` â€” if value specified is the canonical User ID of an AWS account
+* `uri` â€” if granting permission to a predefined Amazon S3 group
 
 Valid values for the explicit ACL permissions are:
-- `read`
-- `write`
-- `read-acp`
-- `write-acp`
-- `full-control` 
+* `read`
+* `write`
+* `read-acp`
+* `write-acp`
+* `full-control` 
 
 A good example for the `$acl` parameter would be:
 
@@ -1166,33 +829,33 @@ Additional details about canned ACL permissions can be found at http://docs.aws.
 	public function putObjectCopy($bucket, $object, $copySource, $requestHeaders = null)
 
 The `$requestHeaders` parameter can take the following values:
-- `x-amz-metadata-directive`
-- `x-amz-copy-source-if-match`
-- `x-amz-copy-source-if-none-match`
-- `x-amz-copy-source-if-unmodified-since`
-- `x-amz-copy-source-if-modified-since`
-- `x-amz-server-sideâ€‹-encryption`
-- `x-amz-storage-class`
-- `x-amz-website-redirect-location`
+* `x-amz-metadata-directive`
+* `x-amz-copy-source-if-match`
+* `x-amz-copy-source-if-none-match`
+* `x-amz-copy-source-if-unmodified-since`
+* `x-amz-copy-source-if-modified-since`
+* `x-amz-server-sideâ€‹-encryption`
+* `x-amz-storage-class`
+* `x-amz-website-redirect-location`
 
 The `$acl` parameter can specify canned ACL permissions:
-- `private`
-- `public-read`
-- `public-read-write`
-- `authenticated-read`
-- `log-delivery-write`
+* `private`
+* `public-read`
+* `public-read-write`
+* `authenticated-read`
+* `log-delivery-write`
 
 You can also set explicit ACL permissions. You specify each grantee as a type=value pair, where the type can be one of the following:
-- `emailAddress` â€” if value specified is the email address of an AWS account
-- `id` â€” if value specified is the canonical User ID of an AWS account
-- `uri` â€” if granting permission to a predefined Amazon S3 group
+* `emailAddress` â€” if value specified is the email address of an AWS account
+* `id` â€” if value specified is the canonical User ID of an AWS account
+* `uri` â€” if granting permission to a predefined Amazon S3 group
 
 Valid values for the explicit ACL permissions are:
-- `read`
-- `write`
-- `read-acp`
-- `write-acp`
-- `full-control` 
+* `read`
+* `write`
+* `read-acp`
+* `write-acp`
+* `full-control` 
 
 A good example for the `$acl` parameter would be:
 
@@ -1226,30 +889,30 @@ Additional details about canned ACL permissions can be found at http://docs.aws.
 	public function initiateMultipartUpload($bucket, $object, $requestHeaders = null, $acl = null)
 
 The `$requestHeaders` parameter can take the following values:
-- `Expires`
-- `x-amz-meta-`
-- `x-amz-server-side-encryption`
-- `x-amz-storage-class`
-- `x-amz-website-redirect-location`
+* `Expires`
+* `x-amz-meta-`
+* `x-amz-server-side-encryption`
+* `x-amz-storage-class`
+* `x-amz-website-redirect-location`
 
 The `$acl` parameter can specify canned ACL permissions:
-- `private`
-- `public-read`
-- `public-read-write`
-- `authenticated-read`
-- `log-delivery-write`
+* `private`
+* `public-read`
+* `public-read-write`
+* `authenticated-read`
+* `log-delivery-write`
 
 You can also set explicit ACL permissions. You specify each grantee as a type=value pair, where the type can be one of the following:
-- `emailAddress` â€” if value specified is the email address of an AWS account
-- `id` â€” if value specified is the canonical User ID of an AWS account
-- `uri` â€” if granting permission to a predefined Amazon S3 group
+* `emailAddress` â€” if value specified is the email address of an AWS account
+* `id` â€” if value specified is the canonical User ID of an AWS account
+* `uri` â€” if granting permission to a predefined Amazon S3 group
 
 Valid values for the explicit ACL permissions are:
-- `read`
-- `write`
-- `read-acp`
-- `write-acp`
-- `full-control` 
+* `read`
+* `write`
+* `read-acp`
+* `write-acp`
+* `full-control` 
 
 A good example for the `$acl` parameter would be:
 
@@ -1283,8 +946,8 @@ Additional details about canned ACL permissions can be found at http://docs.aws.
 	public function uploadPart($bucket, $object, $partNumber, $uploadId, $requestHeaders = null)
 
 The `$requestHeaders` parameter can take one of the following values:
-- `Content-MD5`
-- `Expect`
+* `Content-MD5`
+* `Expect`
 
 More details can be found at http://docs.aws.amazon.com/AmazonS3/2006-03-01/API/mpUploadUploadPart.html#mpUploadUploadPart-requests-request-headers.
 
@@ -1309,12 +972,12 @@ More details can be found at http://docs.aws.amazon.com/AmazonS3/2006-03-01/API/
 	public function uploadPartCopy($bucket, $object, $partNumber, $uploadId, $requestHeaders = null)
 
 The `$requestHeaders` parameter can take one of the following values:
-- `x-amz-copy-source`
-- `x-amz-copy-source-range`
-- `x-amz-copy-source-if-match`
-- `x-amz-copy-source-if-none-match`
-- `x-amz-copy-source-if-unmodified-since`
-- `x-amz-copy-source-if-modified-since`
+* `x-amz-copy-source`
+* `x-amz-copy-source-range`
+* `x-amz-copy-source-if-match`
+* `x-amz-copy-source-if-none-match`
+* `x-amz-copy-source-if-unmodified-since`
+* `x-amz-copy-source-if-modified-since`
 
 More details can be found at http://docs.aws.amazon.com/AmazonS3/2006-03-01/API/mpUploadUploadPartCopy.html#mpUploadUploadPartCopy-requests-request-headers.
 
@@ -1336,8 +999,8 @@ More details can be found at http://docs.aws.amazon.com/AmazonS3/2006-03-01/API/
 	public function completeMultipartUpload($bucket, $object, $uploadId, $parts)
 
 The `$parts` parameter is an array of part elements, which can take the following values:
-- `PartNumber`
-- `ETag`
+* `PartNumber`
+* `ETag`
 
 More details can be found at http://docs.aws.amazon.com/AmazonS3/2006-03-01/API/mpUploadComplete.html#mpUploadComplete-requests-request-elements.
 
@@ -1381,8 +1044,8 @@ A good example for the `$parts` parameter would be:
 	public function deleteMultipleObjects($bucket, $objects, $quiet = false, $serialNr = null, $tokenCode = null)
 
 The `$objects` parameter is an array of object elements which can take the following values:
-- `Key`
-- `VersionId`
+* `Key`
+* `VersionId`
 
 More details can be found at http://docs.aws.amazon.com/AmazonS3/2006-03-01/API/multiobjectdeleteapi.html#multiobjectdeleteapi-requests-request-elements.
 
@@ -1414,19 +1077,19 @@ A good example for the `$objects` parameter would be:
 	public function postObject($bucket, $fields)
 
 The `$fields` parameter can take the following values:
-- `AWSAccessKeyId`
-- `acl`
-- `file`
-- `key`
-- `policy`
-- `success_action_redirect`
-- `redirect`
-- `success_action_status`
-- `x-amz-storage-class`
-- `x-amz-meta-*`
-- `x-amz-security-token`
-- `x-amz-server-side-encryption`
-- `x-amz-website-redirect-location`
+* `AWSAccessKeyId`
+* `acl`
+* `file`
+* `key`
+* `policy`
+* `success_action_redirect`
+* `redirect`
+* `success_action_status`
+* `x-amz-storage-class`
+* `x-amz-meta-*`
+* `x-amz-security-token`
+* `x-amz-server-side-encryption`
+* `x-amz-website-redirect-location`
 
 More details can be found at http://docs.aws.amazon.com/AmazonS3/2006-03-01/API/RESTObjectPOST.html#RESTObjectPOST-requests-form-fields.
 
